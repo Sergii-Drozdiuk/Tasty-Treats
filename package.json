@@ -1,0 +1,30 @@
+{
+  "name": "tasty-treats",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "npm run stlint && npm run lint && vite",
+    "lint": "eslint .",
+    "stlint": "stylelint .",
+    "build": "npm run stlint && npm run lint && vite build --base=/Fancy-team-project/",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "eslint": "^8.49.0",
+    "glob": "^10.3.4",
+    "stylelint": "^15.10.3",
+    "stylelint-config-standard": "^34.0.0",
+    "vite": "^4.4.5",
+    "vite-plugin-eslint": "^1.8.1",
+    "vite-plugin-full-reload": "^1.0.5",
+    "vite-plugin-html-inject": "^1.0.1",
+    "vite-plugin-stylelint": "^5.1.1"
+  },
+  "author": "Denys Babych",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.5.0",
+    "modern-normalize": "^2.0.0"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "extends": ["stylelint-config-standard"],
+  "rules": {
+    "color-named": "never",
+    "no-empty-source": null,
+    "declaration-no-important": true,
+    "declaration-property-value-no-unknown": true,
+    "media-feature-name-value-no-unknown": true,
+    "no-unknown-animations": true,
+    "color-no-hex": true,
+    "font-weight-notation": "numeric",
+    "color-function-notation": "legacy"
+  },
+  "ignoreFiles": [
+    "**/*.js",
+    "**/*.html",
+    "**/*.md",
+    "**/*.json",
+    "**/*.svg",
+    "**/*.avif",
+    "**/*.webp",
+    "**/*.woff",
+    "**/*.woff2",
+    "./src/css/fonts.css",
+    "./dist/**/**.css"
+  ]
+}
