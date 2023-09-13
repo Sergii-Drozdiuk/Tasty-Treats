@@ -147,3 +147,106 @@
   font-weight: 400;
   line-height: 150%;
 }
+
+@media only screen and (width >= 768px) {
+  .hero-container {
+    padding-left: 80px;
+  }
+
+  .hero-title {
+    font-size: 36px;
+    margin-block-end: 16px;
+    width: 446px;
+  }
+
+  .hero-desc {
+    font-size: 16px;
+    line-height: 150%;
+    width: 408px;
+    margin-block-end: 32px;
+  }
+
+  .hero-order-btn {
+    border-radius: 15px;
+    padding: 14px 28px;
+    margin-block-end: 64px;
+  }
+
+  .cooker-card {
+    block-size: 442px;
+    inline-size: 137px;
+  }
+
+  .topic-card {
+    width: 351px;
+    height: 442px;
+  }
+
+  .topic-card::after {
+    width: 250px;
+    height: 250px;
+    left: 15%;
+    top: 11%;
+  }
+
+  .card {
+    block-size: 250px;
+    height: 332px;
+    background-position: 50% -13px;
+    margin-bottom: 32px;
+  }
+
+  .barbecue-card {
+    background-position: 50% 11px;
+  }
+
+  .dish-card {
+    block-size: 442px;
+    inline-size: 351px;
+    background-color: var(--main-text-dark-color);
+  }
+
+  .pizza-dish {
+    background-size: 700px;
+  }
+
+  .barbecue-dish {
+    background-position: 44%;
+    background-size: 700px;
+  }
+
+  .pancakes-dish {
+    background-position: 31%;
+    background-size: 700px;
+  }
+
+  .card-title {
+    font-size: 14px;
+    line-height: 128.571%;
+  }
+
+  .pizza-title {
+    width: 259px;
+  }
+
+  .card-area {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 128.571%;
+  }
+}
+
+@media only screen and (width >= 1200px) {
+  .hero-section {
+    padding-block: 100px;
+  }
+
+  .hero-order-btn {
+    margin-block-end: 0;
+  }
+
+  .hero-container {
+    display: flex;
+    gap: 32px;
+  }
+}
