@@ -55,5 +55,31 @@
         ></button>
       </li>
     </ul>
+
+    <dialog id="ordernow" class="order-modal">
+      <p class="order">Order now</p>
+      <button class="btn-close">
+        <svg width="20" height="20" class="btn-close-icon">
+          <use href="../img/icons.svg#icon-btn-close"></use>
+        </svg>
+      </button>
+      <label class="modal-label">
+        Name
+        <input type="text" name="name" class="modal-input" />
+      </label>
+      <label class="modal-label">
+        Phone number
+        <input type="text" name="phone" class="modal-input" />
+      </label>
+      <label class="modal-label">
+        Email
+        <input type="text" name="email" class="modal-input" />
+      </label>
+      <label class="modal-label">
+        Comment
+        <textarea name="comment" class="comment-input"></textarea>
+      </label>
+      <button type="submit" class="modal-order-send">Send</button>
+    </dialog>
   </div>
 </section>
