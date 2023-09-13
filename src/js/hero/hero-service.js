@@ -56,5 +56,6 @@ document.querySelector('.modal-order-send').addEventListener('click', () => {
     modalWindow.close();
     enablePageScroll();
     form.reset();
+    validator.destroy();
   }
 });
