@@ -152,6 +152,25 @@
   line-height: 150%;
 }
 
+.pag-list .pag-btn {
+  background-color: var(--main-text-dark-color);
+}
+
+.pag-list .pag-btn.is-active {
+  background-color: var(--brand-color);
+}
+
+.hero-section .pag-list {
+  bottom: -30px;
+  left: -10px;
+}
+
+@media only screen and (width <= 375px) {
+  .hero-section .pag-list {
+    left: -24px;
+  }
+}
+
 @media only screen and (width >= 768px) {
   .hero-container {
     padding-left: 80px;
@@ -242,6 +261,10 @@
     font-weight: 500;
     line-height: 128.571%;
   }
+
+  .hero-section .pag-list {
+    left: -45px;
+  }
 }
 
 @media only screen and (width >= 1200px) {
@@ -261,4 +284,14 @@
   .hero-info {
     padding-right: 0;
   }
+
+  .hero-section .pag-list {
+    left: 287px;
+  }
+}
+
+/* stylelint-disable-next-line selector-class-pattern */
+.splide:not(.is-overflow) .splide__pagination {
+  /* stylelint-disable-next-line declaration-no-important */
+  display: block !important;
 }
