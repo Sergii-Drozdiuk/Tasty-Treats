@@ -8,8 +8,8 @@
     <meta name="description" content="Your ultimate online culinary paradise!" />
     <title>TastyTreats</title>
     
-    <script type="module" crossorigin src="/Fancy-team-project/assets/index-3146a335.js"></script>
-    <link rel="stylesheet" href="/Fancy-team-project/assets/index-9f0b94cf.css">
+    <script type="module" crossorigin src="/Fancy-team-project/assets/index-0f6ab9d7.js"></script>
+    <link rel="stylesheet" href="/Fancy-team-project/assets/index-3b39a37d.css">
   </head>
 
   <body>
@@ -28,21 +28,21 @@
     <div class="splide hero-swiper" aria-labelledby="Hero-images-carousel">
       <div class="splide__track">
         <ul class="splide__list cards-list">
-          <li class="splide__slide cooker-heston-card cooker-card"></li>
+          <li class="splide__slide cooker-heston-card cooker-card" data-splide-interval="4000"></li>
           <li class="splide__slide topic-card">
             <div class="barbecue-card card"></div>
             <h2 class="card-title">Grilled, smoky, delicious barbecue</h2>
             <p class="card-area">Spanish</p>
           </li>
           <li class="splide__slide barbecue-dish dish-card"></li>
-          <li class="splide__slide cooker-anna-card cooker-card"></li>
+          <li class="splide__slide cooker-anna-card cooker-card" data-splide-interval="4000"></li>
           <li class="splide__slide topic-card">
             <div class="pizza-card card"></div>
             <h2 class="card-title pizza-title">Hot, cheesy and satisfying pizza</h2>
             <p class="card-area">Italian</p>
           </li>
           <li class="splide__slide pizza-dish dish-card"></li>
-          <li class="splide__slide cooker-ferran-card cooker-card"></li>
+          <li class="splide__slide cooker-ferran-card cooker-card" data-splide-interval="4000"></li>
           <li class="splide__slide topic-card">
             <div class="pancakes-card card"></div>
             <h2 class="card-title">Fluffy and sweet pancakes</h2>
@@ -52,6 +52,29 @@
         </ul>
       </div>
     </div>
+    <ul class="pag-list splide__pagination--ltr" role="tablist" aria-label="Select a slide to show">
+      <li role="presentation">
+        <button
+          class="pag-btn is-active"
+          id="pag-btn"
+          type="button"
+          role="tab"
+          aria-controls="splide01-slide01"
+          aria-label="Go to slide 1"
+          aria-selected="true"
+        ></button>
+      </li>
+      <li role="presentation">
+        <button
+          class="pag-btn"
+          type="button"
+          role="tab"
+          aria-controls="splide01-slide02"
+          aria-label="Go to slide 2"
+          tabindex="-1"
+        ></button>
+      </li>
+    </ul>
   </div>
 </section>
 
