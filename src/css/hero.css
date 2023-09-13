@@ -191,6 +191,15 @@
   position: absolute;
   top: 14px;
   right: 14px;
+  color: var(--brand-color);
+}
+
+.btn-close-icon {
+  stroke: var(--main-text-dark-color);
+}
+
+.btn-close-icon:hover {
+  stroke: currentcolor;
 }
 
 .modal-label {
