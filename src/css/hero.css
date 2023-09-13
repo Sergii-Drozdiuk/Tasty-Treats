@@ -16,6 +16,7 @@
   line-height: 120%;
   text-transform: uppercase;
   margin-block-end: 14px;
+  width: 335px;
 }
 
 .hero-title > i {
@@ -26,6 +27,7 @@
 .hero-desc {
   font-weight: 400;
   margin-block-end: 28px;
+  width: 335px;
 }
 
 .hero-order-btn {
