@@ -230,8 +230,8 @@
   transition: var(--transition-timings);
 }
 
-.modal-order-send:is(:hover, :focus) {
-  color: var(--main-text-dark-color);
+.just-validate-success-field {
+  border: 1px solid var(--brand-color);
 }
 
 @media only screen and (width <= 375px) {
