@@ -57,3 +57,7 @@ button {
     padding-inline: 100px;
   }
 }
+
+.main-wrapper {
+  overflow-x: hidden;
+}

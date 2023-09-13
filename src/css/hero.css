@@ -196,6 +196,7 @@
 
 .btn-close-icon {
   stroke: var(--main-text-dark-color);
+  transition: var(--transition-timings);
 }
 
 .btn-close-icon:hover {
@@ -242,7 +243,7 @@
 }
 
 .just-validate-success-field {
-  border: 1px solid var(--brand-color);
+  border: 1.5px solid var(--brand-color);
 }
 
 @media only screen and (width <= 375px) {

@@ -47,6 +47,7 @@ document.querySelector('.hero-order-btn').addEventListener('click', () => {
 document.querySelector('.btn-close').addEventListener('click', () => {
   modalWindow.close();
   enablePageScroll();
+  form.reset();
   validator.destroy();
 });
 
