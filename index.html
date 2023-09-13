@@ -83,22 +83,24 @@
           <use href="../img/icons.svg#icon-btn-close"></use>
         </svg>
       </button>
-      <label class="modal-label">
-        Name
-        <input type="text" name="name" class="modal-input" />
-      </label>
-      <label class="modal-label">
-        Phone number
-        <input type="text" name="phone" class="modal-input" />
-      </label>
-      <label class="modal-label">
-        Email
-        <input type="text" name="email" class="modal-input" />
-      </label>
-      <label class="modal-label">
-        Comment
-        <textarea name="comment" class="comment-input"></textarea>
-      </label>
+      <form id="order-form" autocomplete="off" novalidate="novalidate">
+        <label class="modal-label">
+          Name
+          <input type="text" name="name" class="modal-input" id="name-input" />
+        </label>
+        <label class="modal-label">
+          Phone number
+          <input type="text" name="phone" class="modal-input" id="phone-input" />
+        </label>
+        <label class="modal-label">
+          Email
+          <input type="text" name="email" class="modal-input" id="email-input" />
+        </label>
+        <label class="modal-label">
+          Comment
+          <textarea name="comment" class="comment-input"></textarea>
+        </label>
+      </form>
       <button type="submit" class="modal-order-send">Send</button>
     </dialog>
   </div>
