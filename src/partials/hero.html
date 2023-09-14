@@ -57,32 +57,34 @@
       </li>
     </ul>
 
-    <dialog id="ordernow" class="order-modal">
-      <p class="order">Order now</p>
-      <button class="btn-close">
-        <svg width="20" height="20" class="btn-close-icon">
-          <use href="./img/icons.svg#icon-btn-close"></use>
-        </svg>
-      </button>
-      <form id="order-form" novalidate="novalidate" method="dialog">
-        <label class="modal-label">
-          Name
-          <input type="text" name="name" class="modal-input" id="name-input" />
-        </label>
-        <label class="modal-label">
-          Phone number
-          <input type="text" name="phone" class="modal-input" id="phone-input" />
-        </label>
-        <label class="modal-label">
-          Email
-          <input type="text" name="email" class="modal-input" id="email-input" />
-        </label>
-        <label class="modal-label">
-          Comment
-          <textarea name="comment" class="comment-input"></textarea>
-        </label>
-        <button type="submit" class="modal-order-send">Send</button>
-      </form>
+    <dialog id="ordernow" class="modal">
+      <div class="modal-container order-modal">
+        <p class="order">Order now</p>
+        <button class="btn-close">
+          <svg width="20" height="20" class="btn-close-icon">
+            <use href="./img/icons.svg#icon-btn-close"></use>
+          </svg>
+        </button>
+        <form id="order-form" novalidate="novalidate" method="dialog">
+          <label class="modal-label">
+            Name
+            <input type="text" name="name" class="modal-input" id="name-input" />
+          </label>
+          <label class="modal-label">
+            Phone number
+            <input type="text" name="phone" class="modal-input" id="phone-input" />
+          </label>
+          <label class="modal-label">
+            Email
+            <input type="text" name="email" class="modal-input" id="email-input" />
+          </label>
+          <label class="modal-label">
+            Comment
+            <textarea name="comment" class="comment-input"></textarea>
+          </label>
+          <button type="submit" class="modal-order-send">Send</button>
+        </form>
+      </div>
     </dialog>
   </div>
 </section>

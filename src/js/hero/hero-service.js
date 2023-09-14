@@ -21,12 +21,12 @@ validator.addField(email, [{ rule: 'required' }, { rule: 'email' }]);
 document.querySelector('.hero-order-btn').addEventListener('click', onOrderBtnClick);
 document.querySelector('.modal-order-send').addEventListener('click', onOrderSendBtnClick);
 document.querySelector('.btn-close').addEventListener('click', onCloseBtnClick);
-document.addEventListener('click', onBackdropClick);
 
 function onOrderBtnClick() {
   disablePageScroll();
   modalWindow.showModal();
   validator.refresh();
+  modalWindow.addEventListener('click', onBackdropClick);
 }
 
 function onOrderSendBtnClick() {
@@ -41,7 +41,8 @@ function onCloseBtnClick() {
 }
 
 function onBackdropClick(e) {
-  if (e.currentTarget === modalWindow) {
+  if (e.target === modalWindow) {
+    console.log(e.target);
     modalWindow.close();
     form.reset();
     validator.destroy();
