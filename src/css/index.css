@@ -30,6 +30,7 @@
   --dark-secondary-text-color: rgba(255, 255, 255, 80%);
   --dark-main-hero-img-color: rgba(255, 255, 255, 60%);
   --dark-secondary-hero-img-color: rgba(255, 255, 255, 20%);
+  --switcher-color: rgb(206, 205, 205);
   --transition-timings: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -41,4 +42,5 @@ body {
   background-color: var(--main-text-light-color);
   color: var(--main-text-dark-color);
   overscroll-behavior: none;
+  -webkit-overflow-scrolling: touch;
 }

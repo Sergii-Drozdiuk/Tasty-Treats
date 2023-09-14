@@ -4,7 +4,6 @@ import '@splidejs/splide/css';
 document.addEventListener('DOMContentLoaded', () => {
   new Splide('.splide', {
     type: 'loop',
-    drag: 'free',
     autoWidth: true,
     autoHeight: true,
     gap: '1rem',

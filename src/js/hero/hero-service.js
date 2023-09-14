@@ -1,11 +1,11 @@
-import { disablePageScroll, enablePageScroll } from 'scroll-lock';
 import JustValidate from 'just-validate';
 
 const form = document.querySelector('#order-form');
 const { name, phone, email } = form.elements;
-const validator = new JustValidate('#order-form', { validateBeforeSubmitting: true });
 
-validator.addField('#name-input', [
+const validator = new JustValidate(form, { validateBeforeSubmitting: true });
+
+validator.addField(name, [
   {
     rule: 'required',
   },
@@ -19,7 +19,7 @@ validator.addField('#name-input', [
   },
 ]);
 
-validator.addField('#phone-input', [
+validator.addField(phone, [
   {
     rule: 'required',
   },
@@ -28,7 +28,8 @@ validator.addField('#phone-input', [
     value: '[789][0-9]{9}',
   },
 ]);
-validator.addField('#email-input', [
+
+validator.addField(email, [
   {
     rule: 'required',
   },
@@ -41,12 +42,10 @@ const modalWindow = document.querySelector('#ordernow');
 
 document.querySelector('.hero-order-btn').addEventListener('click', () => {
   modalWindow.showModal();
-  disablePageScroll();
 });
 
 document.querySelector('.btn-close').addEventListener('click', () => {
   modalWindow.close();
-  enablePageScroll();
   form.reset();
   validator.destroy();
 });
@@ -56,7 +55,6 @@ document.querySelector('.modal-order-send').addEventListener('click', () => {
     return;
   } else {
     modalWindow.close();
-    enablePageScroll();
     form.reset();
     validator.destroy();
   }
