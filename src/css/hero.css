@@ -3,11 +3,11 @@
 }
 
 .hero-container {
-  padding-left: 20px;
+  padding-inline-start: 20px;
 }
 
 .hero-info {
-  padding-right: 20px;
+  padding-inline-end: 20px;
 }
 
 .hero-title {
@@ -16,7 +16,7 @@
   line-height: 120%;
   text-transform: uppercase;
   margin-block-end: 14px;
-  width: 335px;
+  max-width: 335px;
 }
 
 .hero-title > i {
@@ -27,7 +27,7 @@
 .hero-desc {
   font-weight: 400;
   margin-block-end: 28px;
-  width: 335px;
+  max-width: 335px;
 }
 
 .hero-order-btn {
@@ -45,7 +45,7 @@
 }
 
 .cooker-card {
-  block-size: 280px;
+  width: 280px;
   inline-size: 80px;
   background-position: 50%;
   background-size: cover;
@@ -93,7 +93,7 @@
   background-size: cover;
   background-position: 50% 10px;
   background-repeat: no-repeat;
-  margin-bottom: 20px;
+  margin-block-end: 20px;
   position: relative;
   z-index: 3;
 }
@@ -138,7 +138,7 @@
   font-size: 10px;
   line-height: 140%;
   text-transform: uppercase;
-  margin-bottom: 8px;
+  margin-block-end: 8px;
 }
 
 .pizza-title {
@@ -184,7 +184,7 @@
   font-weight: 600;
   line-height: 122.222%;
   text-transform: uppercase;
-  margin-bottom: 28px;
+  margin-block-end: 28px;
 }
 
 .btn-close {
@@ -199,36 +199,41 @@
   transition: var(--transition-timings);
 }
 
-.btn-close-icon:hover {
+.btn-close-icon:is(:hover) {
+  stroke: currentcolor;
+}
+
+.btn-close:is(:focus-visible) .btn-close-icon {
   stroke: currentcolor;
 }
 
 .modal-label {
   display: block;
   color: var(--filters-main-color);
-  margin-bottom: 16px;
+  margin-block-end: 16px;
+}
+
+.modal-label:last-of-type {
+  margin-block-end: 40px;
 }
 
 .modal-input {
-  display: block;
   border-radius: 15px;
   border: 1px solid rgba(5, 5, 5, 20%);
   width: 295px;
   height: 46px;
-  margin-top: 8px;
+  margin-block-start: 8px;
   padding: 20px;
   font-size: 16px;
 }
 
 .comment-input {
-  display: block;
-  margin-top: 8px;
+  margin-block-start: 8px;
   resize: none;
   border-radius: 15px;
   width: 295px;
   height: 100px;
   border: 1px solid rgba(5, 5, 5, 20%);
-  margin-bottom: 40px;
   padding: 20px;
   font-size: 16px;
 }
@@ -276,13 +281,13 @@
   .hero-title {
     font-size: 36px;
     margin-block-end: 16px;
-    width: 446px;
+    max-width: 446px;
   }
 
   .hero-desc {
     font-size: 16px;
     line-height: 150%;
-    width: 408px;
+    max-width: 408px;
     margin-block-end: 32px;
   }
 
@@ -408,9 +413,14 @@
     margin-block-end: 0;
   }
 
+  .hero-title {
+    width: 446px;
+  }
+
   .hero-container {
     display: flex;
     gap: 32px;
+    padding-inline-start: 100px;
   }
 
   .hero-info {
@@ -422,7 +432,7 @@
   }
 
   .modal-label {
-    margin-bottom: 18px;
+    margin-block-end: 18px;
   }
 }
 
