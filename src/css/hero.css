@@ -199,7 +199,7 @@
   transition: var(--transition-timings);
 }
 
-.btn-close-icon:hover {
+.btn-close-icon:is(:hover) {
   stroke: currentcolor;
 }
 
