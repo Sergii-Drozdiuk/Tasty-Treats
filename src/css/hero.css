@@ -39,7 +39,7 @@
   margin-block-end: 48px;
 }
 
-.hero-order-btn:is(:hover, :focus) {
+.hero-order-btn:is(:hover, :focus-visible) {
   color: var(--main-text-light-color);
   background-color: var(--brand-color);
 }
