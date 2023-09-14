@@ -203,6 +203,10 @@
   stroke: currentcolor;
 }
 
+.btn-close:is(:focus) .btn-close-icon {
+  stroke: currentcolor;
+}
+
 .modal-label {
   display: block;
   color: var(--filters-main-color);
