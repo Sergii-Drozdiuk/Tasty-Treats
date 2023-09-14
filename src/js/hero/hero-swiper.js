@@ -10,6 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
     arrows: false,
     perPage: 3,
     autoplay: true,
+    pauseOnHover: true,
+    pauseOnFocus: true,
     classes: {
       pagination: 'splide__pagination pag-list',
       page: 'splide__pagination__page pag-btn',
