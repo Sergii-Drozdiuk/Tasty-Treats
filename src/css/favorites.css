@@ -18,6 +18,7 @@
   font-weight: 500;
   line-height: 1.25;
 }
+
 .favorites-filters-btn:hover,
 .favorites-filters-btn:focus {
   background-color: var(--brand-color);
