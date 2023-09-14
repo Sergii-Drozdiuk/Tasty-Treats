@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   new Splide('.splide', {
     type: 'loop',
     autoWidth: true,
+    drag: false,
     autoHeight: true,
     gap: '1rem',
     arrows: false,
