@@ -248,10 +248,10 @@
 }
 
 .just-validate-success-field {
-  border: 1.5px solid var(--brand-color);
+  border: 1.3px solid var(--brand-color);
 }
 
-@media only screen and (width <= 375px) {
+@media only screen and (width < 375px) {
   .hero-section .pag-list {
     left: -24px;
   }
@@ -271,11 +271,11 @@
 
 @media only screen and (width >= 768px) {
   .hero-container {
-    padding-left: 80px;
+    padding-inline-start: 32px;
   }
 
   .hero-info {
-    padding-right: 80px;
+    padding-inline-end: 0;
   }
 
   .hero-title {
@@ -308,9 +308,9 @@
   }
 
   .topic-card::after {
-    width: 250px;
-    height: 250px;
-    left: 15%;
+    width: 220px;
+    height: 220px;
+    left: 16%;
     top: 11%;
   }
 
@@ -419,6 +419,7 @@
 
   .hero-container {
     display: flex;
+    align-items: center;
     gap: 32px;
     padding-inline-start: 100px;
   }
