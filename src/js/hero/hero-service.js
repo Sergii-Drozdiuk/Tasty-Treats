@@ -41,7 +41,7 @@ function onCloseBtnClick() {
 }
 
 function onBackdropClick(e) {
-  if (e.target === modalWindow) {
+  if (e.currentTarget === modalWindow) {
     modalWindow.close();
     form.reset();
     validator.destroy();
