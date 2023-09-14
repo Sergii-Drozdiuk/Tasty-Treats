@@ -167,6 +167,16 @@
   left: -10px;
 }
 
+@keyframes slide-in {
+  from {
+    transform: translateY(-5%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
 .order-modal {
   width: 335px;
   padding: 20px;
@@ -177,10 +187,12 @@
   padding: 0;
   border: none;
   border-radius: 15px;
+  animation: slide-in 0.4s ease;
 }
 
 .modal::backdrop {
   backdrop-filter: blur(7px) brightness(0.86) grayscale(28%) opacity(92%);
+  transition: var(--transition-timings);
 }
 
 .order {
