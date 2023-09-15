@@ -7,9 +7,10 @@ new Swiper('.swiper', {
   slidesPerView: 0.6,
   spaceBetween: '16px',
   loop: true,
+  freeMode: true,
   modules: [Pagination],
   autoplay: {
-    delay: 2500,
+    delay: 100,
     disableOnInteraction: false,
   },
   pagination: {
