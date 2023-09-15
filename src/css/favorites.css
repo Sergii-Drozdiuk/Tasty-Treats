@@ -1,3 +1,8 @@
+.favorites-main-picture {
+  display: block;
+  margin-block: 50px 40px;
+}
+
 .favorites-filters-list {
   display: flex;
   gap: 15px;
