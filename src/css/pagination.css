@@ -151,7 +151,7 @@
   align-items: center;
   width: 100%;
   height: 100%;
-  border: 1px solid rgba(5, 5, 5, 30%);
+  border: 1px solid var(--filters-secondary-color);
   border-radius: 50%;
   background-color: transparent;
   color: var(--main-text-dark-color);
@@ -188,7 +188,7 @@
 }
 
 .disabled .pag-nav-arrow {
-  fill: rgba(248, 248, 248, 50%);
+  fill: var(--secondary-pag-img-color);
 }
 
 .pag-nav-item :not(.disabled):hover,
