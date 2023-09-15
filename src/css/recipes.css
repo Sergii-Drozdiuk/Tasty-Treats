@@ -8,11 +8,7 @@
     display: flex;
     flex-wrap: wrap;
     border-radius: 15px;
-padding-left: 16px; 
-
-padding-bottom: 16px;
-padding-right: 16px;
-padding-top: 214px;
+    padding: 214px 16px 16px ;
 }
 
 .wrapper-card{
@@ -21,37 +17,41 @@ padding-top: 214px;
     gap: 24px;
 }
 
-@media screen and (min-width: 768px){
-    .recipes-card{
+@media  screen and (width >= 768px){
+ .recipes-card{
         width: 240px;
         height: 264px;
         padding-top: 143px;
-        
     }
-    .wrapper-card{
-        
+
+    .wrapper-card{   
     gap: 16px;
     }
+
     .recipes-icon-svg{
         width: 16px;
         height: 16px;
     }
+
 }
-@media screen and (min-width: 1200px){
-    .recipes-card{
+
+@media screen and (width >=1200px){
+.recipes-card{
         width: 250px;
         height: 287px;
         padding-top: 166px;
         
     }
+
     .recipes-icon-svg{
         width: 18px;
         height: 18px;
     } 
+
     .wrapper-card{
-        
-        gap:32px 16px;
+      gap:32px 16px;
         }
+
 }
 
 .recipes-title{
@@ -74,9 +74,9 @@ margin-bottom: 16px;
     margin-right: 4px;
 }
 
-@media screen and (min-width: 768px){
-    .recipes-text-rating{
-        margin-right: 2px;
+@media screen and (width>= 768px){
+   .recipes-text-rating{
+           margin-right: 2px;
     }
 }
 
@@ -93,7 +93,7 @@ margin-bottom: 16px;
    
 }
 
-@media screen and (min-width: 768px){
+@media screen and (width >=768px){
     .button-recipes{
         margin-left: 23px;
         min-width: 89px;
