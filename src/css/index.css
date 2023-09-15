@@ -44,5 +44,4 @@ body {
   background-color: var(--main-text-light-color);
   color: var(--main-text-dark-color);
   overscroll-behavior: none;
-  -webkit-overflow-scrolling: touch;
 }

@@ -4,6 +4,7 @@
 
 .hero-container {
   padding-inline-start: 20px;
+  position: relative;
 }
 
 .hero-info {
@@ -267,6 +268,27 @@
   border: 1.3px solid var(--brand-color);
 }
 
+.slide {
+  display: flex;
+  gap: 16px;
+}
+
+.pages-pagination .swiper-pagination-bullet {
+  opacity: 1;
+  background-color: var(--main-text-dark-color);
+}
+
+.pages-pagination .swiper-pagination-bullet-active {
+  background-color: var(--brand-color);
+}
+
+.pages-pagination {
+  padding-right: 20px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
 @media only screen and (width < 375px) {
   .hero-section .pag-list {
     left: -24px;
@@ -418,6 +440,10 @@
     width: 360px;
     padding: 14px;
   }
+
+  .pages-pagination {
+    padding-right: 32px;
+  }
 }
 
 @media only screen and (width >= 1200px) {
@@ -433,7 +459,7 @@
     width: 446px;
   }
 
-  .hero-container {
+  .wrapper {
     display: flex;
     align-items: center;
     gap: 32px;
@@ -451,10 +477,9 @@
   .modal-label {
     margin-block-end: 18px;
   }
-}
 
-/* stylelint-disable-next-line selector-class-pattern */
-.splide:not(.is-overflow) .splide__pagination {
-  /* stylelint-disable-next-line declaration-no-important */
-  display: block !important;
+  .pages-pagination {
+    padding-right: 80px;
+    margin-left: 230px;
+  }
 }
