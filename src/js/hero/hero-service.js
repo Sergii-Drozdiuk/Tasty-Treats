@@ -14,7 +14,7 @@ validator.addField(name, [
   { rule: 'maxLength', value: 15 },
 ]);
 
-validator.addField(phone, [{ rule: 'required' }, { rule: 'customRegexp', value: '[789][0-9]{9}' }]);
+validator.addField(phone, [{ rule: 'required' }, { rule: 'customRegexp', value: '[0-9]{1}[0-9]{9}' }]);
 
 validator.addField(email, [{ rule: 'required' }, { rule: 'email' }]);
 
