@@ -1,16 +1,18 @@
 import Swiper from 'swiper';
-import { Pagination } from 'swiper/modules';
+import { Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css/pagination';
 import 'swiper/css';
 
-new Swiper('.swiper', {
+const swiper = new Swiper('.swiper', {
+  noSwiping: true,
+  noSwipingSelector: '.swiper',
+  speed: 1000,
   slidesPerView: 0.6,
   spaceBetween: '16px',
   loop: true,
-  freeMode: true,
-  modules: [Pagination],
-  autoplay: {
-    delay: 100,
+  modules: [Pagination, Autoplay],
+  Autoplay: {
+    delay: 2000,
     disableOnInteraction: false,
   },
   pagination: {
@@ -22,7 +24,7 @@ new Swiper('.swiper', {
       slidesPerView: 0.76,
     },
     427: {
-      slidesPerView: 'auto',
+      slidesPerView: 0.8,
     },
     530: {
       slidesPerView: 1.1,
@@ -55,7 +57,15 @@ new Swiper('.swiper', {
       slidesPerView: 1.4,
     },
     1200: {
-      slidesPerView: 0.97,
+      slidesPerView: 0.7,
+    },
+    1220: {
+      slidesPerView: 0.8,
+    },
+    1310: {
+      slidesPerView: 0.95,
     },
   },
 });
+
+swiper.autoplay.start();
