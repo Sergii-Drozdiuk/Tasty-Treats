@@ -3,6 +3,18 @@
   margin-block: 50px 40px;
 }
 
+@media only screen and (width >= 768px) {
+  .favorites-main-picture {
+    margin-block: 50px 64px;
+  }
+}
+
+@media only screen and (width >= 1200px) {
+  .favorites-main-picture {
+    margin-block: 40px 64px;
+  }
+}
+
 .favorites-filters-list {
   display: flex;
   gap: 15px;
