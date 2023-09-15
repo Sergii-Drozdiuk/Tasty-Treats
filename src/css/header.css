@@ -54,7 +54,7 @@
   stroke: var(--brand-color);
 }
 
-.header-btn-shopping-cart:focus .svg-shopping-cart path {
+.header-btn-shopping-cart:focus-visible .svg-shopping-cart path {
   stroke: var(--brand-color);
 }
 

@@ -5,6 +5,7 @@ import { uploadUser } from './hero-api';
 
 const form = document.querySelector('#order-form');
 const modalWindow = document.querySelector('#ordernow');
+
 const validator = new JustValidate(form);
 const { name, phone, email, comment } = form.elements;
 
@@ -28,6 +29,7 @@ validator.addField(email, [{ rule: 'required' }, { rule: 'email' }]);
 document.querySelector('.hero-order-btn').addEventListener('click', onOrderBtnClick);
 document.querySelector('.modal-order-send').addEventListener('click', onOrderSendBtnClick);
 document.querySelector('.btn-close').addEventListener('click', onCloseBtnClick);
+document.querySelector('.js-shopping-cart').addEventListener('click', onOrderBtnClick);
 
 function onOrderBtnClick() {
   disablePageScroll();
