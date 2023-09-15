@@ -9,10 +9,36 @@
   </head>
   <body>
     <load src="partials/header.html" />
-    <a href="./index.html">home</a>
     <main>
       <section class="favorites-section">
         <div class="favorites-container container">
+          <picture class="favorites-main-picture">
+            <source
+              media="(min-width: 1200px)"
+              srcset="
+                ./img/favorites-img/desktop/main-desktop.avif    1x,
+                ./img/favorites-img/desktop/main-desktop@2x.avif 2x
+              "
+              type="image/avif"
+            />
+            <source
+              media="(min-width: 768px)"
+              srcset="
+                ./img/favorites-img/tablet/main-tablet.avif    1x,
+                ./img/favorites-img/tablet/main-tablet@2x.avif 2x
+              "
+              type="image/avif"
+            />
+            <source
+              media="(max-width: 767px)"
+              srcset="
+                ./img/favorites-img/mobile/main-mobile.avif    1x,
+                ./img/favorites-img/mobile/main-mobile@2x.avif 2x
+              "
+              type="image/avif"
+            />
+            <img src="./img/favorites-img/mobile/main-mobile.webp" alt="Tasty Cook" />
+          </picture>
           <ul class="favorites-filters-list">
             <li class="favorites-filters-items">
               <button type="button" class="favorites-filters-btn">All categoris</button>
@@ -21,7 +47,9 @@
             <li class="js-hidden"><button type="button" class="favorites-filters-btn">Breakfast</button></li>
             <li class="js-hidden"><button type="button" class="favorites-filters-btn">Chicken</button></li>
             <li class="js-hidden"><button type="button" class="favorites-filters-btn">Goat</button></li>
-            <li class="js-hidden"><button type="button" class="favorites-filters-btn">Miscellaneous</button></li>
+            <li class="js-hidden">
+              <button type="button" class="favorites-filters-btn">Miscellaneous</button>
+            </li>
             <li class="js-hidden"><button type="button" class="favorites-filters-btn">Pasta</button></li>
             <li class="js-hidden"><button type="button" class="favorites-filters-btn">Pork</button></li>
             <li class="js-hidden"><button type="button" class="favorites-filters-btn">Seafood</button></li>
