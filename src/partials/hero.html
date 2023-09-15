@@ -1,3 +1,90 @@
 <section class="hero-section">
-  <div class="hero-container"></div>
+  <div class="hero-container">
+    <div class="hero-info">
+      <h1 class="hero-title">Learn to Cook <i>Tasty Treats'</i> Customizable Masterclass</h1>
+      <p class="hero-desc">
+        TastyTreats - Customize Your Meal with Ingredient Options and Step-by-Step Video Guides.
+      </p>
+      <button type="button" class="hero-order-btn">Order now</button>
+    </div>
+    <div class="splide" aria-labelledby="Hero-images-carousel">
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide cooker-heston-card cooker-card" data-splide-interval="4000"></li>
+          <li class="splide__slide topic-card">
+            <div class="barbecue-card card"></div>
+            <h2 class="card-title">Grilled, smoky, delicious barbecue</h2>
+            <p class="card-area">Spanish</p>
+          </li>
+          <li class="splide__slide barbecue-dish dish-card"></li>
+          <li class="splide__slide cooker-anna-card cooker-card" data-splide-interval="4000"></li>
+          <li class="splide__slide topic-card">
+            <div class="pizza-card card"></div>
+            <h2 class="card-title pizza-title">Hot, cheesy and satisfying pizza</h2>
+            <p class="card-area">Italian</p>
+          </li>
+          <li class="splide__slide pizza-dish dish-card"></li>
+          <li class="splide__slide cooker-ferran-card cooker-card" data-splide-interval="4000"></li>
+          <li class="splide__slide topic-card">
+            <div class="pancakes-card card"></div>
+            <h2 class="card-title">Fluffy and sweet pancakes</h2>
+            <p class="card-area">American</p>
+          </li>
+          <li class="splide__slide pancakes-dish dish-card"></li>
+        </ul>
+      </div>
+    </div>
+    <ul class="pag-list" role="tablist" aria-label="Select a slide to show">
+      <li role="presentation">
+        <button
+          class="pag-btn is-active"
+          type="button"
+          role="tab"
+          aria-controls="splide01-slide01"
+          aria-label="Go to slide 1"
+          aria-selected="true"
+        ></button>
+      </li>
+      <li role="presentation">
+        <button
+          class="pag-btn"
+          type="button"
+          role="tab"
+          aria-controls="splide01-slide02"
+          aria-label="Go to slide 2"
+          tabindex="-1"
+        ></button>
+      </li>
+    </ul>
+
+    <dialog id="ordernow" class="modal">
+      <div class="modal-container order-modal">
+        <p class="order">Order now</p>
+        <button class="btn-close">
+          <svg width="20" height="20" class="btn-close-icon">
+            <use href="./img/icons.svg#icon-btn-close"></use>
+          </svg>
+        </button>
+        <form id="order-form" novalidate="novalidate" method="dialog">
+          <label class="modal-label">
+            Name
+            <input type="text" name="name" class="modal-input" id="name-input" />
+          </label>
+          <label class="modal-label">
+            Phone number
+            <input type="text" name="phone" class="modal-input" id="phone-input" />
+          </label>
+          <label class="modal-label">
+            Email
+            <input type="text" name="email" class="modal-input" id="email-input" />
+          </label>
+          <label class="modal-label">
+            Comment
+            <textarea name="comment" class="comment-input"></textarea>
+          </label>
+          <button type="submit" class="modal-order-send">Send</button>
+        </form>
+      </div>
+    </dialog>
+  </div>
 </section>

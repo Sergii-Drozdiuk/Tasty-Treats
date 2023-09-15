@@ -1,1 +1,144 @@
+.header {
+  padding-top: 30px;
+}
 
+.header-nav {
+  display: none;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-tastytreats {
+  color: var(--main-text-dark-color);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: -0.72px;
+}
+
+.header-tasty {
+  color: var(--brand-color);
+}
+
+.header-buttons {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+.header-btn-shopping-cart {
+  color: var(--brand-color);
+  fill-opacity: 0.5;
+}
+
+.svg-shopping-cart {
+  fill: var(--main-text-light-color);
+  transition: var(--transition-timings);
+}
+
+.svg-shopping-cart:hover {
+  fill: currentcolor;
+  stroke: currentcolor;
+}
+
+.svg-shopping-cart:is(:hover, :focus) {
+  fill: var(--brand-color);
+  stroke: currentcolor;
+}
+
+.header-btn-burger-menu {
+  fill: currentcolor;
+  stroke: currentcolor;
+}
+
+.switch {
+  display: none;
+}
+
+@media only screen and (width >= 768px) {
+  .container {
+    border: 2px solid var(--brand-color);
+  }
+
+  .header-nav {
+    display: flex;
+  }
+
+  .header-btn-burger-menu {
+    display: none;
+  }
+
+  .header-refs {
+    display: flex;
+    gap: 16px;
+  }
+
+  .header-refs .active {
+    color: var(--brand-color);
+    font-weight: 500;
+  }
+
+  .header-ref {
+    color: var(--main-text-dark-color);
+    transition: var(--transition-timings);
+    letter-spacing: -0.72px;
+    font-weight: 600;
+    font-size: 12px;
+  }
+
+  .header-ref:is(:hover, :focus) {
+    color: var(--brand-color);
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 46px;
+    height: 20px;
+  }
+
+  .switch input {
+    display: none;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    inset: 0;
+    background-color: var(--switcher-color);
+    transition: 0.4s;
+    box-shadow: 10px 6px 8px var(--switcher-color);
+  }
+
+  .slider::before {
+    position: absolute;
+    content: '';
+    height: 18px;
+    width: 18px;
+    left: 1px;
+    bottom: 1px;
+    background-color: var(--main-text-light-color);
+    transition: 0.4s;
+  }
+
+  input:checked + .slider {
+    background-color: var(--brand-color);
+  }
+
+  input:checked + .slider::before {
+    transform: translateX(26px);
+    box-shadow: 6px 6px 14px var(--main-hero-img-color);
+  }
+
+  .slider.round {
+    border-radius: 34px;
+  }
+
+  .slider.round::before {
+    border-radius: 50%;
+  }
+}

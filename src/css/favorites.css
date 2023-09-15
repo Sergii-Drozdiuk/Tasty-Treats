@@ -1,0 +1,26 @@
+.favorites-filters-list {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.favorites-filters-btn {
+  display: flex;
+  padding: 14px 18px;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  border-radius: 15px;
+  border: 1px solid var(--secondary-hero-img-color);
+  color: var(--filters-secondary-color);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.favorites-filters-btn:hover,
+.favorites-filters-btn:focus {
+  background-color: var(--brand-color);
+  color: var(--main-text-light-color);
+}

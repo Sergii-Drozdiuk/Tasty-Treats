@@ -18,19 +18,21 @@
   --main-text-dark-color: rgb(5, 5, 5);
   --main-text-light-color: rgb(248, 248, 248);
   --brand-color: rgb(155, 181, 55);
-  --filters-main-color: color-mix(in srgb, var(--main-text-dark-color), transperent 50%);
-  --filters-secondary-color: color-mix(in srgb, var(--main-text-dark-color), transperent 30%);
-  --main-hero-img-color: color-mix(in srgb, var(--main-text-light-color), transperent 60%);
-  --secondary-pag-img-color: color-mix(in srgb, var(--main-text-light-color), transperent 50%);
-  --secondary-hero-img-color: color-mix(in srgb, var(--main-text-light-color), transperent 20%);
-  --secondary-pop-recipes-color: color-mix(in srgb, var(--main-text-dark-color), transperent 80%);
+  --filters-main-color: rgba(5, 5, 5, 50%);
+  --filters-secondary-color: rgba(5, 5, 5, 30%);
+  --main-hero-img-color: rgb(248, 248, 248, 60%);
+  --secondary-pag-img-color: rgb(248, 248, 248, 50%);
+  --secondary-hero-img-color: rgb(248, 248, 248, 20%);
+  --secondary-pop-recipes-color: rgba(5, 5, 5, 80%);
+  --border-main-color: rgba(155, 181, 55, 30%);
   --dark-bg-color: rgb(22, 22, 22);
   --dark-main-text-color: rgb(255, 255, 255);
-  --dark-filters-main-color: color-mix(in srgb, var(--dark-main-text-color), transperent 50%);
-  --dark-filters-secondary-color: color-mix(in srgb, var(--dark-main-text-color), transperent 30%);
-  --dark-secondary-text-color: color-mix(in srgb, var(--dark-main-text-color), transperent 80%);
-  --dark-main-hero-img-color: color-mix(in srgb, var(--dark-main-text-color), transperent 60%);
-  --dark-secondary-hero-img-color: color-mix(in srgb, var(--dark-main-text-color), transperent 20%);
+  --dark-filters-main-color: rgba(255, 255, 255, 50%);
+  --dark-filters-secondary-color: rgba(255, 255, 255, 30%);
+  --dark-secondary-text-color: rgba(255, 255, 255, 80%);
+  --dark-main-hero-img-color: rgba(255, 255, 255, 60%);
+  --dark-secondary-hero-img-color: rgba(255, 255, 255, 20%);
+  --switcher-color: rgb(206, 205, 205);
   --transition-timings: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -42,4 +44,5 @@ body {
   background-color: var(--main-text-light-color);
   color: var(--main-text-dark-color);
   overscroll-behavior: none;
+  -webkit-overflow-scrolling: touch;
 }
