@@ -170,7 +170,7 @@
 
 @keyframes slide-in {
   from {
-    transform: translateY(-5%);
+    transform: translateY(8%);
   }
 
   to {
