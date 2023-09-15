@@ -41,29 +41,21 @@
   align-items: center;
 }
 
-.header-btn-shopping-cart {
-  color: var(--brand-color);
-  fill-opacity: 0.5;
-}
-
-.svg-shopping-cart {
-  fill: var(--main-text-light-color);
+.svg-shopping-cart:is(:hover) path {
+  stroke: var(--brand-color);
   transition: var(--transition-timings);
 }
 
-.svg-shopping-cart:hover {
-  fill: currentcolor;
-  stroke: currentcolor;
+.svg-burger-menu:hover path {
+  stroke: var(--brand-color);
 }
 
-.svg-shopping-cart:is(:hover, :focus) {
-  fill: var(--brand-color);
-  stroke: currentcolor;
+.header-btn-burger-menu:focus .svg-burger-menu path {
+  stroke: var(--brand-color);
 }
 
-.header-btn-burger-menu {
-  fill: currentcolor;
-  stroke: currentcolor;
+.header-btn-shopping-cart:focus-visible .svg-shopping-cart path {
+  stroke: var(--brand-color);
 }
 
 .switch {

@@ -1,5 +1,5 @@
 .hero-section {
-  padding-block: 90px 80px;
+  padding-block-end: 80px;
 }
 
 .hero-container {
@@ -454,7 +454,7 @@
 
 @media only screen and (width >= 1200px) {
   .hero-section {
-    padding-block: 100px;
+    padding-block-end: 100px;
   }
 
   .hero-order-btn {

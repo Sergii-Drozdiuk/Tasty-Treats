@@ -41,7 +41,7 @@ body {
   font-size: 14px;
   font-weight: 500;
   line-height: 18px;
-  background-color: var(--main-text-light-color);
-  color: var(--main-text-dark-color);
   overscroll-behavior: none;
+  color: var(--main-text-dark-color);
+  background-color: var(--main-text-light-color);
 }

@@ -5,6 +5,7 @@ import { uploadUser } from './hero-api';
 
 const form = document.querySelector('#order-form');
 const modalWindow = document.querySelector('#ordernow');
+
 const validator = new JustValidate(form);
 const { name, phone, email, comment } = form.elements;
 
@@ -14,13 +15,21 @@ validator.addField(name, [
   { rule: 'maxLength', value: 15 },
 ]);
 
-validator.addField(phone, [{ rule: 'required' }, { rule: 'customRegexp', value: '[0-9]{1}[0-9]{9}' }]);
+validator.addField(phone, [
+  { rule: 'required' },
+  {
+    rule: 'customRegexp',
+    value: '[0-9]{0}[0-9]{9}',
+    errorMessage: 'Your phone number should be in this format: ##########',
+  },
+]);
 
 validator.addField(email, [{ rule: 'required' }, { rule: 'email' }]);
 
 document.querySelector('.hero-order-btn').addEventListener('click', onOrderBtnClick);
 document.querySelector('.modal-order-send').addEventListener('click', onOrderSendBtnClick);
 document.querySelector('.btn-close').addEventListener('click', onCloseBtnClick);
+document.querySelector('.js-shopping-cart').addEventListener('click', onOrderBtnClick);
 
 function onOrderBtnClick() {
   disablePageScroll();
