@@ -1,6 +1,6 @@
 import axios from 'axios';
 console.log(axios);
-const categorys = ['Breakfast', 'Chicken'];
+const categorys = ['Breakfast', 'Chicken', 'Dessert'];
 console.log(categorys);
 const filters = document.querySelector('.favorites-filters-list');
 console.log(filters);
