@@ -7,12 +7,12 @@ const swiper = new Swiper('.swiper', {
   noSwiping: true,
   noSwipingSelector: '.swiper',
   speed: 1000,
-  slidesPerView: 0.6,
+  slidesPerView: 0.7,
   spaceBetween: '16px',
   loop: true,
   modules: [Pagination, Autoplay],
   Autoplay: {
-    delay: 2000,
+    delay: 1000,
     disableOnInteraction: false,
   },
   pagination: {
