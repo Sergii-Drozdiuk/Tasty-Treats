@@ -43,6 +43,5 @@ body {
   line-height: 18px;
   overscroll-behavior: none;
   color: var(--main-text-dark-color);
-  overflow: hidden;
   background-color: var(--main-text-light-color);
 }
