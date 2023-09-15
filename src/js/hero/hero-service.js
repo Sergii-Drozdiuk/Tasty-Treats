@@ -1,61 +1,78 @@
 import JustValidate from 'just-validate';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import { disablePageScroll, enablePageScroll } from 'scroll-lock';
+import { uploadUser } from './hero-api';
 
 const form = document.querySelector('#order-form');
-const { name, phone, email } = form.elements;
-
-const validator = new JustValidate(form, { validateBeforeSubmitting: true });
+const modalWindow = document.querySelector('#ordernow');
+const validator = new JustValidate(form);
+const { name, phone, email, comment } = form.elements;
 
 validator.addField(name, [
-  {
-    rule: 'required',
-  },
-  {
-    rule: 'minLength',
-    value: 3,
-  },
-  {
-    rule: 'maxLength',
-    value: 15,
-  },
+  { rule: 'required' },
+  { rule: 'minLength', value: 3 },
+  { rule: 'maxLength', value: 15 },
 ]);
 
-validator.addField(phone, [
-  {
-    rule: 'required',
-  },
-  {
-    rule: 'customRegexp',
-    value: '[789][0-9]{9}',
-  },
-]);
+validator.addField(phone, [{ rule: 'required' }, { rule: 'customRegexp', value: '[789][0-9]{9}' }]);
 
-validator.addField(email, [
-  {
-    rule: 'required',
-  },
-  {
-    rule: 'email',
-  },
-]);
+validator.addField(email, [{ rule: 'required' }, { rule: 'email' }]);
 
-const modalWindow = document.querySelector('#ordernow');
+document.querySelector('.hero-order-btn').addEventListener('click', onOrderBtnClick);
+document.querySelector('.modal-order-send').addEventListener('click', onOrderSendBtnClick);
+document.querySelector('.btn-close').addEventListener('click', onCloseBtnClick);
 
-document.querySelector('.hero-order-btn').addEventListener('click', () => {
+function onOrderBtnClick() {
+  disablePageScroll();
   modalWindow.showModal();
-});
+  validator.refresh();
+  modalWindow.addEventListener('click', onBackdropClick);
+}
 
-document.querySelector('.btn-close').addEventListener('click', () => {
+function onOrderSendBtnClick() {
+  validator.revalidate().then(isFormValid);
+}
+
+function onCloseBtnClick() {
   modalWindow.close();
   form.reset();
   validator.destroy();
-});
+  enablePageScroll();
+}
 
-document.querySelector('.modal-order-send').addEventListener('click', () => {
-  if (!name.value || !phone.value || !email.value) {
-    return;
-  } else {
+function onBackdropClick(e) {
+  if (e.target === modalWindow) {
     modalWindow.close();
     form.reset();
     validator.destroy();
+    enablePageScroll();
   }
-});
+}
+
+function isFormValid(isValid) {
+  if (isValid) {
+    const data = {
+      name: name.value,
+      phone: '+380000000000',
+      email: email.value,
+    };
+
+    if (comment.value) {
+      data.comment = comment.value;
+    }
+
+    uploadUser(data).then(onOrderSuccess).catch(onOrderFailure);
+  }
+}
+
+function onOrderSuccess() {
+  modalWindow.close();
+  enablePageScroll();
+  form.reset();
+  validator.destroy();
+  return Notify.success('Order added successfully!');
+}
+
+function onOrderFailure() {
+  return Notify.failure('Oops! Something went wrong, please try again.');
+}

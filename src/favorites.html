@@ -1,20 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Favorites</title>
-</head>
-
-<body>
-  <load src="partials/header.html" />
-  <main>
-    <section class="favorites-section">
-      <div class="favorites-container container"></div>
-    </section>
-  </main>
-</body>
-
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Favorites</title>
+    <link rel="stylesheet" href="./css/index.css" />
+  </head>
+  <body>
+    <load src="partials/header.html" />
+    <a href="./index.html">home</a>
+    <main>
+      <section class="favorites-section">
+        <div class="favorites-container container">
+          <ul class="favorites-filters-list">
+            <li class="favorites-filters-items">
+              <button type="button" class="favorites-filters-btn">All categoris</button>
+            </li>
+            <li class="js-hidden"><button type="button" class="favorites-filters-btn">Beef</button></li>
+            <li class="js-hidden"><button type="button" class="favorites-filters-btn">Breakfast</button></li>
+            <li class="js-hidden"><button type="button" class="favorites-filters-btn">Chicken</button></li>
+            <li class="js-hidden"><button type="button" class="favorites-filters-btn">Goat</button></li>
+            <li class="js-hidden"><button type="button" class="favorites-filters-btn">Miscellaneous</button></li>
+            <li class="js-hidden"><button type="button" class="favorites-filters-btn">Pasta</button></li>
+            <li class="js-hidden"><button type="button" class="favorites-filters-btn">Pork</button></li>
+            <li class="js-hidden"><button type="button" class="favorites-filters-btn">Seafood</button></li>
+            <li class="js-hidden"><button type="button" class="favorites-filters-btn">Side</button></li>
+          </ul>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>

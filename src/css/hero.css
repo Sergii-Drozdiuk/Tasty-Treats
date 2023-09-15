@@ -39,7 +39,7 @@
   margin-block-end: 48px;
 }
 
-.hero-order-btn:is(:hover, :focus) {
+.hero-order-btn:is(:hover, :focus-visible) {
   color: var(--main-text-light-color);
   background-color: var(--brand-color);
 }
@@ -167,16 +167,32 @@
   left: -10px;
 }
 
+@keyframes slide-in {
+  from {
+    transform: translateY(-5%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
 .order-modal {
   width: 335px;
   padding: 20px;
-  border-radius: 15px;
-  border: none;
   position: relative;
 }
 
-.order-modal::backdrop {
+.modal {
+  padding: 0;
+  border: none;
+  border-radius: 15px;
+  animation: slide-in 0.4s ease;
+}
+
+.modal::backdrop {
   backdrop-filter: blur(7px) brightness(0.86) grayscale(28%) opacity(92%);
+  transition: var(--transition-timings);
 }
 
 .order {
@@ -248,10 +264,10 @@
 }
 
 .just-validate-success-field {
-  border: 1.5px solid var(--brand-color);
+  border: 1.3px solid var(--brand-color);
 }
 
-@media only screen and (width <= 375px) {
+@media only screen and (width < 375px) {
   .hero-section .pag-list {
     left: -24px;
   }
@@ -271,11 +287,11 @@
 
 @media only screen and (width >= 768px) {
   .hero-container {
-    padding-left: 80px;
+    padding-inline-start: 32px;
   }
 
   .hero-info {
-    padding-right: 80px;
+    padding-inline-end: 0;
   }
 
   .hero-title {
@@ -308,9 +324,9 @@
   }
 
   .topic-card::after {
-    width: 250px;
-    height: 250px;
-    left: 15%;
+    width: 220px;
+    height: 220px;
+    left: 16%;
     top: 11%;
   }
 
@@ -419,6 +435,7 @@
 
   .hero-container {
     display: flex;
+    align-items: center;
     gap: 32px;
     padding-inline-start: 100px;
   }
