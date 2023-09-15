@@ -1,0 +1,211 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hide {
+  display: none;
+}
+
+.pag-item,
+.pag-nav-item {
+  width: 40px;
+  height: 40px;
+}
+
+.pag-item-third {
+  display: none;
+}
+
+.pag-nav {
+  display: flex;
+  gap: 4px;
+}
+
+.pag-nav-start {
+  margin-right: 14px;
+}
+
+.pag-nav-end {
+  margin-left: 14px;
+}
+
+.pag-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.pag-span {
+  user-select: none;
+}
+
+.pag-nav-arrow1 {
+  position: absolute;
+  top: 7px;
+  left: 4px;
+}
+
+.pag-nav-arrow2 {
+  position: absolute;
+  top: 7px;
+  left: 11px;
+}
+
+.pag-item:not(.pag-item-span):hover :not(.active),
+.pag-item:not(.pag-item-span):focus :not(.active) {
+  border-color: var(--brand-color);
+  width: 39px;
+  height: 39px;
+}
+
+@media only screen and (width <= 374px) {
+  .pag-item,
+  .pag-nav-item {
+    width: 34px;
+    height: 34px;
+  }
+
+  .pag-nav-start {
+    margin-right: 9px;
+  }
+
+  .pag-nav-end {
+    margin-left: 9px;
+  }
+
+  .pag-nav-arrow1 {
+    position: absolute;
+    top: 4px;
+    left: 2px;
+  }
+
+  .pag-nav-arrow2 {
+    position: absolute;
+    top: 4px;
+    left: 8px;
+  }
+
+  .pag-item:not(.pag-item-span):hover :not(.active),
+  .pag-item:not(.pag-item-span):focus :not(.active) {
+    width: 33px;
+    height: 33px;
+  }
+}
+
+@media only screen and (width >= 768px) {
+  .pag-item,
+  .pag-nav-item {
+    width: 44px;
+    height: 44px;
+  }
+
+  .pag-item-third {
+    display: flex;
+  }
+
+  .pag-nav {
+    gap: 8px;
+  }
+
+  .pag-nav-start {
+    margin-right: 24px;
+  }
+
+  .pag-nav-end {
+    margin-left: 24px;
+  }
+
+  .pag-wrapper {
+    gap: 10px;
+  }
+
+  .pag-nav-arrow1 {
+    position: absolute;
+    top: 9px;
+    left: 5px;
+  }
+
+  .pag-nav-arrow2 {
+    position: absolute;
+    top: 9px;
+    left: 12px;
+  }
+
+  .pag-item:not(.pag-item-span):hover :not(.active),
+  .pag-item:not(.pag-item-span):focus :not(.active) {
+    width: 43px;
+    height: 43px;
+  }
+}
+
+.pag-btn,
+.pag-span {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.2222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(5, 5, 5, 30%);
+  border-radius: 50%;
+  background-color: transparent;
+  color: var(--main-text-dark-color);
+  transition: border-color var(--transition-timings);
+  transition: fill var(--transition-timings);
+}
+
+.pag-nav-btn {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.2222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border: 1px solid var(--brand-color);
+  border-radius: 50%;
+  background-color: var(--brand-color);
+  transition: border-color var(--transition-timings);
+  transition: fill var(--transition-timings);
+  position: relative;
+}
+
+.pag-btn.active {
+  background-color: var(--brand-color);
+  border: 1px solid var(--brand-color);
+}
+
+.disabled {
+  background-color: var(--main-text-dark-color);
+  border-color: var(--main-text-dark-color);
+  cursor: not-allowed;
+}
+
+.disabled .pag-nav-arrow {
+  fill: rgba(248, 248, 248, 50%);
+}
+
+.pag-nav-item :not(.disabled):hover,
+.pag-nav-item :not(.disabled):focus {
+  border-color: var(--main-text-light-color);
+}
+
+.pag-nav-item :not(.disabled):hover .pag-nav-arrow,
+.pag-nav-item :not(.disabled):focus .pag-nav-arrow {
+  fill: var(--main-text-light-color);
+}
+
+.minimize {
+  width: 14px;
+  height: 14px;
+}
+
+.minimize .pag-span {
+  border: none;
+}
