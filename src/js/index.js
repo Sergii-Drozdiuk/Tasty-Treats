@@ -6,3 +6,4 @@ import './hero/hero.js';
 import './hero/hero-swiper.js';
 import './pop-recipes/pop-recipes.js';
 import './recipes/recipes.js';
+import './pagination.js';

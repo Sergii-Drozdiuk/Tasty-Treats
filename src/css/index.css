@@ -6,6 +6,7 @@
 @import url('./hero.css');
 @import url('./pop-recipes.css');
 @import url('./recipes.css');
+@import url('./pagination.css');
 @import url('./reset.css');
 
 :root {
@@ -20,6 +21,7 @@
   --filters-main-color: color-mix(in srgb, var(--main-text-dark-color), transperent 50%);
   --filters-secondary-color: color-mix(in srgb, var(--main-text-dark-color), transperent 30%);
   --main-hero-img-color: color-mix(in srgb, var(--main-text-light-color), transperent 60%);
+  --secondary-pag-img-color: color-mix(in srgb, var(--main-text-light-color), transperent 50%);
   --secondary-hero-img-color: color-mix(in srgb, var(--main-text-light-color), transperent 20%);
   --secondary-pop-recipes-color: color-mix(in srgb, var(--main-text-dark-color), transperent 80%);
   --dark-bg-color: rgb(22, 22, 22);
