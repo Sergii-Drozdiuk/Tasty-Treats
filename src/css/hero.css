@@ -140,6 +140,7 @@
   line-height: 140%;
   text-transform: uppercase;
   margin-block-end: 8px;
+  user-select: none;
 }
 
 .pizza-title {
@@ -153,6 +154,7 @@
   font-size: 8px;
   font-weight: 400;
   line-height: 150%;
+  user-select: none;
 }
 
 .pag-list .pag-btn {
@@ -304,6 +306,10 @@
 
   .modal-order-send {
     width: 97%;
+  }
+
+  .hero-info {
+    padding-right: 0;
   }
 }
 
