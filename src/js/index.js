@@ -7,3 +7,4 @@ import './hero/hero-service.js';
 import './pop-recipes/pop-recipes.js';
 import './recipes/recipes.js';
 import './pagination.js';
+import './animation.js';
