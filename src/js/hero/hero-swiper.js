@@ -3,16 +3,16 @@ import { Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css/pagination';
 import 'swiper/css';
 
-const swiper = new Swiper('.swiper', {
+export const swiper = new Swiper('.swiper', {
   noSwiping: true,
   noSwipingSelector: '.swiper',
-  speed: 1000,
+  speed: 800,
   slidesPerView: 0.7,
   spaceBetween: '16px',
   loop: true,
   modules: [Pagination, Autoplay],
   Autoplay: {
-    delay: 1000,
+    delay: 500,
     disableOnInteraction: false,
   },
   pagination: {
@@ -67,5 +67,3 @@ const swiper = new Swiper('.swiper', {
     },
   },
 });
-
-swiper.autoplay.start();
