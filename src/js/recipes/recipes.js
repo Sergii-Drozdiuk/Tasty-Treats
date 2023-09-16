@@ -23,7 +23,6 @@ function createMarcup(arr) {
 <h3 class="recipes-title">${title.slice(0, 22)}</h3>
 <p class="recipes-text">${description.slice(0, 50)}...</p>
 <div class="rating">
-
   <p class="recipes-text-rating">4.5</p>
   <svg class="recipes-icon-svg" width="18" height="18">
       <use href="./img/icons.svg#icon-star">
@@ -46,14 +45,8 @@ function createMarcup(arr) {
       </use>
     </svg>
     </div>
-
-    <button class="button-recipes" type="button">See recipe</button>
-  
-
     <button class="button-recipes" type="button" data-id="${_id}">See recipe</button>
   </div>
-
-
 </li>
 `;
     })
