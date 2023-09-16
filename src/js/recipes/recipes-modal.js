@@ -36,7 +36,7 @@ function renderModalById(r) {
     }
     return stars.join('');
   }
-  return `<div class="modal-container">
+  return `<div class="recipes-modal-container">
            <button class="recipes-btn-close">
           <svg width="20" height="20" class="recipes-btn-close-icon">
             <use href="./img/icons.svg#icon-btn-close"></use>
