@@ -95,7 +95,6 @@
 
 @media screen and (width >=768px) {
   .button-recipes {
-    margin-left: 23px;
     min-width: 89px;
   }
 }
