@@ -1,10 +1,11 @@
 import axios from 'axios';
-import { createFilterByTime } from './filterByTime';
+import { renderFilterByTime } from './filterByTime';
 import { getResByTime } from './filters-api';
+import { renderFilterByArea } from './filterByArea';
 console.log(axios);
 
+const selectArea = document.querySelector('.select-area');
 const selectTime = document.querySelector('.select-time');
-selectTime.insertAdjacentHTML('beforeend', createFilterByTime());
 
 function renderResExample() {
   let page = 1;
@@ -17,3 +18,7 @@ function renderResExample() {
     .catch(error => console.log(error));
 }
 renderResExample();
+
+selectArea.insertAdjacentHTML('beforeend', renderFilterByArea());
+
+selectTime.insertAdjacentHTML('beforeend', renderFilterByTime());
