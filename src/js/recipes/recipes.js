@@ -17,10 +17,14 @@ getFetchRecipes()
 
 
   function createMarcup(arr) {
- return arr.map(({title, description,preview})=>{
+ return arr.map(({title, description,preview, _id})=>{
 
   return `
-  <div class ="recipes-card" style="background-image:linear-gradient(to top, var(--main-text-dark-color),var( --filters-main-color),transparent 100%), url(${preview});">
+  <li class ="recipes-card" style="background-image:linear-gradient(to top, var(--main-text-dark-color),var( --filters-main-color),transparent 100%), url(${preview});" data-id="${_id}">
+  <svg class="recipes-icon-heart" width="22" height="22">
+      <use href="./img/icons.svg#icon-heart">
+      </use>
+    </svg>
 <h3 class="recipes-title">${title.slice(0,22)}</h3>
 <p class="recipes-text">${description.slice(0,50)}...</p>
 <div class="rating">
@@ -50,7 +54,7 @@ getFetchRecipes()
     <button class="button-recipes" type="button">See recipe</button>
   </div>
 
-</div>
+</li>
 `;
   }).join('');
 
