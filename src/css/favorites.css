@@ -1,17 +1,11 @@
 .favorites-main-picture {
   display: block;
-  margin-block: 50px 40px;
+  margin-block-end: 40px;
 }
 
 @media only screen and (width >= 768px) {
   .favorites-main-picture {
-    margin-block: 50px 64px;
-  }
-}
-
-@media only screen and (width >= 1200px) {
-  .favorites-main-picture {
-    margin-block: 40px 64px;
+    margin-block-end: 64px;
   }
 }
 
