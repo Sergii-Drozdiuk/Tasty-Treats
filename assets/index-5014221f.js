@@ -36,7 +36,6 @@ Notiflix needs to be appended to the "<`+h+'>" element, but you called it before
 <h3 class="recipes-title">${e.slice(0,22)}</h3>
 <p class="recipes-text">${t.slice(0,50)}...</p>
 <div class="rating">
-
   <p class="recipes-text-rating">4.5</p>
   <svg class="recipes-icon-svg" width="18" height="18">
       <use href="./img/icons.svg#icon-star">
@@ -59,14 +58,8 @@ Notiflix needs to be appended to the "<`+h+'>" element, but you called it before
       </use>
     </svg>
     </div>
-
-    <button class="button-recipes" type="button">See recipe</button>
-  
-
     <button class="button-recipes" type="button" data-id="${n}">See recipe</button>
   </div>
-
-
 </li>
 `).join("")}const tt=document.querySelector("#recipes-modal");window.onload=function(){document.querySelectorAll(".button-recipes").forEach(e=>{e.addEventListener("click",()=>{tt.showModal(),ve.disablePageScroll(),Os(e.dataset.id).then(t=>{tt.innerHTML=Ds(t),document.querySelector(".recipes-btn-close").addEventListener("click",()=>{tt.close(),ve.enablePageScroll()})})})})};function Ds(s){const{description:e,time:t,title:i,ingredients:n,tags:r,youtube:o,thumb:a,rating:l,instructions:d}=s;function m(g){const v=Math.round(g),E=Array(5).fill('<svg class="recipes-icon-start" width="18" height="18"><use href="./img/icons.svg#icon-star"></use></svg>');for(let x=0;x<v;x+=1)E[x]=E[x].replace("recipes-icon-start","recipes-icon-start active");return E.join("")}return`<div class="modal-container">
            <button class="recipes-btn-close">
