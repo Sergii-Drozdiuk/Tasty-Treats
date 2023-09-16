@@ -9,12 +9,18 @@
     flex-wrap: wrap;
     border-radius: 15px;
     padding: 214px 16px 16px ;
+    position: relative;
 }
 
 .wrapper-card{
     display: flex;
     flex-wrap: wrap;
     gap: 24px;
+    
+}
+
+.recipes-icon-svg{
+    fill: var(--main-text-light-color);
 }
 
 @media  screen and (width >= 768px){
@@ -110,4 +116,10 @@ margin-bottom: 16px;
 .rating-wraper{
     display: flex;
     margin-left: auto;
+}
+
+.recipes-icon-heart{
+    position: absolute;
+    top: 16px;
+    right: 16px;
 }
