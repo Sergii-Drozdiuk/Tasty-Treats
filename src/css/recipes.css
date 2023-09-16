@@ -116,10 +116,25 @@
 
 .recipes-md {
   border: none;
-  padding: 0;
+  padding: 40px 20px;
   border-radius: 15px;
 }
 
 .modal-container {
   width: 335px;
+  position: relative;
+}
+
+.recipes-btn-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+}
+
+.recipes-btn-close-icon {
+  stroke: var(--main-text-dark-color);
+}
+
+.video {
+  margin-bottom: 20px;
 }

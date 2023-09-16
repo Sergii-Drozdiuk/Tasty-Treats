@@ -14,13 +14,15 @@ window.onload = function () {
 };
 
 function renderModalById(r) {
-  const { description, time, title, ingredients, tags } = r;
+  const { description, time, title, ingredients, tags, youtube, thumb } = r;
   return `<div class="modal-container"></div>
            <button class="recipes-btn-close">
           <svg width="20" height="20" class="recipes-btn-close-icon">
             <use href="./img/icons.svg#icon-btn-close"></use>
           </svg>
         </button>
+   <img src="${thumb}" alt="" width="295" heigth="295" class="video">
+        <a href="${youtube}" target="blank" class="recipe-video"></a>
         <h3 class="recipes-title">${title}</h3>
         <div class="rating-container">
           <svg class="recipes-icon-start" width="18" height="18">
