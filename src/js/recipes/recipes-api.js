@@ -1,24 +1,20 @@
 import axios from 'axios';
-console.log(axios);
-
-
-
 
 const BASE_URL = 'https://tasty-treats-backend.p.goit.global/api';
 
-async function getFetchRecipes(){
-  try{
+async function getFetchRecipes() {
+  try {
     const response = await axios.get(`${BASE_URL}/recipes?limit=5`);
     console.log(response);
     return response.data;
-  }catch(error){
-    
-   
+  } catch (error) {
     throw new Error(error.message);
   }
 }
 
+async function getRecipeById(recipeId) {
+  const r = await axios.get(`${BASE_URL}/recipes/${recipeId}`);
+  return r.data;
+}
 
-
-
-  export { getFetchRecipes };
+export { getFetchRecipes, getRecipeById };
