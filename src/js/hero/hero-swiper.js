@@ -67,3 +67,5 @@ export const swiper = new Swiper('.swiper', {
     },
   },
 });
+
+swiper.autoplay.start();
