@@ -125,6 +125,7 @@
    min-width: 89px;
    transition: color var(--transition-timings);
 }
+
 .button-recipes:focus,
 .button-recipes:hover{
     color: var(--main-text-dark-color);
