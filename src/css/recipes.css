@@ -1,7 +1,7 @@
 
 
 .recipes-card{
-    width: 335px;
+    max-width: 335px;
     height: 335px;
     background-size: cover;
     background-position: center;
@@ -94,29 +94,24 @@ margin-bottom: 16px;
     background-color: var(--brand-color);
     border-radius: 8px;
     padding: 8px 14px;
-   margin-left: 98px;
-    
-   
+   margin-left: auto;
+   min-width: 89px;
+   transition: color var(--transition-timings);
+}
+.button-recipes:focus,
+.button-recipes:hover{
+    color: var(--main-text-dark-color);
 }
 
-@media screen and (width >=768px){
-    .button-recipes{
-        margin-left: 23px;
-        min-width: 89px;
-    }
-}
 
 .rating{
     display: flex;
     align-items: center;
-    justify-content: end;
+   
  
 }
 
-.rating-wraper{
-    display: flex;
-    margin-left: auto;
-}
+
 
 .recipes-icon-heart{
     position: absolute;

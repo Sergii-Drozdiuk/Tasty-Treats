@@ -28,7 +28,7 @@ getFetchRecipes()
 <h3 class="recipes-title">${title.slice(0,22)}</h3>
 <p class="recipes-text">${description.slice(0,50)}...</p>
 <div class="rating">
-<div class="rating-wraper">
+
   <p class="recipes-text-rating">4.5</p>
   <svg class="recipes-icon-svg" width="18" height="18">
       <use href="./img/icons.svg#icon-star">
@@ -52,7 +52,7 @@ getFetchRecipes()
     </svg>
     </div>
     <button class="button-recipes" type="button">See recipe</button>
-  </div>
+  
 
 </li>
 `;
