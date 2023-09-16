@@ -25,23 +25,23 @@ function createMarcup(arr) {
 <div class="rating">
   <p class="recipes-text-rating">4.5</p>
   <svg class="recipes-icon-svg" width="18" height="18">
-      <use href="img/icons.svg#icon-star">
+      <use href="../img/icons.svg#icon-star">
       </use>
     </svg>
     <svg class="recipes-icon-svg" width="18" height="18">
-      <use href="img/icons.svg#icon-star">
+      <use href="../img/icons.svg#icon-star">
       </use>
     </svg>
     <svg class="recipes-icon-svg" width="18" height="18">
-      <use href="img/icons.svg#icon-star">
+      <use href="../img/icons.svg#icon-star">
       </use>
     </svg>
     <svg class="recipes-icon-svg" width="18" height="18">
-      <use href="img/icons.svg#icon-star">
+      <use href="../img/icons.svg#icon-star">
       </use>
     </svg>
     <svg class="recipes-icon-svg" width="18" height="18">
-      <use href="img/icons.svg#icon-star">
+      <use href="../img/icons.svg#icon-star">
       </use>
     </svg>
     </div>
