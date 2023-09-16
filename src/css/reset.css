@@ -61,3 +61,11 @@ button {
 .main-wrapper {
   overflow-x: hidden;
 }
+
+@media only screen and (width >= 768px) {
+  .sidebar-container {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+  }
+}
