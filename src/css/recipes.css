@@ -1,3 +1,17 @@
+
+
+
+.recipes-card{
+    max-width: 335px;
+    height: 335px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 15px;
+    padding: 214px 16px 16px ;
+    position: relative;
+  
 .recipes-card {
   width: 335px;
   height: 335px;
@@ -8,6 +22,7 @@
   border-radius: 15px;
   padding: 214px 16px 16px;
   position: relative;
+
 }
 
 .wrapper-card {
@@ -97,6 +112,34 @@
   }
 }
 
+
+.button-recipes{
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.2;
+    color: var(--main-text-light-color);
+    background-color: var(--brand-color);
+    border-radius: 8px;
+    padding: 8px 14px;
+   margin-left: auto;
+   min-width: 89px;
+   transition: color var(--transition-timings);
+}
+.button-recipes:focus,
+.button-recipes:hover{
+    color: var(--main-text-dark-color);
+}
+
+
+.rating{
+    display: flex;
+    align-items: center;
+   
+ 
+}
+
+
+
 .rating {
   display: flex;
   align-items: center;
@@ -119,6 +162,7 @@
   padding: 0;
   border-radius: 15px;
 }
+
 
 .modal-container {
   width: 335px;
