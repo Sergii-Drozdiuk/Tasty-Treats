@@ -144,7 +144,6 @@
   background: none;
   padding: 4px 0;
   margin-left: auto;
-
   color: rgba(5, 5, 5, 50%);
   font-size: 12px;
 }
@@ -152,6 +151,7 @@
 .reset-filter {
   margin: 10px 0;
 }
+
 .clear-button:hover {
   text-shadow: 0 4px 4px rgba(0, 0, 0, 20%);
 }
