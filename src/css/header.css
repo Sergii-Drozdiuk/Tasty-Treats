@@ -1,5 +1,5 @@
 .header {
-  padding-top: 30px;
+  margin-top: 30px;
 }
 
 .header-nav {
@@ -41,13 +41,14 @@
   align-items: center;
 }
 
-.svg-shopping-cart:is(:hover) path {
+.svg-shopping-cart:is(:hover, :focus) path {
   stroke: var(--brand-color);
   transition: var(--transition-timings);
 }
 
 .svg-burger-menu:hover path {
   stroke: var(--brand-color);
+  transition: var(--transition-timings);
 }
 
 .header-btn-burger-menu:focus .svg-burger-menu path {
@@ -108,14 +109,44 @@ input:checked + .slider::before {
   display: none;
 }
 
+@keyframes ani {
+  0% {
+    transform: translateX(-150%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.header-back {
+  z-index: 98;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  backdrop-filter: blur(7px) brightness(0.86) grayscale(28%) opacity(92%);
+  transition: var(--transition-timings);
+}
+
 .header-modal {
   position: fixed;
   z-index: 99;
-  inset: 0;
-  width: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 50%;
   height: 100%;
   overflow: auto;
   background-color: var(--brand-color);
+  transform: translateX(-150%);
+  animation: ani var(--transition-timings) forwards;
+}
+
+.header-modal::backdrop {
+  backdrop-filter: blur(7px) brightness(0.86) grayscale(28%) opacity(92%);
+  transition: var(--transition-timings);
 }
 
 .header-btn-close {
@@ -141,13 +172,12 @@ input:checked + .slider::before {
   z-index: 999;
   position: absolute;
   bottom: 20px;
-  left: 20px;
+  left: 29px;
 }
 
 @media only screen and (width >= 768px) {
   .header-tastytreats {
-    font-size: 18px;
-    line-height: 20px;
+    line-height: 111.111%;
     letter-spacing: -0.72px;
   }
 
