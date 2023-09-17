@@ -20,51 +20,51 @@ export const swiper = new Swiper('.swiper', {
     clickable: true,
   },
   breakpoints: {
-    375: {
-      slidesPerView: 0.76,
-    },
-    427: {
-      slidesPerView: 0.8,
-    },
-    530: {
-      slidesPerView: 1.1,
-    },
-    588: {
-      slidesPerView: 1.2,
-    },
-    640: {
-      slidesPerView: 1.3,
-    },
-    697: {
-      slidesPerView: 1.4,
-    },
-    746: {
-      slidesPerView: 1.5,
-    },
-    768: {
-      slidesPerView: 0.9,
-    },
-    900: {
-      slidesPerView: 1.1,
-    },
-    997: {
-      slidesPerView: 1.2,
-    },
-    1084: {
-      slidesPerView: 1.3,
-    },
-    1175: {
-      slidesPerView: 1.4,
-    },
-    1200: {
-      slidesPerView: 0.7,
-    },
-    1220: {
-      slidesPerView: 0.8,
-    },
-    1310: {
-      slidesPerView: 0.95,
-    },
+    // 375: {
+    //   slidesPerView: 1,
+    // },
+    //   427: {
+    //     slidesPerView: 0.8,
+    //   },
+    //   530: {
+    //     slidesPerView: 1.1,
+    //   },
+    //   588: {
+    //     slidesPerView: 1.2,
+    //   },
+    //   640: {
+    //     slidesPerView: 1.3,
+    //   },
+    //   697: {
+    //     slidesPerView: 1.4,
+    //   },
+    //   746: {
+    //     slidesPerView: 1.5,
+    //   },
+    //   768: {
+    //     slidesPerView: 0.9,
+    //   },
+    //   900: {
+    //     slidesPerView: 1.1,
+    //   },
+    //   997: {
+    //     slidesPerView: 1.2,
+    //   },
+    //   1084: {
+    //     slidesPerView: 1.3,
+    //   },
+    //   1175: {
+    //     slidesPerView: 1.4,
+    //   },
+    //   1200: {
+    //     slidesPerView: 0.7,
+    //   },
+    //   1220: {
+    //     slidesPerView: 0.8,
+    //   },
+    //   1310: {
+    //     slidesPerView: 0.95,
+    //   },
   },
 });
 
