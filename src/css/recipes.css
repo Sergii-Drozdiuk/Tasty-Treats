@@ -140,8 +140,8 @@
 
 .recipes-btn-close {
   position: absolute;
-  top: 16px;
-  right: 16px;
+  top: 10px;
+  right: 13px;
   color: var(--brand-color);
 }
 
