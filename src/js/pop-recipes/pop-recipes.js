@@ -24,10 +24,11 @@ function displayData(dataArray) {
 }
 
 function fetchData() {
-  axios.get('https://tasty-treats-backend.p.goit.global/api/recipes/popular')
+  axios
+    .get('https://tasty-treats-backend.p.goit.global/api/recipes/popular')
     .then(function (response) {
       const data = response.data;
-      displayData(data); 
+      displayData(data);
     })
     .catch(function (error) {
       console.error(error);
