@@ -1,6 +1,5 @@
 .pop-recipes-container {
   max-width: 375px;
-  margin-inline: auto;
 }
 
 .pop-title {
@@ -103,5 +102,29 @@
     font-size: 10px;
     line-height: 1.4;
     -webkit-line-clamp: 3;
+  }
+}
+
+@media only screen and (width >= 1200px) {
+  .pop-recipes-container {
+    max-width: 235px;
+  }
+
+  .pop-list {
+    gap: 32px;
+  }
+
+  .pop-item {
+    gap: 16px;
+  }
+
+  .pop-img {
+    width: 64px;
+    height: 64px;
+    border-radius: 8px;
+  }
+
+  .pop-description {
+    max-width: 155px;
   }
 }
