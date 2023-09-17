@@ -3,13 +3,22 @@
   padding-right: 16px;
   flex-basis: 70%;
 }
+
+.input-filters,
+.select-time,
+.select-area,
+.select-ingredients {
+  border: 1px solid rgba(5, 5, 5, 20%);
+  border-radius: 15px;
+  font-size: 14px;
+  color: rgba(5, 5, 5, 50%);
+  padding: 14px 18px;
+  background-color: transparent;
+}
+
 @media screen and (width >= 768px) {
   .filters-container {
     padding-left: 0;
-  }
-
-  .filters-form {
-    margin-bottom: 24px;
   }
 
   .filters-list {
@@ -28,18 +37,6 @@
     margin-bottom: 8px;
     font-size: 12px;
     color: rgba(5, 5, 5, 50%);
-  }
-
-  .input-filters,
-  .select-time,
-  .select-area,
-  .select-ingredients {
-    border: 1px solid rgba(5, 5, 5, 20%);
-    border-radius: 15px;
-    font-size: 14px;
-    color: rgba(5, 5, 5, 50%);
-    padding: 14px 18px;
-    background-color: transparent;
   }
 
   .input-filters::placeholder,
@@ -93,19 +90,6 @@
 
   .filters-form {
     margin-bottom: 32px;
-  }
-
-  .filters-list {
-    gap: 16px;
-    flex-wrap: wrap;
-  }
-
-  .label {
-    font-size: 14px;
-  }
-
-  .input-container {
-    width: 278px;
   }
 
   .select-time {
@@ -165,7 +149,7 @@
 }
 
 .clear-button:hover {
-  text-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 20%);
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 20%);
 }
 
 .svg-button-click {
