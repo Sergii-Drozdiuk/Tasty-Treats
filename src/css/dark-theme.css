@@ -1,0 +1,12 @@
+.body-dark {
+  color: var(--dark-main-text-color);
+  background-color: var(--dark-bg-color);
+}
+
+.header-tastytreats-dark {
+  color: var(--dark-main-text-color);
+}
+
+.header-ref-dark {
+  color: var(--dark-main-text-color);
+}

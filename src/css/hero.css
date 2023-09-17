@@ -2,15 +2,6 @@
   padding-block-end: 80px;
 }
 
-.hero-container {
-  padding-inline-start: 20px;
-  position: relative;
-}
-
-.hero-info {
-  padding-inline-end: 20px;
-}
-
 .hero-title {
   font-size: 26px;
   font-weight: 600;
@@ -314,14 +305,6 @@
 }
 
 @media only screen and (width >= 768px) {
-  .hero-container {
-    padding-inline-start: 32px;
-  }
-
-  .hero-info {
-    padding-inline-end: 0;
-  }
-
   .hero-title {
     font-size: 36px;
     margin-block-end: 16px;
@@ -465,11 +448,10 @@
     width: 446px;
   }
 
-  .wrapper {
+  .hero-container {
     display: flex;
     align-items: center;
     gap: 32px;
-    padding-inline-start: 100px;
   }
 
   .hero-info {

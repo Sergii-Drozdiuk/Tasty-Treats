@@ -1,0 +1,130 @@
+.pop-recipes-container {
+  max-width: 375px;
+}
+
+.pop-title {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.33;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.pop-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.pop-item {
+  display: inline-flex;
+  gap: 16px;
+  cursor: pointer;
+}
+
+.pop-img {
+  width: 64px;
+  height: 64px;
+  border-radius: 8px;
+}
+
+.pop-description {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pop-description-title {
+  font-weight: 600;
+  line-height: 1.28;
+  text-transform: uppercase;
+}
+
+.pop-description-text {
+  overflow: hidden;
+  color: var(--secondary-pop-recipes-color);
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.33;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+}
+
+@media only screen and (width < 768px) {
+  .pop-list li:nth-last-child(-n + 2) {
+    display: none;
+  }
+}
+
+@media only screen and (width >= 768px) {
+  .pop-recipes-container {
+    max-width: 176px;
+  }
+
+  .pop-title {
+    margin-bottom: 32px;
+  }
+
+  .pop-list {
+    gap: 16px;
+    margin-bottom: 0;
+  }
+
+  .pop-item {
+    gap: 8px;
+  }
+
+  .pop-img {
+    width: 48px;
+    height: 48px;
+    border-radius: 5px;
+    flex-shrink: 0;
+  }
+
+  .pop-description {
+    max-width: 120px;
+    flex-shrink: 0;
+  }
+
+  .pop-description-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    font-weight: 600;
+    -webkit-line-clamp: 1;
+    display: -webkit-box;
+  }
+
+  .pop-description-text {
+    font-size: 10px;
+    line-height: 1.4;
+    -webkit-line-clamp: 3;
+  }
+}
+
+@media only screen and (width >= 1200px) {
+  .pop-recipes-container {
+    max-width: 235px;
+  }
+
+  .pop-list {
+    gap: 32px;
+  }
+
+  .pop-item {
+    gap: 16px;
+  }
+
+  .pop-img {
+    width: 64px;
+    height: 64px;
+    border-radius: 8px;
+  }
+
+  .pop-description {
+    max-width: 155px;
+  }
+}
