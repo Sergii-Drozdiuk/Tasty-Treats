@@ -6,7 +6,9 @@
 @import url('./hero.css');
 @import url('./pop-recipes.css');
 @import url('./recipes.css');
+@import url('./pagination.css');
 @import url('./reset.css');
+@import url('./dark-theme.css');
 
 :root {
   font-synthesis: none;
@@ -20,6 +22,7 @@
   --filters-main-color: rgba(5, 5, 5, 50%);
   --filters-secondary-color: rgba(5, 5, 5, 30%);
   --main-hero-img-color: rgb(248, 248, 248, 60%);
+  --secondary-pag-img-color: rgb(248, 248, 248, 50%);
   --secondary-hero-img-color: rgb(248, 248, 248, 20%);
   --secondary-pop-recipes-color: rgba(5, 5, 5, 80%);
   --border-main-color: rgba(155, 181, 55, 30%);
@@ -39,8 +42,7 @@ body {
   font-size: 14px;
   font-weight: 500;
   line-height: 18px;
-  background-color: var(--main-text-light-color);
-  color: var(--main-text-dark-color);
   overscroll-behavior: none;
-  -webkit-overflow-scrolling: touch;
+  color: var(--main-text-dark-color);
+  background-color: var(--main-text-light-color);
 }

@@ -1,3 +1,14 @@
+.favorites-main-picture {
+  display: block;
+  margin-block-end: 40px;
+}
+
+@media only screen and (width >= 768px) {
+  .favorites-main-picture {
+    margin-block-end: 64px;
+  }
+}
+
 .favorites-filters-list {
   display: flex;
   gap: 15px;

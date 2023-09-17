@@ -1,20 +1,71 @@
-import Splide from '@splidejs/splide';
-import '@splidejs/splide/css';
+import Swiper from 'swiper';
+import { Pagination, Autoplay } from 'swiper/modules';
+import 'swiper/css/pagination';
+import 'swiper/css';
 
-document.addEventListener('DOMContentLoaded', () => {
-  new Splide('.splide', {
-    type: 'loop',
-    autoWidth: true,
-    autoHeight: true,
-    gap: '1rem',
-    arrows: false,
-    perPage: 3,
-    autoplay: true,
-    pauseOnHover: true,
-    pauseOnFocus: true,
-    classes: {
-      pagination: 'splide__pagination pag-list',
-      page: 'splide__pagination__page pag-btn',
-    },
-  }).mount();
+export const swiper = new Swiper('.swiper', {
+  noSwiping: true,
+  noSwipingSelector: '.swiper',
+  speed: 800,
+  slidesPerView: 0.7,
+  spaceBetween: '16px',
+  loop: true,
+  modules: [Pagination, Autoplay],
+  Autoplay: {
+    delay: 500,
+    disableOnInteraction: false,
+  },
+  pagination: {
+    el: '.pages-pagination',
+    clickable: true,
+  },
+  breakpoints: {
+    // 375: {
+    //   slidesPerView: 1,
+    // },
+    //   427: {
+    //     slidesPerView: 0.8,
+    //   },
+    //   530: {
+    //     slidesPerView: 1.1,
+    //   },
+    //   588: {
+    //     slidesPerView: 1.2,
+    //   },
+    //   640: {
+    //     slidesPerView: 1.3,
+    //   },
+    //   697: {
+    //     slidesPerView: 1.4,
+    //   },
+    //   746: {
+    //     slidesPerView: 1.5,
+    //   },
+    //   768: {
+    //     slidesPerView: 0.9,
+    //   },
+    //   900: {
+    //     slidesPerView: 1.1,
+    //   },
+    //   997: {
+    //     slidesPerView: 1.2,
+    //   },
+    //   1084: {
+    //     slidesPerView: 1.3,
+    //   },
+    //   1175: {
+    //     slidesPerView: 1.4,
+    //   },
+    //   1200: {
+    //     slidesPerView: 0.7,
+    //   },
+    //   1220: {
+    //     slidesPerView: 0.8,
+    //   },
+    //   1310: {
+    //     slidesPerView: 0.95,
+    //   },
+  },
 });
+
+swiper.autoplay.start();

@@ -1,0 +1,383 @@
+.recipes-card {
+  width: 335px;
+  height: 335px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 15px;
+  padding: 214px 16px 16px;
+  position: relative;
+}
+
+.wrapper-card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.recipes-icon-svg {
+  fill: var(--main-text-light-color);
+  opacity: 0.1;
+}
+
+@media screen and (width >= 768px) {
+  .recipes-card {
+    width: 240px;
+    height: 264px;
+    padding-top: 143px;
+  }
+
+  .wrapper-card {
+    gap: 16px;
+  }
+
+  .recipes-icon-svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+@media screen and (width >=1200px) {
+  .recipes-card {
+    width: 250px;
+    height: 287px;
+    padding-top: 166px;
+  }
+
+  .recipes-icon-svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .wrapper-card {
+    gap: 32px 16px;
+  }
+}
+
+.recipes-title {
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--main-text-light-color);
+}
+
+.recipes-text {
+  font-size: 12px;
+  line-height: 1.33;
+  color: var(--main-text-light-color);
+  margin-bottom: 16px;
+}
+
+.recipes-text-rating {
+  font-weight: 500;
+  color: var(--main-text-light-color);
+  margin-right: 4px;
+}
+
+@media screen and (width>= 768px) {
+  .recipes-text-rating {
+    margin-right: 2px;
+  }
+}
+
+.button-recipes {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.2;
+  color: var(--main-text-light-color);
+  background-color: var(--brand-color);
+  border-radius: 8px;
+  padding: 8px 14px;
+  margin-left: auto;
+  min-width: 89px;
+  transition: color var(--transition-timings);
+}
+
+@media screen and (width >=768px) {
+  .button-recipes {
+    min-width: 89px;
+  }
+}
+
+.button-recipes:focus,
+.button-recipes:hover {
+  color: var(--main-text-dark-color);
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+.rating-wraper {
+  display: flex;
+  margin-left: auto;
+}
+
+.recipes-icon-heart {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+
+.recipes-md {
+  padding: 0;
+  border: none;
+  overflow-x: hidden;
+  border-radius: 15px;
+}
+
+.recipes-md::backdrop {
+  backdrop-filter: blur(7px) brightness(0.86) grayscale(28%) opacity(92%);
+}
+
+.recipes-modal-container {
+  width: 531px;
+  padding: 32px;
+  position: relative;
+}
+
+.recipes-btn-close {
+  position: absolute;
+  top: 10px;
+  right: 13px;
+  color: var(--brand-color);
+}
+
+.recipes-btn-close-icon {
+  stroke: var(--main-text-dark-color);
+  transition: var(--transition-timings);
+}
+
+.recipes-btn-close-icon:is(:hover) {
+  stroke: currentcolor;
+}
+
+.recipes-btn-close:is(:focus-visible) .recipes-btn-close-icon {
+  stroke: currentcolor;
+}
+
+.recipes-modal-title {
+  color: var(--main-text-dark-color);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 22px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.recipe-video {
+  display: inline-block;
+  position: relative;
+  width: 467px;
+  height: 250px;
+  margin-bottom: 16px;
+}
+
+.youtube-video {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+}
+
+.recipes-btn-youtube {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.tags-wrapper {
+  display: flex;
+  align-items: baseline;
+  row-gap: 20px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.rating-container {
+  display: flex;
+  margin-bottom: 32px;
+}
+
+.rating-modal {
+  margin-right: 6px;
+}
+
+.recipes-time {
+  margin-left: 16px;
+}
+
+.recipes-ingridients {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.ingridient {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.ingridient::after {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 1px;
+  background-color: rgba(5, 5, 5, 10%);
+  bottom: -8px;
+}
+
+.ingridient-number {
+  margin-left: auto;
+  color: rgba(5, 5, 5, 50%);
+}
+
+.recipes-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.recipe-tag {
+  font-size: 12px;
+  padding: 8px 16px;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 35px;
+  border: 1px solid rgba(5, 5, 5, 20%);
+  line-height: 14px;
+}
+
+.recipe-desc {
+  color: rgba(5, 5, 5, 80%);
+  width: 467px;
+  margin-bottom: 32px;
+}
+
+.favorites-btn {
+  color: var(--main-text-light-color);
+  line-height: normal;
+  border-radius: 15px;
+  background: var(--brand-color);
+  padding: 14px 28px;
+  margin-right: 16px;
+}
+
+.rating-btn {
+  color: var(--main-text-dark-color);
+  line-height: normal;
+  padding: 14px 28px;
+  border-radius: 15px;
+  border: 1px solid var(--brand-color);
+}
+
+.recipes-icon-start {
+  opacity: 0.1;
+}
+
+.recipes-icon-start.active {
+  fill: rgb(238, 161, 12);
+  opacity: 1;
+}
+
+@media only screen and (width < 767px) {
+  .recipes-modal-container {
+    width: 335px;
+    padding: 40px 20px;
+  }
+
+  .recipes-btn-close {
+    top: 14px;
+    right: 14px;
+  }
+
+  .recipes-modal-title {
+    margin-bottom: 14px;
+  }
+
+  .recipe-video {
+    width: 295px;
+    height: 295px;
+    margin-bottom: 20px;
+  }
+
+  .rating-container {
+    display: flex;
+    margin-bottom: 32px;
+  }
+
+  .rating-modal {
+    margin-right: 6px;
+  }
+
+  .recipes-time {
+    margin-left: 16px;
+  }
+
+  .recipes-ingridients {
+    gap: 20px;
+  }
+
+  .last-child:last-of-type {
+    margin-bottom: 24px;
+  }
+
+  .ingridient::after {
+    bottom: -6px;
+  }
+
+  .recipe-desc {
+    width: 295px;
+    margin-bottom: 40px;
+  }
+
+  .favorites-btn {
+    padding: 12px 24px;
+    margin-right: 10px;
+  }
+
+  .rating-btn {
+    padding: 12px 24px;
+  }
+}
+
+@media only screen and (width < 374px) {
+  .recipes-modal-container {
+    width: 101%;
+  }
+
+  .recipe-video {
+    width: 98%;
+  }
+
+  .recipes-ingridients {
+    width: 98%;
+  }
+
+  .recipe-desc {
+    width: 98%;
+  }
+
+  .favorites-btn {
+    padding: 12px 16px;
+    margin-right: 9px;
+  }
+
+  .rating-btn {
+    padding: 12px 16px;
+  }
+}
+
+@media only screen and (width >= 1200px) {
+  .rating-container {
+    margin-bottom: 28px;
+  }
+}
