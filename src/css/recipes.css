@@ -16,9 +16,21 @@
   gap: 24px;
 }
 
+.recipes-icon-heart {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  fill: none;
+}
+
 .recipes-icon-svg {
   fill: var(--main-text-light-color);
   opacity: 0.1;
+}
+
+.heart-active{
+  fill: var(--main-text-light-color);
+  
 }
 
 @media screen and (width >= 768px) {
@@ -115,17 +127,20 @@
   margin-left: auto;
 }
 
-.recipes-icon-heart {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-}
+
+
+
+
 
 .recipes-md {
   padding: 0;
   border: none;
   overflow-x: hidden;
   border-radius: 15px;
+}
+
+.recipes-md:modal {
+  outline: none;
 }
 
 .recipes-md::backdrop {
