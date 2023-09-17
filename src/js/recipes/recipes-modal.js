@@ -34,9 +34,11 @@ function renderModalById(r) {
     for (let i = 0; i < roundedRating; i += 1) {
       stars[i] = stars[i].replace('recipes-icon-start', 'recipes-icon-start active');
     }
+
     return stars.join('');
   }
-  return `<div class="recipes-modal-container">
+  if (window.innerWidth >= 768) {
+    return `<div class="recipes-modal-container">
            <button class="recipes-btn-close">
           <svg width="20" height="20" class="recipes-btn-close-icon">
             <use href="./img/icons.svg#icon-btn-close"></use>
@@ -73,4 +75,44 @@ function renderModalById(r) {
         <p class="recipe-desc">${description}${instructions}</p>
          <button type="button" class="favorites-btn">Add to favorite</button>
         <button type="button" class="rating-btn">Give a rating</button></div>`;
+  }
+  if (window.innerWidth < 767) {
+    return `<div class="recipes-modal-container">
+           <button class="recipes-btn-close">
+          <svg width="20" height="20" class="recipes-btn-close-icon">
+            <use href="./img/icons.svg#icon-btn-close"></use>
+          </svg>
+        </button>
+        <a href="${youtube}" target="_blank" class="recipe-video">
+        <div class="youtube-video" style="background-image: linear-gradient(0deg, rgba(5, 5, 5, 0.40) 0%, rgba(5, 5, 5, 0.40) 100%), url(${thumb});"></div>
+         <svg width="38" height="38" class="recipes-btn-youtube">
+            <use href="./img/icons.svg#icon-youtube"></use>
+          </svg>
+        </a>
+          <h3 class="recipes-modal-title">${title}</h3>
+       <div class="tags-wrapper">
+           <ul class="recipes-tags">${
+             tags.length > 1
+               ? tags.map(tag => `<div class="last-child"><li class="recipe-tag">#${tag}</li></div>`).join('')
+               : ''
+           }</ul>
+          <div class="rating-container">
+          <p class="rating-modal">${rating}</p>
+           ${generateRatingStars(rating)}
+            <p class="recipes-time">${time} min</p>
+          </div>
+       </div>
+        <ul class="recipes-ingridients">${ingredients
+          .map(
+            ingredient =>
+              `<li class="ingridient">
+            <p class="ingridient-title">${ingredient.name}</p>
+            <p class="ingridient-number">${ingredient.measure}</p>
+          </li>`
+          )
+          .join('')}</ul>
+        <p class="recipe-desc">${description}${instructions}</p>
+         <button type="button" class="favorites-btn">Add to favorite</button>
+        <button type="button" class="rating-btn">Give a rating</button></div>`;
+  }
 }
