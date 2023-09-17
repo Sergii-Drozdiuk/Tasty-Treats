@@ -51,9 +51,9 @@ button {
   }
 }
 
-@media only screen and (width >= 1200px) {
+@media only screen and (width >= 1280px) {
   .container {
-    max-width: 1280px;
+    max-width: 1080px;
     padding-inline: 100px;
   }
 }
