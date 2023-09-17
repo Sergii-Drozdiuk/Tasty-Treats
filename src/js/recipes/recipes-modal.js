@@ -3,7 +3,7 @@ import { getRecipeById } from './recipes-api';
 
 const recipeModal = document.querySelector('#recipes-modal');
 
-window.addEventListener('load', () => {
+window.addEventListener('load', async () => {
   const recipeBtns = document.querySelectorAll('.button-recipes');
   recipeBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -12,8 +12,16 @@ window.addEventListener('load', () => {
       getRecipeById(btn.dataset.id).then(r => {
         recipeModal.innerHTML = renderModalById(r);
         recipeModal.addEventListener('click', onBackdropClick);
-        const recipeCloseBtn = document.querySelector('.recipes-btn-close');
-        recipeCloseBtn.addEventListener('click', () => {
+        document.querySelector('.favorites-btn').addEventListener('click', () => {
+          localStorage.setItem(r.title, JSON.stringify({ id: r._id, tags: r.tags }));
+          const data = JSON.parse(localStorage.getItem(r.title));
+          if (data._id !== r._id) {
+            localStorage.setItem(r.title, JSON.stringify({ id: r._id, tags: r.tags }));
+          } else {
+            return;
+          }
+        });
+        document.querySelector('.recipes-btn-close').addEventListener('click', () => {
           recipeModal.close();
           enablePageScroll();
         });
@@ -109,7 +117,7 @@ function renderModalById(r) {
             ingredient =>
               `<li class="ingridient">
             <p class="ingridient-title">${ingredient.name}</p>
-            <p class="ingridient-number">${ingredient.measure.slice(0, 28)}</p>
+            <p class="ingridient-number">${ingredient.measure.slice(0, 18)}</p>
           </li>`
           )
           .join('')}</ul>
