@@ -1,18 +1,14 @@
 .categories-btn {
-  margin-top: 100px;
+  margin-top: 26px;
   color: var(--filters-main-color);
   font-size: 18px;
-  font-style: normal;
   font-weight: 500;
-  line-height: normal;
   display: inline-flex;
   padding: 14px 28px;
   justify-content: center;
-  align-items: center;
   gap: 10px;
   border-radius: 15px;
   border: 1px solid var(--filters-secondary-color);
-  box-shadow: 1px 4px 4px 1px var(--filters-secondary-color);
 }
 
 .categories-btn:hover,
@@ -32,7 +28,7 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
-  width: 235px;
+  width: 176px;
   height: 416px;
   overflow-y: scroll;
 }
