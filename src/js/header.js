@@ -8,6 +8,8 @@ const refs = {
   modalWindow: document.querySelector('#header-dialog'),
 };
 
+console.log('hello');
+
 const page = document.location.pathname;
 console.log(page);
 
