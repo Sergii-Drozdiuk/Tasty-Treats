@@ -361,10 +361,6 @@
   .rating-btn {
     padding: 12px 24px;
   }
-
-  .remove-btn {
-    width: 170px;
-  }
 }
 
 @media only screen and (width < 374px) {

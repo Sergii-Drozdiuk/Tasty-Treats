@@ -2,6 +2,7 @@ import { disablePageScroll, enablePageScroll } from 'scroll-lock';
 import { getRecipeById } from './recipes-api.js';
 import { renderModalById } from './render-modal-markup.js';
 const recipeModal = document.querySelector('#recipes-modal');
+const ratingModal = document.querySelector('#rating-modal');
 
 export async function renderModal() {
   const recipeCards = document.querySelector('.js-recipes-container');
@@ -31,10 +32,16 @@ function onRecipeCardBtnClick(r) {
   recipeModal.addEventListener('click', onBackdropClick);
   const favoritesBtn = document.querySelector('.favorites-btn');
   const removeBtn = document.querySelector('.remove-btn');
+  const ratingBtn = document.querySelector('.rating-btn');
+
   favoritesBtn.addEventListener('click', () => {
     localStorage.setItem(r.title, JSON.stringify({ id: r._id, tags: r.tags }));
     favoritesBtn.style.display = 'none';
     removeBtn.style.display = 'inline-block';
+    if (window.innerWidth < 768) {
+      removeBtn.textContent = 'Remove';
+      removeBtn.style.display = 'inline-block';
+    }
     removeBtn.addEventListener('click', () => {
       localStorage.removeItem(r.title);
       removeBtn.style.display = 'none';
@@ -45,6 +52,18 @@ function onRecipeCardBtnClick(r) {
       localStorage.setItem(r.title, JSON.stringify({ id: r._id, tags: r.tags }));
     } else {
       return;
+    }
+  });
+
+  ratingBtn.addEventListener('click', () => {
+    ratingModal.showModal();
+    disablePageScroll();
+  });
+
+  ratingModal.addEventListener('click', e => {
+    if (e.target === ratingModal) {
+      ratingModal.close();
+      enablePageScroll();
     }
   });
 
