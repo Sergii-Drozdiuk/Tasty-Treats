@@ -30,6 +30,7 @@
 
 .heart-active {
   fill: var(--main-text-light-color);
+  fill: 1;
 }
 
 @media screen and (width >= 768px) {
