@@ -17,7 +17,7 @@
 }
 
 .recipes-icon-heart {
-  position: absolute;
+  position: absolute; 
   top: 16px;
   right: 16px;
   fill: none;
@@ -30,7 +30,7 @@
 
 .heart-active{
   fill: var(--main-text-light-color);
-  
+  opacity: 1;
 }
 
 @media screen and (width >= 768px) {
