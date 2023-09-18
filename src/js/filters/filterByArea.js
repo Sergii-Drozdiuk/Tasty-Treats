@@ -1,9 +1,7 @@
-import { filterResByArea } from './filters-api';
-
-export function renderFilterByArea() {
-  filterResByArea()
-    .then(r => {
-      r.data.map(elm => `<option value="${elm.name}">${elm.name}</option>`).join('');
-    })
-    .catch(error => console.log(error));
+import { fetchArea } from './filters-api';
+import { selectArea } from './vars';
+export async function renderFilterByArea() {
+  const areas = await fetchArea();
+  const markup = areas.map(area => `<option>${area}</option>`).join('');
+  selectArea.insertAdjacentHTML('beforeend', markup);
 }
