@@ -1,10 +1,12 @@
 const body = document.body;
 const switchDark = document.querySelector('.switch');
 const logo = document.querySelector('.header-tastytreats');
+const svgHeader = document.querySelector('.svg-shopping-cart');
 
 const herOrderBtn = document.querySelector('.hero-order-btn');
 
 const filters = document.querySelector('.filters-list');
+const svgFilters = document.querySelector('.filters-icon');
 const children = filters.querySelectorAll('.label');
 
 const filterSel1 = document.querySelector('.select-time');
@@ -16,7 +18,10 @@ const categoryBtn = document.querySelector('.categories-btn');
 
 // modal
 const modalHero = document.querySelector('.modal-container');
-const resipesModal = document.querySelector('.recipes-modal-container');
+// const resipesModal = document.querySelector('.recipes-modal-container');
+const modalCloseIcon = document.querySelector('.btn-close-icon');
+
+const clearBtn = document.querySelector('.clear-button');
 
 switchDark.addEventListener('change', onDarkMode);
 
@@ -25,6 +30,13 @@ function onDarkMode() {
   logo.classList.toggle('header-tastytreats-dark');
   herOrderBtn.classList.toggle('hero-order-btn-dark');
 
+  const headerLink = document.querySelectorAll('.header-ref');
+  headerLink.forEach(function (element) {
+    element.classList.toggle('header-ref-dark');
+  });
+
+  svgHeader.classList.toggle('svg-shopping-cart-dark');
+
   children.forEach(function (child) {
     child.classList.toggle('filters-list-dark');
   });
@@ -32,6 +44,8 @@ function onDarkMode() {
   filterSel2.classList.toggle('input-filters-dark');
   filterSel3.classList.toggle('input-filters-dark');
   filterSel4.classList.toggle('input-filters-dark');
+
+  svgFilters.classList.toggle('filters-icon-dark');
 
   const popTxt = document.querySelectorAll('.pop-description-text');
   popTxt.forEach(function (element) {
@@ -52,6 +66,8 @@ function onDarkMode() {
 
   modalHero.classList.toggle('dark-modal');
 
+  modalCloseIcon.classList.toggle('btn-close-icon-dark');
+
   const modalLabel = document.querySelectorAll('.modal-label');
   modalLabel.forEach(function (element) {
     element.classList.toggle('modal-label-dark');
@@ -65,5 +81,16 @@ function onDarkMode() {
   const modalTextInput = document.querySelector('.comment-input');
   modalTextInput.classList.toggle('modal-input-dark');
 
-  resipesModal.classList.toggle('dark-modal');
+  clearBtn.classList.toggle('clear-button-dark');
+
+  const footerSpan = document.querySelectorAll('.pag-span');
+  footerSpan.forEach(function (element) {
+    element.classList.toggle('pag-span-dark');
+  });
+
+  const swiperPagBull = document.querySelectorAll('.swiper-pagination-bullet');
+  swiperPagBull.forEach(function (element) {
+    element.classList.toggle('swiper-pagination-bullet-dark');
+  });
+  //   resipesModal.classList.toggle('dark-modal');
 }

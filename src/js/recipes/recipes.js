@@ -16,10 +16,29 @@ fetchData()
   })
   .catch(() => Notify.failure('Oops! Something went wrong, please try again.'));
 
-document.querySelector('.js-list').addEventListener('click', hadlerClick);
+// document.querySelector('.js-list').addEventListener('click', hadlerClick);
 
-function hadlerClick(evt) {
-  if (evt.target.classList.contains('recipes-icon-heart') || evt.target.classList.contains('path')) {
-    document.querySelector('.recipes-icon-heart').classList.toggle('heart-active');
-  }
+// function hadlerClick(evt) {
+//   if (evt.target.classList.contains('recipes-icon-heart') || evt.target.classList.contains('path')) {
+//     document.querySelector('.recipes-icon-heart').classList.toggle('heart-active');
+//   }
+// }
+const list = document.querySelector('.js-list');
+
+list.addEventListener('click', hadlerClick);
+
+const arr =JSON.parse(localStorage.getItem('favorite-recipes')) ?? [];
+
+function hadlerClick(evt){
+console.log(evt.target.id);
+if(evt.target.classList.contains('recipes-icon-heart') ){
+  arr.push(evt.target.id);
+  evt.target.classList.add('heart-active');
+}
+if(evt.target.classList.contains('path')){
+  evt.target.farthestViewportElement.classList.remove('heart-active');
+  arr.splice(arr.indexOf(evt.target.farthestViewportElement.id),1);
+}
+
+localStorage.setItem('favorite-recipes', JSON.stringify(arr));
 }

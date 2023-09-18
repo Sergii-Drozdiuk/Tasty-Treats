@@ -1,5 +1,4 @@
 import './categories/categories.js';
-import './favorites/favorites.js';
 import './filters/filters.js';
 import './header.js';
 import './hero/hero-swiper.js';
