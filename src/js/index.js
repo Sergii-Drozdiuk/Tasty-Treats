@@ -7,6 +7,5 @@ import './hero/hero-service.js';
 import './pop-recipes/pop-recipes.js';
 import './recipes/recipes.js';
 import './pagination.js';
-import './recipes/recipes-modal.js';
 import './dark-theme.js';
 import './scroll-up.js';
