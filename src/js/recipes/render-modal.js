@@ -29,9 +29,17 @@ function onPopRecipeCardClick(e) {
 function onRecipeCardBtnClick(r) {
   recipeModal.innerHTML = renderModalById(r);
   recipeModal.addEventListener('click', onBackdropClick);
-
-  document.querySelector('.favorites-btn').addEventListener('click', () => {
+  const favoritesBtn = document.querySelector('.favorites-btn');
+  const removeBtn = document.querySelector('.remove-btn');
+  favoritesBtn.addEventListener('click', () => {
     localStorage.setItem(r.title, JSON.stringify({ id: r._id, tags: r.tags }));
+    favoritesBtn.style.display = 'none';
+    removeBtn.style.display = 'inline-block';
+    removeBtn.addEventListener('click', () => {
+      localStorage.removeItem(r.title);
+      removeBtn.style.display = 'none';
+      favoritesBtn.style.display = 'inline-block';
+    });
     const data = JSON.parse(localStorage.getItem(r.title));
     if (data._id !== r._id) {
       localStorage.setItem(r.title, JSON.stringify({ id: r._id, tags: r.tags }));
