@@ -6,6 +6,6 @@ import './hero/hero-swiper.js';
 import './hero/hero-service.js';
 import './pop-recipes/pop-recipes.js';
 import './recipes/recipes.js';
-import './recipes/recipes-modal.js';
+import './pagination.js';
 import './dark-theme.js';
 import './scroll-up.js';
