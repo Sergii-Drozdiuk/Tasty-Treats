@@ -7,12 +7,24 @@
   color: var(--dark-main-text-color);
 }
 
+.header-ref-dark {
+  color: var(--dark-main-text-color);
+}
+
+.svg-shopping-cart-dark {
+  stroke: var(--main-text-light-color);
+}
+
 .js-favorites-link-dark {
   color: var(--dark-main-text-color);
 }
 
 .hero-order-btn-dark {
   color: var(--dark-main-text-color);
+}
+
+.swiper-pagination-bullet-dark {
+  background-color: var(--dark-main-text-color);
 }
 
 .filters-list-dark {
@@ -23,6 +35,14 @@
   border: 1px solid var(--dark-filters-main-color);
   color: var(--dark-filters-main-color);
   background-color: var(--dark-bg-color);
+}
+
+.input-filters-dark::placeholder {
+  color: var(--dark-filters-main-color);
+}
+
+.filters-icon-dark {
+  fill: var(--dark-filters-main-color);
 }
 
 .pop-list-dark {
@@ -48,6 +68,10 @@
   background-color: var(--dark-bg-color);
 }
 
+.btn-close-icon-dark {
+  stroke: var(--main-text-light-color);
+}
+
 .modal-label-dark {
   color: var(--dark-filters-main-color);
 }
@@ -56,4 +80,18 @@
   border: 1px solid var(--dark-filters-main-color);
   color: var(--dark-filters-main-color);
   background-color: var(--dark-bg-color);
+}
+
+.modal-input-dark:valid {
+  color: var(--dark-filters-main-color);
+  background-color: var(--dark-bg-color);
+}
+
+.clear-button-dark {
+  color: var(--dark-filters-main-color);
+}
+
+.pag-span-dark {
+  border: 1px solid var(--dark-filters-secondary-color);
+  color: var(--dark-main-text-color);
 }
