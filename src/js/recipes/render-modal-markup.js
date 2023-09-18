@@ -51,6 +51,7 @@ export function renderModalById(r) {
           .join('')}</ul>
         <p class="recipe-desc">${description}${instructions}</p>
          <button type="button" class="favorites-btn">Add to favorite</button>
+        <button type="button" class="favorites-btn remove-btn">Remove from favorites</button>
         <button type="button" class="rating-btn">Give a rating</button></div>`;
   }
   if (window.innerWidth < 767) {
