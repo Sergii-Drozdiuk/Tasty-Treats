@@ -1,38 +1,26 @@
-import axios from 'axios';
+import { fetchData } from './pop-recipes-api';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 const dataList = document.querySelector('.pop-list');
 
-function displayData(dataArray) {
-  let html = '';
+fetchData()
+  .then(displayData)
+  .catch(() => Notify.failure('Oops! Something went wrong, please try again.'));
 
-  dataArray.forEach(function (item) {
-    const itemHTML = `
-      <li>
-        <a class="pop-item" id="${item._id}">
-          <img class="pop-img" src="${item.preview}" alt="${item.title}">
+function displayData(dataArray) {
+  dataArray.map(item => {
+    const { _id, preview, title, description } = item;
+    const markup = `
+      <li class="pop-card" id="${_id}">
+        <a class="pop-item">
+          <img class="pop-img" src="${preview}" alt="${title}">
           <div class="pop-description">
-          <h3 class="pop-description-title">${item.title}</h3>
-          <p class="pop-description-text">${item.description}</p>
+          <h3 class="pop-description-title">${title}</h3>
+          <p class="pop-description-text">${description}</p>
           </div>
         </a>
       </li>
     `;
-    html += itemHTML;
+    dataList.insertAdjacentHTML('beforeend', markup);
   });
-
-  dataList.insertAdjacentHTML('beforeend', html);
 }
-
-function fetchData() {
-  axios
-    .get('https://tasty-treats-backend.p.goit.global/api/recipes/popular')
-    .then(function (response) {
-      const data = response.data;
-      displayData(data);
-    })
-    .catch(function (error) {
-      console.error(error);
-    });
-}
-
-fetchData();
