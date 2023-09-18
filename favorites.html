@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Favorites</title>
   
-  <script type="module" crossorigin src="/Fancy-team-project/assets/favorites-932ed386.js"></script>
-  <link rel="modulepreload" crossorigin href="/Fancy-team-project/assets/header-844fc98f.js">
-  <link rel="stylesheet" href="/Fancy-team-project/assets/header-7ea329d5.css">
+  <script type="module" crossorigin src="/Fancy-team-project/assets/favorites-6c78ece2.js"></script>
+  <link rel="modulepreload" crossorigin href="/Fancy-team-project/assets/header-73a92c08.js">
+  <link rel="stylesheet" href="/Fancy-team-project/assets/header-b82d589a.css">
 </head>
 
 <body>
@@ -18,15 +18,16 @@
     <nav class="header-nav">
       <ul class="header-refs">
         <li class="header-list">
-          <a class="header-ref active" rel="noreferrer noopener" href="./index.html">Home</a>
+          <a class="header-ref" id="header-ref-home" rel="noreferrer noopener" href="./index.html">Home</a>
         </li>
         <li class="header-list">
-          <a class="header-ref" rel="noreferrer noopener" href="./favorites.html">Favorites</a>
+          <a class="header-ref" id="header-ref-favorites" rel="noreferrer noopener"
+            href="./favorites.html">Favorites</a>
         </li>
       </ul>
     </nav>
 
-    <a class="header-tastytreats active" href="./index.html"><span class="header-tasty">tasty</span>treats.</a>
+    <a class="header-tastytreats" href="./index.html"><span class="header-tasty">tasty</span>treats.</a>
 
     <div class="header-buttons">
       <button class="header-btn-shopping-cart js-shopping-cart" type="button">
@@ -62,8 +63,8 @@
   </div>
 
 
-  <div class="header-back display-none">
-    <div class="header-modal ">
+  <dialog id="header-dialog" class="dialog-modal">
+    <div class="header-modal">
       <button class="header-btn-close js-btn-close" type="button">
         <svg class="svg-btn-close" width="32" height="32">
           <use href="/Fancy-team-project/assets/icons-6fb877e3.svg#icon-btn-close"></use>
@@ -74,12 +75,12 @@
         <li><a href="./index.html" rel="noreferrer noopener" class="header-modal-item">Home</a></li>
         <li><a href="./favorites.html" rel="noreferrer noopener" class="header-modal-item">Favorites</a></li>
       </ul>
-      <label class="switch">
-        <input type="checkbox" name="checkbox" />
+      <label class="switch-dialog">
+        <input class="switch-input" type="checkbox" name="checkbox" />
         <span class="slider round"></span>
       </label>
     </div>
-  </div>
+  </dialog>
 </section>
   <main>
     <section class="favorites-section">
