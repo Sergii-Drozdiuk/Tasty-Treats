@@ -22,10 +22,6 @@
   transition: var(--transition-timings);
 }
 
-.style-container {
-  margin-top: 42px;
-}
-
 @media only screen and (width >= 768px) {
   .categories-list {
     width: 176px;
