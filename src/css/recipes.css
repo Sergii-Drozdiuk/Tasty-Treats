@@ -1,3 +1,13 @@
+.padding-recipes{
+margin-bottom: 40px;
+}
+
+@media screen and (width >= 768px) {
+  .padding-recipes{
+    margin-bottom: 64px;
+    }
+}
+
 .recipes-card {
   width: 335px;
   height: 335px;
@@ -50,7 +60,7 @@
   }
 }
 
-@media screen and (width >=1200px) {
+@media screen and (width >=1280px) {
   .recipes-card {
     width: 250px;
     height: 287px;
