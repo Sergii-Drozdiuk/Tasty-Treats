@@ -7,6 +7,49 @@
   color: var(--dark-main-text-color);
 }
 
-.header-ref-dark {
+.js-favorites-link-dark {
   color: var(--dark-main-text-color);
+}
+
+.hero-order-btn-dark {
+  color: var(--dark-main-text-color);
+}
+
+.filters-list-dark {
+  color: var(--dark-filters-main-color);
+}
+
+.input-filters-dark {
+  border: 1px solid var(--dark-filters-main-color);
+  color: var(--dark-filters-main-color);
+  background-color: var(--dark-bg-color);
+}
+
+.pop-list-dark {
+  color: var(--dark-secondary-text-color);
+}
+
+.pag-btn-dark {
+  border: 1px solid var(--dark-filters-secondary-color);
+  color: var(--dark-main-text-color);
+}
+
+.item-btn-dark {
+  color: var(--dark-filters-secondary-color);
+}
+.categories-btn-dark {
+  color: var(--dark-filters-main-color);
+  border: 1px solid var(--dark-filters-secondary-color);
+}
+.dark-modal {
+  color: var(--dark-main-text-color);
+  background-color: var(--dark-bg-color);
+}
+.modal-label-dark {
+  color: var(--dark-filters-main-color);
+}
+.modal-input-dark {
+  border: 1px solid var(--dark-filters-main-color);
+  color: var(--dark-filters-main-color);
+  background-color: var(--dark-bg-color);
 }
