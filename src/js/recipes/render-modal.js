@@ -1,8 +1,11 @@
 import { disablePageScroll, enablePageScroll } from 'scroll-lock';
 import { getRecipeById } from './recipes-api.js';
 import { renderModalById } from './render-modal-markup.js';
+
 const recipeModal = document.querySelector('#recipes-modal');
 const ratingModal = document.querySelector('#rating-modal');
+const starContainer = document.querySelector('.rating-modal-container');
+// const ratingNumber = document.querySelector('.rating-number');
 
 export async function renderModal() {
   const recipeCards = document.querySelector('.js-recipes-container');
@@ -58,6 +61,11 @@ function onRecipeCardBtnClick(r) {
   ratingBtn.addEventListener('click', () => {
     ratingModal.showModal();
     disablePageScroll();
+    starContainer.addEventListener('click', e => {
+      if (e.target.nodeName === 'path') {
+        e.target.style.fill = 'rgb(238, 161, 12)';
+      }
+    });
   });
 
   ratingModal.addEventListener('click', e => {
