@@ -58,10 +58,6 @@ button {
   }
 }
 
-.main-wrapper {
-  overflow-x: hidden;
-}
-
 @media only screen and (width >= 768px) {
   .main-sidebar-container {
     display: flex;
@@ -81,8 +77,22 @@ button {
   }
 }
 
+.main-wrapper {
+  overflow-x: hidden;
+}
+
 @media only screen and (width >= 1200px) {
   .main-sidebar-container {
     gap: 64px;
+  }
+}
+
+.main-sidebar-container {
+  margin-bottom: 40px;
+}
+
+@media only screen and (width >= 768px) {
+  .main-sidebar-container {
+    margin-bottom: 64px;
   }
 }
