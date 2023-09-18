@@ -28,9 +28,8 @@
   opacity: 0.1;
 }
 
-.heart-active{
+.heart-active {
   fill: var(--main-text-light-color);
-  
 }
 
 @media screen and (width >= 768px) {
@@ -126,11 +125,6 @@
   display: flex;
   margin-left: auto;
 }
-
-
-
-
-
 
 .recipes-md {
   padding: 0;
@@ -303,7 +297,11 @@
   opacity: 1;
 }
 
-@media only screen and (width < 767px) {
+.remove-btn {
+  display: none;
+}
+
+@media only screen and (width < 768px) {
   .recipes-modal-container {
     width: 335px;
     padding: 40px 20px;
@@ -361,6 +359,10 @@
 
   .rating-btn {
     padding: 12px 24px;
+  }
+
+  .remove-btn {
+    width: 170px;
   }
 }
 
