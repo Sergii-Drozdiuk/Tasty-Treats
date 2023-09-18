@@ -5,14 +5,11 @@ const recipeModal = document.querySelector('#recipes-modal');
 
 export async function renderModal() {
   const recipeCard = document.querySelector('.recipes-card');
-  const popRecipe = document.querySelector('.pop-card');
-  console.log(recipeCard);
-  console.log(popRecipe);
+  const popRecipe = document.querySelector('.pop-item');
   popRecipe.addEventListener('click', onPopRecipeClick);
 
   function onPopRecipeClick(e) {
-    console.log(e.target);
-    if (e.target.classList.contains('pop-card')) {
+    if (e.target.closest('.pop-item')) {
       recipeModal.showModal();
       disablePageScroll();
       getRecipeById(popRecipe.id).then(onRecipeCardBtnClick);
@@ -21,7 +18,6 @@ export async function renderModal() {
     recipeCard.addEventListener('click', onRecipeCardClick);
 
     function onRecipeCardClick(e) {
-      console.log(e.target);
       if (e.target.classList.contains('button-recipes')) {
         recipeModal.showModal();
         disablePageScroll();
