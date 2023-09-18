@@ -8,17 +8,14 @@ const refs = {
   modalWindow: document.querySelector('#header-dialog'),
 };
 
-console.log('hello');
-
 const page = document.location.pathname;
-console.log(page);
 
-if (page === '/index.html') {
-  refs.headerHome.classList.add('active');
-  refs.headerContainer.style.marginBottom = '90px';
-} else {
+if (page === '/favorites.html') {
   refs.headerFavorites.classList.add('active');
   refs.headerContainer.style.marginBottom = '50px';
+} else {
+  refs.headerHome.classList.add('active');
+  refs.headerContainer.style.marginBottom = '90px';
 }
 
 refs.btnBurger.addEventListener('click', onOrderBtnClick);
