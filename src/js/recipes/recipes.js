@@ -1,13 +1,17 @@
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { getFetchRecipes } from './recipes-api';
+import { pagination, options } from '../pagination.js';
+
 const container = document.querySelector('.js-recipes-container');
+let data = { results: [] };
 
 getFetchRecipes()
-  .then(data => {
+  .then(responseData => {
+    data.results = responseData.results;
+    options.totalItems = responseData.totalItems;
     container.innerHTML = createMarcup(data.results);
   })
-  .catch(error => {
-    console.log(error);
-  });
+  .catch(error => Notify.failure(error.message));
 
 function createMarcup(arr) {
   return arr
@@ -51,3 +55,13 @@ function createMarcup(arr) {
     })
     .join('');
 }
+
+pagination.on('afterMove', async (event) => {
+  const currentPage = event.page;
+  try {
+    const data = await getFetchRecipes(currentPage);
+     container.innerHTML = createMarcup(data.results);
+  } catch (error) {
+    Notify.failure(error.message);
+  }
+});
