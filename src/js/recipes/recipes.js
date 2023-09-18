@@ -2,16 +2,19 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { getFetchRecipes } from './recipes-api.js';
 import { createMarcup } from './recipes-render-markup.js';
 import { renderModal } from './render-modal.js';
+import { fetchData } from '../pop-recipes/pop-recipes-api.js';
+import { displayData } from '../pop-recipes/pop-recipes.js';
 
 const container = document.querySelector('.js-recipes-container');
 
-getFetchRecipes()
-  .then(data => (container.innerHTML = createMarcup(data)))
-  .then(() => renderModal())
-  .catch(e => {
-    console.log(e);
-    Notify.failure('Oops! Something went wrong, please try again.');
-  });
+fetchData()
+  .then(displayData)
+  .then(() => {
+    getFetchRecipes()
+      .then(data => (container.innerHTML = createMarcup(data)))
+      .then(() => renderModal());
+  })
+  .catch(() => Notify.failure('Oops! Something went wrong, please try again.'));
 
 document.querySelector('.js-list').addEventListener('click', hadlerClick);
 
