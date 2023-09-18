@@ -198,7 +198,6 @@ function createMarcup(arr) {
 }
 
 const list = document.querySelector('.js-list');
-
 list.addEventListener('click', hadlerClick);
 
 function hadlerClick(evt) {
