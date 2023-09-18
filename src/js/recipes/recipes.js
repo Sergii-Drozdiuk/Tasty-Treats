@@ -196,27 +196,14 @@ function createMarcup(arr) {
     })
     .join('');
 }
+
 const list = document.querySelector('.js-list');
 list.addEventListener('click', hadlerClick);
+
 function hadlerClick(evt) {
   if (evt.target.classList.contains('recipes-icon-heart') || evt.target.classList.contains('path')) {
     const svgHeart = document.querySelector('.recipes-icon-heart');
+
     svgHeart.classList.toggle('heart-active');
   }
-}
-
-
-const list = document.querySelector('.js-list');
-
-list.addEventListener('click', hadlerClick);
-
-function hadlerClick(evt){
- 
-
-if(evt.target.classList.contains('recipes-icon-heart') || evt.target.classList.contains('path') ){
-
-const svgHeart = document.querySelector('.recipes-icon-heart');
-
-svgHeart.classList.toggle('heart-active');
-}
 }
