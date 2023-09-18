@@ -30,7 +30,10 @@
 
 .heart-active {
   fill: var(--main-text-light-color);
+<<<<<<< Updated upstream
   opacity:  1;
+=======
+>>>>>>> Stashed changes
 }
 
 @media screen and (width >= 768px) {

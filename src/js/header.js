@@ -14,12 +14,9 @@ console.log(page);
 if (page === '/index.html') {
   refs.headerHome.classList.add('active');
   refs.headerContainer.style.marginBottom = '90px';
-  console.log('yes');
 } else {
   refs.headerFavorites.classList.add('active');
   refs.headerContainer.style.marginBottom = '50px';
-
-  console.log('no');
 }
 
 refs.btnBurger.addEventListener('click', onOrderBtnClick);
