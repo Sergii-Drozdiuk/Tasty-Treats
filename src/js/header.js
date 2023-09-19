@@ -1,31 +1,41 @@
+import { disablePageScroll, enablePageScroll } from 'scroll-lock';
 const refs = {
-  btnCart: document.querySelector('.js-shopping-cart'),
   btnBurger: document.querySelector('.js-burger-menu'),
-  switch: document.querySelector('.switch'),
   btnCloseModal: document.querySelector('.js-btn-close'),
-  modal: document.querySelector('.header-back'),
-  header: document.querySelector('.header-refs'),
+  headerContainer: document.querySelector('.header'),
+  headerHome: document.querySelector('#header-ref-home'),
+  headerFavorites: document.querySelector('#header-ref-favorites'),
+  modalWindow: document.querySelector('#header-dialog'),
 };
 
-refs.btnBurger.addEventListener('click', handlerClickerAdd);
-refs.btnCloseModal.addEventListener('click', handlerClickerRemove);
+const page = document.location.pathname;
 
-function handlerClickerAdd() {
-  refs.modal.classList.toggle('display-none');
-  refs.switch.classList.toggle('switch-modal');
-  removeOwerflowAdd();
+if (page === '/favorites.html') {
+  refs.headerFavorites.classList.add('active');
+  refs.headerContainer.style.marginBottom = '50px';
+} else {
+  refs.headerHome.classList.add('active');
+  refs.headerContainer.style.marginBottom = '90px';
 }
 
-function handlerClickerRemove() {
-  refs.modal.classList.toggle('display-none');
-  refs.switch.classList.toggle('switch-modal');
-  removeOwerflow();
+refs.btnBurger.addEventListener('click', onOrderBtnClick);
+
+function onOrderBtnClick() {
+  disablePageScroll();
+  refs.modalWindow.showModal();
+  refs.modalWindow.addEventListener('click', onBackdropClick);
 }
 
-function removeOwerflow() {
-  document.body.style.overflow = 'visible';
+function onBackdropClick(e) {
+  if (e.target === refs.modalWindow) {
+    refs.modalWindow.close();
+    enablePageScroll();
+  }
 }
 
-function removeOwerflowAdd() {
-  document.body.style.overflow = 'hidden';
+refs.btnCloseModal.addEventListener('click', onCloseBtn);
+
+function onCloseBtn() {
+  refs.modalWindow.close();
+  enablePageScroll();
 }

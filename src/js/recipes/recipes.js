@@ -1,59 +1,51 @@
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
-import { getFetchRecipes } from './recipes-api';
+import { getFetchRecipes } from './recipes-api.js';
+import { createMarcup } from './recipes-render-markup.js';
+import { renderModal } from './render-modal.js';
+import { fetchData } from '../pop-recipes/pop-recipes-api.js';
+import { displayData } from '../pop-recipes/pop-recipes.js';
 import { pagination, options } from '../pagination.js';
 
 const container = document.querySelector('.js-recipes-container');
 let data = { results: [] };
 
-getFetchRecipes()
-  .then(responseData => {
-    data.results = responseData.results;
-    options.totalItems = responseData.totalItems;
-    container.innerHTML = createMarcup(data.results);
+fetchData()
+  .then(displayData)
+  .then(() => {
+    getFetchRecipes()
+      .then(responseData => {
+        data.results = responseData.results;
+        options.totalItems = responseData.totalItems;
+        container.innerHTML = createMarcup(data.results);
+      })
+      .then(() => renderModal());
   })
-  .catch(error => Notify.failure(error.message));
+  .catch(() => Notify.failure('Oops! Something went wrong, please try again.'));
 
-function createMarcup(arr) {
-  return arr
-    .map(({ title, description, preview, _id }) => {
-      return `<ul class="js-recipes-container wrapper-card">
-  <li class ="recipes-card" style="background-image:linear-gradient(to top, var(--main-text-dark-color),var( --filters-main-color),transparent 100%), url(${preview});" >
-  <svg class="recipes-icon-heart" width="22" height="22">
-      <use href="./img/icons.svg#icon-heart">
-      </use>
-    </svg>
-<h3 class="recipes-title">${title.slice(0, 22)}</h3>
-<p class="recipes-text">${description.slice(0, 50)}...</p>
-<div class="rating">
-  <p class="recipes-text-rating">4.5</p>
-  <svg class="recipes-icon-svg" width="18" height="18">
-      <use href="../img/icons.svg#icon-star">
-      </use>
-    </svg>
-    <svg class="recipes-icon-svg" width="18" height="18">
-      <use href="../img/icons.svg#icon-star">
-      </use>
-    </svg>
-    <svg class="recipes-icon-svg" width="18" height="18">
-      <use href="../img/icons.svg#icon-star">
-      </use>
-    </svg>
-    <svg class="recipes-icon-svg" width="18" height="18">
-      <use href="../img/icons.svg#icon-star">
-      </use>
-    </svg>
-    <svg class="recipes-icon-svg" width="18" height="18">
-      <use href="../img/icons.svg#icon-star">
-      </use>
-    </svg>
-    </div>
-    <button class="button-recipes" type="button" data-id="${_id}">See recipe</button>
-  </div>
-</li>
-</ul>
-`;
-    })
-    .join('');
+
+const list = document.querySelector('.js-list');
+
+list.addEventListener('click', hadlerClick);
+
+const arr =JSON.parse(localStorage.getItem('favorite-recipes')) ?? [];
+
+function hadlerClick(evt){
+if(evt.target.classList.contains('recipes-icon-heart') ){
+  
+  arr.push(evt.target.id);
+  evt.target.classList.add('heart-active');
+}
+if(evt.target.classList.contains('path')){
+  evt.target.farthestViewportElement.classList.remove('heart-active');
+  arr.splice(arr.indexOf(evt.target.farthestViewportElement.id),1);
+}
+if(arr.includes(evt.target.id)){
+  
+  evt.target.classList.add('heart-active');
+}
+
+localStorage.setItem('favorite-recipes', JSON.stringify(arr));
+
 }
 
 pagination.on('afterMove', async (event) => {

@@ -22,4 +22,3 @@ async function getRecipeById(recipeId) {
 }
 
 export { getFetchRecipes, getRecipeById };
-
