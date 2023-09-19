@@ -35,3 +35,8 @@
   background-color: var(--brand-color);
   color: var(--main-text-light-color);
 }
+.kitchen-hat {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
