@@ -4,14 +4,20 @@ import { createMarcup } from './recipes-render-markup.js';
 import { renderModal } from './render-modal.js';
 import { fetchData } from '../pop-recipes/pop-recipes-api.js';
 import { displayData } from '../pop-recipes/pop-recipes.js';
+import { pagination, options } from '../pagination.js';
 
 const container = document.querySelector('.js-recipes-container');
+let data = { results: [] };
 
 fetchData()
   .then(displayData)
   .then(() => {
     getFetchRecipes()
-      .then(data => (container.innerHTML = createMarcup(data)))
+      .then(responseData => {
+        data.results = responseData.results;
+        options.totalItems = responseData.totalItems;
+        container.innerHTML = createMarcup(data.results);
+      })
       .then(() => renderModal());
   })
   .catch(() => Notify.failure('Oops! Something went wrong, please try again.'));
@@ -22,8 +28,6 @@ const list = document.querySelector('.js-list');
 list.addEventListener('click', hadlerClick);
 
 const arr =JSON.parse(localStorage.getItem('favorite-recipes')) ?? [];
-
-
 
 function hadlerClick(evt){
 if(evt.target.classList.contains('recipes-icon-heart') ){
@@ -44,3 +48,12 @@ localStorage.setItem('favorite-recipes', JSON.stringify(arr));
 
 }
 
+pagination.on('afterMove', async (event) => {
+  const currentPage = event.page;
+  try {
+    const data = await getFetchRecipes(currentPage);
+     container.innerHTML = createMarcup(data.results);
+  } catch (error) {
+    Notify.failure(error.message);
+  }
+});
