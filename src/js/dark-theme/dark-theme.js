@@ -1,72 +1,43 @@
-const body = document.body;
 const switchDark = document.querySelector('.switch');
-const logo = document.querySelector('.header-tastytreats');
+
 const svgHeader = document.querySelector('.svg-shopping-cart');
 
 const herOrderBtn = document.querySelector('.hero-order-btn');
 
-const filters = document.querySelector('.filters-list');
-const svgFilters = document.querySelector('.filters-icon');
-const children = filters.querySelectorAll('.label');
+const switchCheckbox = document.querySelector('input[name="switch"]');
 
-const filterSel1 = document.querySelector('.select-time');
-const filterSel2 = document.querySelector('.select-area');
-const filterSel3 = document.querySelector('.select-ingredients');
-const filterSel4 = document.querySelector('.input-filters');
-// pop-list
-const categoryBtn = document.querySelector('.categories-btn');
-
-// modal
-const modalHero = document.querySelector('.modal-container');
-// const resipesModal = document.querySelector('.recipes-modal-container');
-const modalCloseIcon = document.querySelector('.btn-close-icon');
-
-const clearBtn = document.querySelector('.clear-button');
+if (localStorage.getItem('theme') === 'dark') {
+  switchCheckbox.checked = true;
+  onDarkMode();
+}
 
 switchDark.addEventListener('change', onDarkMode);
 
 function onDarkMode() {
-  body.classList.toggle('body-dark');
-  logo.classList.toggle('header-tastytreats-dark');
+  const root = document.documentElement;
+  if (switchCheckbox.checked) {
+    localStorage.setItem('theme', 'dark');
+
+    root.style.setProperty('--main-text-dark-color', 'rgb(248, 248, 248)');
+    root.style.setProperty('--main-text-light-color', 'rgb(22, 22, 22)');
+    root.style.setProperty('--filters-main-color', 'rgba(255, 255, 255, 50%)');
+    root.style.setProperty('--filters-secondary-color', ' rgba(255, 255, 255, 30%)');
+    root.style.setProperty('--secondary-pop-recipes-color', ' rgba(255, 255, 255, 80%)');
+    root.style.setProperty('--ingridients-main-border-color', ' rgba(255, 255, 255, 20%)');
+  } else {
+    localStorage.removeItem('theme');
+
+    root.style.setProperty('--main-text-dark-color', 'rgb(5, 5, 5)');
+    root.style.setProperty('--main-text-light-color', 'rgb(248, 248, 248)');
+    root.style.setProperty('--filters-main-color', 'rgba(5, 5, 5, 50%)');
+    root.style.setProperty('--filters-secondary-color', '  rgba(5, 5, 5, 30%)');
+    root.style.setProperty('--secondary-pop-recipes-color', ' rgba(5, 5, 5, 80%)');
+    root.style.setProperty('--ingridients-main-border-color', ' rgba(5, 5, 5, 20%)');
+  }
+
   herOrderBtn.classList.toggle('hero-order-btn-dark');
 
-  const headerLink = document.querySelectorAll('.header-ref');
-  headerLink.forEach(function (element) {
-    element.classList.toggle('header-ref-dark');
-  });
-
   svgHeader.classList.toggle('svg-shopping-cart-dark');
-
-  children.forEach(function (child) {
-    child.classList.toggle('filters-list-dark');
-  });
-  filterSel1.classList.toggle('input-filters-dark');
-  filterSel2.classList.toggle('input-filters-dark');
-  filterSel3.classList.toggle('input-filters-dark');
-  filterSel4.classList.toggle('input-filters-dark');
-
-  svgFilters.classList.toggle('filters-icon-dark');
-
-  const popTxt = document.querySelectorAll('.pop-description-text');
-  popTxt.forEach(function (element) {
-    element.classList.toggle('pop-list-dark');
-  });
-
-  const pagBtn = document.querySelectorAll('.pag-btn');
-  pagBtn.forEach(function (element) {
-    element.classList.toggle('pag-btn-dark');
-  });
-
-  const categoryItem = document.querySelectorAll('.item-btn');
-  categoryItem.forEach(function (element) {
-    element.classList.toggle('item-btn-dark');
-  });
-
-  categoryBtn.classList.toggle('categories-btn-dark');
-
-  modalHero.classList.toggle('dark-modal');
-
-  modalCloseIcon.classList.toggle('btn-close-icon-dark');
 
   const modalLabel = document.querySelectorAll('.modal-label');
   modalLabel.forEach(function (element) {
@@ -80,17 +51,4 @@ function onDarkMode() {
 
   const modalTextInput = document.querySelector('.comment-input');
   modalTextInput.classList.toggle('modal-input-dark');
-
-  clearBtn.classList.toggle('clear-button-dark');
-
-  const footerSpan = document.querySelectorAll('.pag-span');
-  footerSpan.forEach(function (element) {
-    element.classList.toggle('pag-span-dark');
-  });
-
-  const swiperPagBull = document.querySelectorAll('.swiper-pagination-bullet');
-  swiperPagBull.forEach(function (element) {
-    element.classList.toggle('swiper-pagination-bullet-dark');
-  });
-  //   resipesModal.classList.toggle('dark-modal');
 }
