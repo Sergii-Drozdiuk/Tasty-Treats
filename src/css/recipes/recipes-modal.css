@@ -71,6 +71,7 @@
 
 .rating-modal {
   margin-right: 6px;
+  color: var(--secondary-pop-recipes-color);
 }
 
 .recipes-time {
@@ -88,6 +89,10 @@
   display: flex;
   flex-wrap: wrap;
   position: relative;
+}
+
+.ingridient-title {
+  color: var(--secondary-pop-recipes-color);
 }
 
 .ingridient::after {
@@ -120,10 +125,11 @@
   border-radius: 35px;
   border: 1px solid var(--ingridients-main-border-color);
   line-height: 14px;
+  color: var(--secondary-pop-recipes-color);
 }
 
 .recipe-desc {
-  color: var(--econdary-pop-recipes-color);
+  color: var(--secondary-pop-recipes-color);
   width: 467px;
   margin-bottom: 32px;
 }
@@ -190,6 +196,7 @@
 
   .recipes-time {
     margin-left: 16px;
+    color: var(--secondary-pop-recipes-color);
   }
 
   .recipes-ingridients {
