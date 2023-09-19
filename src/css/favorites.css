@@ -16,11 +16,7 @@
 }
 
 .favorites-filters-btn {
-  display: flex;
   padding: 14px 18px;
-  justify-content: center;
-  align-items: center;
-  gap: 18px;
   border-radius: 15px;
   border: 1px solid var(--secondary-hero-img-color);
   color: var(--filters-secondary-color);
