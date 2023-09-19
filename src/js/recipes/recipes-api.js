@@ -17,4 +17,13 @@ async function getRecipeById(recipeId) {
   return r.data;
 }
 
-export { getFetchRecipes, getRecipeById };
+async function addRecipeRating(data, recipeId) {
+  const r = await axios({
+    method: 'PATCH',
+    url: `${BASE_URL}/recipes/${recipeId}/rating`,
+    data,
+  });
+  return r;
+}
+
+export { getFetchRecipes, getRecipeById, addRecipeRating };
