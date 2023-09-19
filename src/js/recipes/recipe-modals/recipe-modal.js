@@ -21,7 +21,7 @@ export async function renderModal() {
 function onRecipeCardClick(e) {
   if (e.target.classList.contains('button-recipes')) {
     recipeModal.showModal();
-    disablePageScroll();
+    disablePageScroll(recipeModal);
     onRatingBtnSendClick(e.target.parentElement.id);
     getRecipeById(e.target.parentElement.id).then(onRecipeCardBtnClick).then(afterCardLoaded);
   }
@@ -30,7 +30,7 @@ function onRecipeCardClick(e) {
 function onPopRecipeCardClick(e) {
   if (e.target.closest('.pop-item')) {
     recipeModal.showModal();
-    disablePageScroll();
+    disablePageScroll(recipeModal);
     onRatingBtnSendClick(e.target.closest('.pop-item').id);
     getRecipeById(e.target.closest('.pop-item').id).then(onRecipeCardBtnClick).then(afterCardLoaded);
   }
