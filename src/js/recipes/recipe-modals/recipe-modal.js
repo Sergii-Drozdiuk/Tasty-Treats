@@ -1,5 +1,10 @@
 import { disablePageScroll, enablePageScroll } from 'scroll-lock';
-import { onRatingBtnClick, onRatingBtnCloseClick, onRatingModalBackdropClick } from './rating-modal.js';
+import {
+  onRatingBtnClick,
+  onRatingBtnCloseClick,
+  onRatingModalBackdropClick,
+  onRatingBtnSendClick,
+} from './rating-modal.js';
 import { getRecipeById } from '../recipes-api.js';
 import { renderModalById } from '../markups/render-modal-markup.js';
 
@@ -17,6 +22,7 @@ function onRecipeCardClick(e) {
   if (e.target.classList.contains('button-recipes')) {
     recipeModal.showModal();
     disablePageScroll();
+    onRatingBtnSendClick(e.target.parentElement.id);
     getRecipeById(e.target.parentElement.id).then(onRecipeCardBtnClick).then(afterCardLoaded);
   }
 }
@@ -25,6 +31,7 @@ function onPopRecipeCardClick(e) {
   if (e.target.closest('.pop-item')) {
     recipeModal.showModal();
     disablePageScroll();
+    onRatingBtnSendClick(e.target.closest('.pop-item').id);
     getRecipeById(e.target.closest('.pop-item').id).then(onRecipeCardBtnClick).then(afterCardLoaded);
   }
 }
@@ -47,7 +54,6 @@ function onRecipeCardBtnClick(r) {
 function afterCardLoaded(r) {
   const favoritesBtn = document.querySelector('.favorites-btn');
   const removeBtn = document.querySelector('.remove-btn');
-
   favoritesBtn.addEventListener('click', () => {
     localStorage.setItem(r.title, JSON.stringify({ id: r._id, tags: r.tags }));
     favoritesBtn.style.display = 'none';

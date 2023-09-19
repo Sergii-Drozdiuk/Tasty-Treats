@@ -1,6 +1,5 @@
 import axios from 'axios';
 import { setPerPageValue } from '../pagination.js';
-
 const BASE_URL = 'https://tasty-treats-backend.p.goit.global/api';
 
 async function getFetchRecipes(page) {
@@ -17,7 +16,8 @@ async function getRecipeById(recipeId) {
   return r.data;
 }
 
-async function addRecipeRating(data, recipeId) {
+async function addRecipeRating(recipeId, data) {
+  console.log(recipeId);
   const r = await axios({
     method: 'PATCH',
     url: `${BASE_URL}/recipes/${recipeId}/rating`,
