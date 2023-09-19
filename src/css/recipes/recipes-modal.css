@@ -6,6 +6,7 @@
   width: 531px;
   padding: 32px;
   position: relative;
+  overflow-y: scroll;
   background-color: var(--main-text-light-color);
 }
 
