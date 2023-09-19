@@ -4,11 +4,9 @@ import { disablePageScroll, enablePageScroll } from 'scroll-lock';
 import { uploadUser } from './hero-api';
 
 const form = document.querySelector('#order-form');
-const ratingForm = document.querySelector('.rating-form');
 const modalWindow = document.querySelector('#ordernow');
 
 const validator = new JustValidate(form);
-const ratingValidator = new JustValidate(ratingForm);
 const { name, phone, email, comment } = form.elements;
 
 validator.addField(name, [
@@ -27,8 +25,6 @@ validator.addField(phone, [
 ]);
 
 validator.addField(email, [{ rule: 'required' }, { rule: 'email' }]);
-
-ratingValidator.addField(ratingForm.elements.ratingemail, [{ rule: 'required' }, { rule: 'email' }]);
 
 document.querySelector('.hero-order-btn').addEventListener('click', onOrderBtnClick);
 document.querySelector('.modal-order-send').addEventListener('click', onOrderSendBtnClick);
