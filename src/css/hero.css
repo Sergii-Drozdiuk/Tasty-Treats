@@ -229,7 +229,7 @@
 
 .modal-input {
   border-radius: 15px;
-  border: 1px solid rgba(5, 5, 5, 20%);
+  border: 1px solid var(--ingridients-main-border-color);
   width: 295px;
   height: 46px;
   margin-block-start: 8px;
@@ -243,7 +243,7 @@
   border-radius: 15px;
   width: 295px;
   height: 100px;
-  border: 1px solid rgba(5, 5, 5, 20%);
+  border: 1px solid var(--ingridients-main-border-color);
   padding: 20px;
   font-size: 16px;
 }

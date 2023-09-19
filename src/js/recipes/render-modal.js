@@ -5,7 +5,7 @@ import { renderModalById } from './render-modal-markup.js';
 const recipeModal = document.querySelector('#recipes-modal');
 const ratingModal = document.querySelector('#rating-modal');
 const starContainer = document.querySelector('.rating-modal-container');
-// const ratingNumber = document.querySelector('.rating-number');
+const ratingNumber = document.querySelector('.rating-number');
 
 export async function renderModal() {
   const recipeCards = document.querySelector('.js-recipes-container');
@@ -61,9 +61,21 @@ function onRecipeCardBtnClick(r) {
   ratingBtn.addEventListener('click', () => {
     ratingModal.showModal();
     disablePageScroll();
+
+    document.querySelector('.rating-btn-close').addEventListener('click', () => {
+      ratingModal.close();
+      enablePageScroll();
+    });
+
+    // for (let i = 0; i < starContainer.children.length; i += 1) {}
+
     starContainer.addEventListener('click', e => {
       if (e.target.nodeName === 'path') {
-        e.target.style.fill = 'rgb(238, 161, 12)';
+        ratingNumber.textContent++;
+        // console.log(starContainer.children);
+        // starContainer.children.map(star => {
+        //   star.style.fill = 'rgb(238, 161, 12)';
+        // });
       }
     });
   });

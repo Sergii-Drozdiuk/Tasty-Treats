@@ -44,24 +44,24 @@ button {
   padding-inline: 20px;
 }
 
+.main-wrapper {
+  overflow-x: hidden;
+}
+
+.main-sidebar-container {
+  margin-bottom: 40px;
+}
+
 @media only screen and (width >= 768px) {
   .container {
     max-width: 768px;
     padding-inline: 32px;
   }
-}
 
-@media only screen and (width >= 1200px) {
-  .container {
-    max-width: 1080px;
-    padding-inline: 26px;
-  }
-}
-
-@media only screen and (width >= 768px) {
   .main-sidebar-container {
     display: flex;
     gap: 32px;
+    margin-bottom: 64px;
   }
 
   .right-sidebar-container {
@@ -77,22 +77,13 @@ button {
   }
 }
 
-.main-wrapper {
-  overflow-x: hidden;
-}
-
 @media only screen and (width >= 1200px) {
+  .container {
+    max-width: 1080px;
+    padding-inline: 26px;
+  }
+
   .main-sidebar-container {
     gap: 64px;
-  }
-}
-
-.main-sidebar-container {
-  margin-bottom: 40px;
-}
-
-@media only screen and (width >= 768px) {
-  .main-sidebar-container {
-    margin-bottom: 64px;
   }
 }
