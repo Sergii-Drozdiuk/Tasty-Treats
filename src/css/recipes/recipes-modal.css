@@ -1,12 +1,7 @@
-.recipe-md {
-  overscroll-behavior: none;
-}
-
 .recipes-modal-container {
   width: 531px;
   padding: 32px;
   position: relative;
-  overscroll-behavior: none;
 }
 
 .recipes-btn-close {
@@ -257,12 +252,6 @@
   }
 }
 
-.rating-md {
-  border: none;
-  padding: 0;
-  border-radius: 15px;
-}
-
 .modal-container {
   width: 335px;
   position: relative;
@@ -290,7 +279,6 @@
 
 .rating-number {
   font-size: 16px;
-  font-weight: 500;
   line-height: 150%;
 }
 
@@ -300,15 +288,15 @@
   padding: 14px 18px;
   border-radius: 15px;
   border: 1px solid var(--ingridients-main-border-color);
-  margin-bottom: 14px;
+  margin-bottom: 10px;
 }
 
 .rating-modal-send {
+  margin-top: 14px;
   width: 295px;
   height: 46px;
   color: var(--main-text-light-color);
   border-radius: 15px;
-  font-weight: 500;
   line-height: normal;
   background: var(--brand-color);
   transition: var(--transition-timings);
@@ -359,10 +347,10 @@
   .rating-email {
     width: 360px;
     height: 48px;
-    margin-bottom: 16px;
   }
 
   .rating-modal-send {
+    margin-top: 16px;
     width: 360px;
     height: 48px;
   }

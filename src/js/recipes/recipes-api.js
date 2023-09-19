@@ -17,7 +17,6 @@ async function getRecipeById(recipeId) {
 }
 
 async function addRecipeRating(recipeId, data) {
-  console.log(recipeId);
   const r = await axios({
     method: 'PATCH',
     url: `${BASE_URL}/recipes/${recipeId}/rating`,
