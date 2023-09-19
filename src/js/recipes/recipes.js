@@ -1,6 +1,6 @@
 import { getFetchRecipes } from './recipes-api.js';
 import { createMarcup } from './markups/recipes-main-markup.js';
-import { renderModal } from './recipe-modals/recipe-modal.js';
+import { renderModal } from './recipe-modal.js';
 import { fetchData } from '../pop-recipes/pop-recipes-api.js';
 import { displayData } from '../pop-recipes/pop-recipes.js';
 import { pagination, options } from '../pagination.js';
