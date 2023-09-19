@@ -25,17 +25,17 @@ const options = {
   centerAlign: true,
   firstItemClassName: 'tui-first-child',
   lastItemClassName: 'tui-last-child',
-    template: {
+  template: {
     page: '<button class="tui-page-btn" type="button">{{page}}</button>',
     currentPage: '<button class="tui-page-btn tui-is-selected">{{page}}</button>',
     moveButton:
       '<button class="tui-page-btn tui-{{type}}">' +
-        '<span class="tui-ico-{{type}}">{{type}}</span>' +
-        '</button>',
+      '<span class="tui-ico-{{type}}">{{type}}</span>' +
+      '</button>',
     moreButton:
       '<button class="tui-page-btn tui-{{type}}-is-ellip">' +
-        '<span class="tui-ico-ellip">...</span>' +
-      '</button'
+      '<span class="tui-ico-ellip">...</span>' +
+      '</button',
   },
 };
 
