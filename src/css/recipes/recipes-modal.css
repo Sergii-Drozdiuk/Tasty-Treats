@@ -1,3 +1,7 @@
+.recipes-md {
+  overflow-y: scroll;
+}
+
 .recipes-md::backdrop {
   backdrop-filter: blur(7px) brightness(0.86) grayscale(28%) opacity(92%);
 }
@@ -6,7 +10,6 @@
   width: 531px;
   padding: 32px;
   position: relative;
-  overflow-y: scroll;
 }
 
 .recipes-btn-close {
