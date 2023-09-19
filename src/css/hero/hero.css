@@ -163,6 +163,107 @@
   left: -10px;
 }
 
+@keyframes slide-in {
+  from {
+    transform: translateY(8%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+.order-modal {
+  width: 335px;
+  padding: 20px;
+  position: relative;
+  background-color: var(--main-text-light-color);
+}
+
+.modal {
+  padding: 0;
+  border: none;
+  border-radius: 15px;
+  animation: slide-in 0.4s ease;
+}
+
+.modal::backdrop {
+  backdrop-filter: blur(7px) brightness(0.86) grayscale(28%) opacity(92%);
+  transition: var(--transition-timings);
+}
+
+.order {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 122.222%;
+  text-transform: uppercase;
+  margin-block-end: 28px;
+}
+
+.btn-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  color: var(--brand-color);
+}
+
+.btn-close-icon {
+  stroke: var(--main-text-dark-color);
+  transition: var(--transition-timings);
+}
+
+.btn-close-icon:is(:hover) {
+  stroke: currentcolor;
+}
+
+.btn-close:is(:focus-visible) .btn-close-icon {
+  stroke: currentcolor;
+}
+
+.modal-label {
+  display: block;
+  color: var(--filters-main-color);
+  margin-block-end: 16px;
+}
+
+.modal-label:last-of-type {
+  margin-block-end: 40px;
+}
+
+.modal-input {
+  border-radius: 15px;
+  border: 1px solid var(--ingridients-main-border-color);
+  width: 295px;
+  height: 46px;
+  margin-block-start: 8px;
+  padding: 20px;
+  font-size: 16px;
+}
+
+.comment-input {
+  margin-block-start: 8px;
+  resize: none;
+  border-radius: 15px;
+  width: 295px;
+  height: 100px;
+  border: 1px solid var(--ingridients-main-border-color);
+  padding: 20px;
+  font-size: 16px;
+}
+
+.modal-order-send {
+  width: 295px;
+  padding: 15px;
+  border-radius: 15px;
+  background: var(--brand-color);
+  color: var(--main-text-light-color);
+  transition: var(--transition-timings);
+}
+
+.just-validate-success-field {
+  border: 1.3px solid var(--brand-color);
+}
+
 .slide {
   display: flex;
   gap: 16px;
@@ -279,6 +380,46 @@
 
   .hero-section .pag-list {
     left: -45px;
+  }
+
+  .btn-close {
+    top: 16px;
+    right: 16px;
+  }
+
+  .btn-close-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .order-modal {
+    width: 440px;
+    padding: 40px;
+  }
+
+  .order {
+    margin-bottom: 40px;
+    color: var(--main-text-dark-color);
+  }
+
+  .modal-label {
+    margin-bottom: 16px;
+  }
+
+  .modal-input {
+    width: 360px;
+    height: 48px;
+    font-size: 17px;
+  }
+
+  .comment-input {
+    width: 360px;
+    font-size: 17px;
+  }
+
+  .modal-order-send {
+    width: 360px;
+    padding: 14px;
   }
 
   .pages-pagination {
