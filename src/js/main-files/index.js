@@ -1,0 +1,10 @@
+import '../categories/categories.js';
+import '../filters/filters.js';
+import '../header.js';
+import '../hero/hero-swiper.js';
+import '../hero/hero-service.js';
+import '../pop-recipes/pop-recipes.js';
+import '../recipes/recipes.js';
+import '../dark-theme/dark-theme.js';
+import '../scroll-up.js';
+import '../pagination.js';
