@@ -1,11 +1,10 @@
 import { disablePageScroll, enablePageScroll } from 'scroll-lock';
-import { getRecipeById } from './recipes-api.js';
-import { renderModalById } from './render-modal-markup.js';
+import { onRatingBtnClick, onRatingBtnCloseClick, onRatingModalBackdropClick } from './rating-modal.js';
+import { getRecipeById } from '../recipes-api.js';
+import { renderModalById } from '../markups/render-modal-markup.js';
 
 const recipeModal = document.querySelector('#recipes-modal');
 const ratingModal = document.querySelector('#rating-modal');
-const starContainer = document.querySelector('.rating-modal-container');
-const ratingNumber = document.querySelector('.rating-number');
 
 export async function renderModal() {
   const recipeCards = document.querySelector('.js-recipes-container');
@@ -18,7 +17,7 @@ function onRecipeCardClick(e) {
   if (e.target.classList.contains('button-recipes')) {
     recipeModal.showModal();
     disablePageScroll();
-    getRecipeById(e.target.parentElement.id).then(onRecipeCardBtnClick);
+    getRecipeById(e.target.parentElement.id).then(onRecipeCardBtnClick).then(afterCardLoaded);
   }
 }
 
@@ -26,16 +25,28 @@ function onPopRecipeCardClick(e) {
   if (e.target.closest('.pop-item')) {
     recipeModal.showModal();
     disablePageScroll();
-    getRecipeById(e.target.closest('.pop-item').id).then(onRecipeCardBtnClick);
+    getRecipeById(e.target.closest('.pop-item').id).then(onRecipeCardBtnClick).then(afterCardLoaded);
   }
 }
 
 function onRecipeCardBtnClick(r) {
   recipeModal.innerHTML = renderModalById(r);
+  const recipeModalBtnClose = document.querySelector('.recipes-btn-close');
+  const ratingBtn = document.querySelector('.rating-btn');
+  const ratingBtnClose = document.querySelector('.rating-btn-close');
+
   recipeModal.addEventListener('click', onBackdropClick);
+  recipeModalBtnClose.addEventListener('click', onRecipeModalBtnCloseClick);
+  ratingBtn.addEventListener('click', onRatingBtnClick);
+  ratingBtnClose.addEventListener('click', onRatingBtnCloseClick);
+  ratingModal.addEventListener('click', onRatingModalBackdropClick);
+
+  return r;
+}
+
+function afterCardLoaded(r) {
   const favoritesBtn = document.querySelector('.favorites-btn');
   const removeBtn = document.querySelector('.remove-btn');
-  const ratingBtn = document.querySelector('.rating-btn');
 
   favoritesBtn.addEventListener('click', () => {
     localStorage.setItem(r.title, JSON.stringify({ id: r._id, tags: r.tags }));
@@ -57,40 +68,11 @@ function onRecipeCardBtnClick(r) {
       return;
     }
   });
+}
 
-  ratingBtn.addEventListener('click', () => {
-    ratingModal.showModal();
-    disablePageScroll();
-
-    document.querySelector('.rating-btn-close').addEventListener('click', () => {
-      ratingModal.close();
-      enablePageScroll();
-    });
-
-    // for (let i = 0; i < starContainer.children.length; i += 1) {}
-
-    starContainer.addEventListener('click', e => {
-      if (e.target.nodeName === 'path') {
-        ratingNumber.textContent++;
-        // console.log(starContainer.children);
-        // starContainer.children.map(star => {
-        //   star.style.fill = 'rgb(238, 161, 12)';
-        // });
-      }
-    });
-  });
-
-  ratingModal.addEventListener('click', e => {
-    if (e.target === ratingModal) {
-      ratingModal.close();
-      enablePageScroll();
-    }
-  });
-
-  document.querySelector('.recipes-btn-close').addEventListener('click', () => {
-    recipeModal.close();
-    enablePageScroll();
-  });
+function onRecipeModalBtnCloseClick() {
+  recipeModal.close();
+  enablePageScroll();
 }
 
 function onBackdropClick(e) {
