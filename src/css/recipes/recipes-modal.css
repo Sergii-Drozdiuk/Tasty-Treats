@@ -1,7 +1,3 @@
-.recipes-md {
-  overflow-y: scroll;
-}
-
 .recipes-md::backdrop {
   backdrop-filter: blur(7px) brightness(0.86) grayscale(28%) opacity(92%);
 }
