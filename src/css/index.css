@@ -3,7 +3,7 @@
 @import url('./favorites.css');
 @import url('./filters.css');
 @import url('./header.css');
-@import url('./hero.css');
+@import url('./hero/hero.css');
 @import url('./pop-recipes.css');
 @import url('./recipes/recipes.css');
 @import url('./pagination.css');
