@@ -11,8 +11,8 @@
   color: var(--dark-main-text-color);
 }
 
-.svg-shopping-cart-dark {
-  stroke: var(--main-text-light-color);
+.svg-shopping-cart-dark path {
+  stroke: var(--dark-main-text-color);
 }
 
 .js-favorites-link-dark {
