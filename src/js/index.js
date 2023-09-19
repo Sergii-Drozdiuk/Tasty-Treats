@@ -7,3 +7,4 @@ import './pop-recipes/pop-recipes.js';
 import './recipes/recipes.js';
 import './dark-theme.js';
 import './scroll-up.js';
+import './pagination.js';

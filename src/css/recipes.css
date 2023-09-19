@@ -50,7 +50,7 @@
   }
 }
 
-@media screen and (width >=1200px) {
+@media screen and (width >=1280px) {
   .recipes-card {
     width: 250px;
     height: 287px;

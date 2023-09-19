@@ -1,16 +1,16 @@
-.style-container {
+.categories-container {
   max-width: 375px;
   margin-bottom: 40px;
 }
 
 .categories-btn {
-  margin-top: 26px;
+  margin-bottom: 24px;
   color: var(--filters-main-color);
   font-size: 18px;
-  font-weight: 500;
-  padding: 14px 28px;
+  padding: 14px 29px;
   border-radius: 15px;
   border: 1px solid var(--filters-secondary-color);
+  transition: var(--transition-timings);
 }
 
 .categories-btn:hover,
@@ -19,52 +19,53 @@
   background: var(--brand-color);
   border-color: var(--brand-color);
   box-shadow: none;
-  transition: var(--transition-timings);
-}
-
-@media only screen and (width >= 768px) {
-  .categories-list {
-    width: 176px;
-  }
-
-  .style-container {
-    margin-bottom: 0;
-  }
-}
-
-@media only screen and (width >= 1200px) {
-  .categories-list {
-    width: 235px;
-  }
 }
 
 .categories-list {
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  height: 416px;
+  gap: 18px;
+  height: 198px;
   overflow-y: scroll;
-}
-
-.style-container::-webkit-scrollbar {
-  width: 8px;
-}
-
-.style-container::-webkit-scrollbar-track {
-  background-color: var(--main-text-light-color);
-}
-
-.style-container::-webkit-scrollbar-thumb {
-  border-radius: 12px;
-  background: var(--filters-secondary-color);
 }
 
 .item-btn {
   color: var(--filters-secondary-color);
-  font-size: 16px;
-  line-height: 20px;
+  line-height: 1.28;
 }
 
-.item-btn:hover {
+.item-btn:hover,
+.item-btn:focus {
   color: var(--brand-color);
+}
+
+@media only screen and (width >= 768px) {
+  .categories-container {
+    margin-bottom: 0;
+  }
+
+  .categories-btn {
+    margin-top: 26px;
+  }
+
+  .categories-list {
+    width: 176px;
+    gap: 24px;
+    height: 416px;
+  }
+
+  .item-btn {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+@media only screen and (width >= 1200px) {
+  .categories-btn {
+    padding: 14px 28px;
+  }
+
+  .categories-list {
+    width: 235px;
+  }
 }
