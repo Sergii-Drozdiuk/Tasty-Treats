@@ -163,8 +163,6 @@
   left: -10px;
 }
 
-<<<<<<< Updated upstream:src/css/hero/hero.css
-=======
 @keyframes slide-in {
   from {
     transform: translateY(8%);
@@ -266,7 +264,6 @@
   border: 1.3px solid var(--brand-color);
 }
 
->>>>>>> Stashed changes:src/css/hero.css
 .slide {
   display: flex;
   gap: 16px;
@@ -385,8 +382,6 @@
     left: -45px;
   }
 
-<<<<<<< Updated upstream:src/css/hero/hero.css
-=======
   .btn-close {
     top: 16px;
     right: 16px;
@@ -427,7 +422,6 @@
     padding: 14px;
   }
 
->>>>>>> Stashed changes:src/css/hero.css
   .pages-pagination {
     padding-right: 32px;
   }
