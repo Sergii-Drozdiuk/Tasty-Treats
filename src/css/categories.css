@@ -18,7 +18,6 @@
   color: var(--main-text-light-color);
   background: var(--brand-color);
   border-color: var(--brand-color);
-  box-shadow: none;
 }
 
 .categories-list {
@@ -60,7 +59,7 @@
   }
 }
 
-@media only screen and (width >= 1200px) {
+@media only screen and (width >= 1280px) {
   .categories-btn {
     padding: 14px 28px;
   }
