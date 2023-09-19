@@ -178,9 +178,6 @@
 }
 
 .modal {
-  padding: 0;
-  border: none;
-  border-radius: 15px;
   animation: slide-in 0.4s ease;
 }
 

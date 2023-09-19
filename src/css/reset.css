@@ -37,6 +37,17 @@ button {
   border: none;
 }
 
+dialog {
+  border: none;
+  padding: 0;
+  border-radius: 15px;
+  overflow-x: hidden;
+}
+
+dialog:modal {
+  outline: none;
+}
+
 .container {
   min-width: 320px;
   max-width: 375px;
