@@ -427,7 +427,7 @@
   }
 }
 
-@media only screen and (width >= 1200px) {
+@media only screen and (width >= 1280px) {
   .hero-section {
     padding-block-end: 100px;
   }

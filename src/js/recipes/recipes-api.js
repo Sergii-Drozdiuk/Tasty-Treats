@@ -7,12 +7,12 @@ async function getFetchRecipes(page) {
     page = 1;
   }
   let limit = setPerPageValue();
-  const response = await axios.get(`${BASE_URL}/recipes?limit=${limit}&page=${page}`);
+  const response = await axios(`${BASE_URL}/recipes?limit=${limit}&page=${page}`);
   return response.data;
 }
 
 async function getRecipeById(recipeId) {
-  const r = await axios.get(`${BASE_URL}/recipes/${recipeId}`);
+  const r = await axios(`${BASE_URL}/recipes/${recipeId}`);
   return r.data;
 }
 
