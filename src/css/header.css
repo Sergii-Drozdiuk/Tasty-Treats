@@ -132,11 +132,6 @@ input:checked + .slider::before {
   left: 29px;
 }
 
-.active {
-  color: var(--brand-color);
-  font-weight: 500;
-}
-
 .dialog-modal {
   padding: 0;
   margin: 0;
@@ -211,5 +206,10 @@ input:checked + .slider::before {
 
   .header-ref:is(:hover, :focus) {
     color: var(--brand-color);
+  }
+
+  .active {
+    color: var(--brand-color);
+    font-weight: 500;
   }
 }
