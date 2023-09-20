@@ -1,5 +1,4 @@
 import JustValidate from 'just-validate';
-import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { disablePageScroll, enablePageScroll } from 'scroll-lock';
 import { getRecipeById, addRecipeRating } from './recipes-api.js';
 import { renderModalById } from './markups/render-modal-markup.js';
@@ -98,7 +97,6 @@ function onRatingError(e) {
   console.log(e);
   if (e.response.status === 409) {
     console.log('hello');
-    Notify.failure('.....');
   }
 }
 
