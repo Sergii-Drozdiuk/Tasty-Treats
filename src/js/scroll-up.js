@@ -1,56 +1,33 @@
-const buttonUp = {
-    scrollUpEl: document.querySelector('.button-up'),
+const scrollUpContainer = document.querySelector('#scroll-container');
+const scrollUpEl = document.querySelector('.button-up');
 
-    show() {
-        if (this.scrollUpEl.classList.contains('button-up-hide') && !this.scrollUpEl.classList.contains('button-up-hiding')) {
-            this.scrollUpEl.classList.remove('button-up-hide');
-            this.scrollUpEl.classList.add('button-up-hiding');
-            setTimeout(() => {
-                this.scrollUpEl.classList.remove('button-up-hiding');
-            }, 300);
-        }
-    },
+scrollUpContainer.addEventListener('click', (e) => {
+  if (e.target === scrollUpEl) {
+    scrollToTop();
+  }
+});
 
-    hide() {
-        if (!this.scrollUpEl.classList.contains('button-up-hide') && !this.scrollUpEl.classList.contains('button-up-hiding')) {
-            this.scrollUpEl.classList.add('button-up-hiding');
-            setTimeout(() => {
-                this.scrollUpEl.classList.add('button-up-hide');
-                this.scrollUpEl.classList.remove('button-up-hiding');
-            }, 300);
-        }
-    },
+function scrollToTop() {
+  scrollUpEl.classList.add('hiding');
+  setTimeout(() => {
+    scrollUpEl.classList.add('hidden');
+    scrollUpEl.classList.remove('hiding');
+  }, 300);
+  window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: 'smooth'
+  });
+}
 
-    handleScroll() {
-        const scrollY = window.scrollY || document.documentElement.scrollTop;
+window.addEventListener('scroll', handleScroll);
 
-        if (this.scrolling && scrollY > 0) {
-            return;
-        }
+function handleScroll() {
+  const scrollY = window.scrollY || document.documentElement.scrollTop;
 
-        this.scrolling = false;
-
-        if (scrollY > 400) {
-            this.show();
-        } else {
-            this.hide();
-        }
-    },
-
-    scrollToTop() {
-        this.scrolling = true;
-        this.hide();
-        window.scrollTo({
-            top: 0,
-            left: 0,
-            behavior: 'smooth'
-        });
-    },
-
-    addEventListener() {
-        window.addEventListener('scroll', this.handleScroll.bind(this));
-        this.scrollUpEl.addEventListener('click', this.scrollToTop.bind(this));
-    }
-};
-
-buttonUp.addEventListener();
+  if (scrollY > 300) {
+    scrollUpEl.classList.remove('hidden');
+  } else {
+    scrollUpEl.classList.add('hidden');
+  }
+}
