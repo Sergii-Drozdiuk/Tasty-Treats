@@ -9,23 +9,11 @@ const refs = {
 };
 
 const page = document.location.pathname;
-// видалити 2 рядка
-console.log('href', document.location.pathname);
-console.log('page', page);
 
 if (page === '/Fancy-team-project/favorites.html') {
-  // видалити 4 рядка
-  console.log(page === '/Fancy-team-project/favorites.html');
-  console.log('href', document.location.pathname);
-  console.log('page', page);
-  console.log(document.location.pathname);
   refs.headerFavorites.classList.add('active');
   refs.headerContainer.style.marginBottom = '50px';
 } else {
-  console.log(page === '/Fancy-team-project/favorites.html');
-  console.log('href', document.location.pathname);
-  console.log('page', page);
-  console.log(document.location.pathname);
   refs.headerHome.classList.add('active');
   refs.headerContainer.style.marginBottom = '90px';
 }
