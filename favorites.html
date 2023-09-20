@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Favorites</title>
     
-    <script type="module" crossorigin src="/Fancy-team-project/assets/favorites-bc18b1d1.js"></script>
-    <link rel="modulepreload" crossorigin href="/Fancy-team-project/assets/header-96e43589.js">
-    <link rel="stylesheet" href="/Fancy-team-project/assets/header-674fcfaa.css">
+    <script type="module" crossorigin src="/Fancy-team-project/assets/favorites-ac571124.js"></script>
+    <link rel="modulepreload" crossorigin href="/Fancy-team-project/assets/header-2fac19df.js">
+    <link rel="stylesheet" href="/Fancy-team-project/assets/header-c14a2a6e.css">
   </head>
 
   <body>
@@ -102,16 +102,18 @@
             />
             <img src="/Fancy-team-project/assets/main-mobile-ee5174fb.webp" alt="Tasty Cook" />
           </picture>
-          <svg class="kitchen-hat">
-            <use href="/Fancy-team-project/assets/icons-6fb877e3.svg#icon-kitchen-hat"></use>
-          </svg>
-          <p>
-            It appears that you haven't added any recipes to your favorites yet. To get started, you can add
-            recipes that you like to your favorites for easier access in the future.
-          </p>
-          <ul class="favorites-filters-list">
+          <div class="hat-wrapper">
+            <svg class="kitchen-hat">
+              <use href="/Fancy-team-project/assets/icons-6fb877e3.svg#icon-kitchen-hat"></use>
+            </svg>
+            <p class="no-favarits">
+              It appears that you haven't added any recipes to your favorites yet. To get started, you can add
+              recipes that you like to your favorites for easier access in the future.
+            </p>
+          </div>
+          <ul class="favorites-filters-list js-hidden">
             <li class="favorites-filters-items">
-              <button type="button" class="favorites-filters-btn">All categories</button>
+              <button type="button" class="favorites-filters-btn">All categoris</button>
             </li>
           </ul>
         </div>
