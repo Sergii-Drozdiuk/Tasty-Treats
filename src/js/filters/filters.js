@@ -1,5 +1,5 @@
 import { getResByIngredient, getResByArea } from './filters-api.js';
-import time from '/json/time.json';
+import time from './filters-time.json';
 
 const ingredientsSelect = document.querySelector('.select-ingredients');
 const areasSelect = document.querySelector('.select-area');
