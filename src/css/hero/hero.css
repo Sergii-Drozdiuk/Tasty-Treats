@@ -1,3 +1,5 @@
+@import url('./hero-modal.css');
+
 .hero-section {
   padding-block-end: 80px;
 }
@@ -175,6 +177,7 @@
   width: 335px;
   padding: 20px;
   position: relative;
+  background-color: var(--main-text-light-color);
 }
 
 .modal {
@@ -229,7 +232,7 @@
 
 .modal-input {
   border-radius: 15px;
-  border: 1px solid rgba(5, 5, 5, 20%);
+  border: 1px solid var(--ingridients-main-border-color);
   width: 295px;
   height: 46px;
   margin-block-start: 8px;
@@ -243,7 +246,7 @@
   border-radius: 15px;
   width: 295px;
   height: 100px;
-  border: 1px solid rgba(5, 5, 5, 20%);
+  border: 1px solid var(--ingridients-main-border-color);
   padding: 20px;
   font-size: 16px;
 }
@@ -285,18 +288,6 @@
 @media only screen and (width < 375px) {
   .hero-section .pag-list {
     left: -24px;
-  }
-
-  .modal-input {
-    width: 97%;
-  }
-
-  .comment-input {
-    width: 97%;
-  }
-
-  .modal-order-send {
-    width: 97%;
   }
 
   .hero-info {
@@ -408,6 +399,7 @@
 
   .order {
     margin-bottom: 40px;
+    color: var(--main-text-dark-color);
   }
 
   .modal-label {
@@ -462,12 +454,8 @@
     left: 287px;
   }
 
-  .modal-label {
-    margin-block-end: 18px;
-  }
-
   .pages-pagination {
     padding-right: 80px;
-    margin-left: 230px;
+    margin-left: 295px;
   }
 }
