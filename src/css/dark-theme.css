@@ -73,18 +73,18 @@
 }
 
 .modal-label-dark {
-  color: var(--dark-filters-main-color);
+  color: var(--fixex-black);
 }
 
 .modal-input-dark {
   border: 1px solid var(--dark-filters-main-color);
   color: var(--dark-filters-main-color);
-  background-color: var(--dark-bg-color);
+  background-color: var(--fixex-black);
 }
 
-.modal-input-dark:valid {
+.modal-input-dark ::placeholder {
   color: var(--dark-filters-main-color);
-  background-color: var(--dark-bg-color);
+  background-color: var(--fixex-black);
 }
 
 .clear-button-dark {
