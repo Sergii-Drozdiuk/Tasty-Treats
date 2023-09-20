@@ -1,22 +1,24 @@
-// import axios from 'axios';
-import { renderFilterByTime } from './filterByTime';
+import { getResByIngredient, getResByArea } from './filters-api.js';
+import time from '/json/time.json';
 
-// import { getResByTime } from './filters-api';
-import { renderFilterByArea } from './filterByArea';
-import { renderFilterByIngredients } from './filterByIngredients';
+const ingredientsSelect = document.querySelector('.select-ingredients');
+const areasSelect = document.querySelector('.select-area');
+const timeSelect = document.querySelector('.select-time');
 
-// function renderResExample() {
-//   let page = 1;
-//   let limit = 9;
-//   let time = 15;
-//   getResByTime(page, limit, time)
-//     .then(({ data }) => {
-//       console.log(data);
-//     })
-//     .catch(error => console.log(error));
-// }
-// renderResExample();
+getResByIngredient().then(renderIngredients);
+getResByArea().then(renderAreas);
 
-renderFilterByTime();
-renderFilterByArea();
-renderFilterByIngredients();
+const markup = time.map(time => `<option value="${time}">${time}</option>`).join('');
+timeSelect.insertAdjacentHTML('beforeend', markup);
+
+function renderIngredients(r) {
+  const markup = r
+    .map(ingredient => `<option value="${ingredient.name}">${ingredient.name}</option>`)
+    .join('');
+  ingredientsSelect.insertAdjacentHTML('beforeend', markup);
+}
+
+function renderAreas(r) {
+  const markup = r.map(area => `<option value="${area.name}">${area.name}</option>`).join('');
+  areasSelect.insertAdjacentHTML('beforeend', markup);
+}
