@@ -1,10 +1,8 @@
 const scrollUpContainer = document.querySelector('#scroll-container');
 const scrollUpEl = document.querySelector('.button-up');
 
-scrollUpContainer.addEventListener('click', (e) => {
-  if (e.target === scrollUpEl) {
-    scrollToTop();
-  }
+scrollUpContainer.addEventListener('click', () => {
+  scrollToTop();
 });
 
 function scrollToTop() {
