@@ -146,7 +146,7 @@
 }
 
 .tui-is-disabled {
-  background-color: var(--main-text-dark-color);
+  background-color: var(--fixex-black);
 }
 
 .tui-is-disabled.tui-prev {

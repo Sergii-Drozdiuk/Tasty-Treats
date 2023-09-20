@@ -59,7 +59,7 @@
 }
 
 .topic-card {
-  background-color: var(--main-text-dark-color);
+  background-color: var(--fixed-slider-color);
   width: 200px;
   height: 280px;
   border-radius: 15px;
@@ -177,7 +177,7 @@
   width: 335px;
   padding: 20px;
   position: relative;
-  background-color: var(--main-text-light-color);
+  background-color: var(--modal-white);
 }
 
 .modal {

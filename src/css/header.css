@@ -86,7 +86,7 @@
   width: 18px;
   left: 1px;
   bottom: 1px;
-  background-color: var(--main-text-light-color);
+  background-color: var(--fixed-white);
   transition: 0.4s;
 }
 
