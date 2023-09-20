@@ -10,18 +10,12 @@ const refs = {
 
 const page = document.location.pathname;
 
-if (page === '/favorites.html') {
-  if (page === '/Fancy-team-project/favorites.html') {
-    refs.headerFavorites.classList.add('active');
-    refs.headerContainer.style.marginBottom = '50px';
-  } else {
-    console.log(page === document.location.href);
-    console.log('href', document.location.pathname);
-    console.log('page', page);
-    console.log(document.location.pathname);
-    refs.headerHome.classList.add('active');
-    refs.headerContainer.style.marginBottom = '90px';
-  }
+if (page === '/Fancy-team-project/favorites.html') {
+  refs.headerFavorites.classList.add('active');
+  refs.headerContainer.style.marginBottom = '50px';
+} else {
+  refs.headerHome.classList.add('active');
+  refs.headerContainer.style.marginBottom = '90px';
 }
 
 refs.btnBurger.addEventListener('click', onOrderBtnClick);
