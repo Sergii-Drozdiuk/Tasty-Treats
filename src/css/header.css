@@ -1,5 +1,5 @@
 .header {
-  padding-top: 30px;
+  margin-top: 30px;
 }
 
 .header-nav {
@@ -41,13 +41,14 @@
   align-items: center;
 }
 
-.svg-shopping-cart:is(:hover) path {
+.svg-shopping-cart:is(:hover, :focus) path {
   stroke: var(--brand-color);
   transition: var(--transition-timings);
 }
 
 .svg-burger-menu:hover path {
   stroke: var(--brand-color);
+  transition: var(--transition-timings);
 }
 
 .header-btn-burger-menu:focus .svg-burger-menu path {
@@ -67,6 +68,7 @@
 
 .switch input {
   display: none;
+  margin: 1px;
 }
 
 .slider {
@@ -84,12 +86,13 @@
   width: 18px;
   left: 1px;
   bottom: 1px;
-  background-color: var(--main-text-light-color);
+  background-color: var(--fixed-white);
   transition: 0.4s;
 }
 
 input:checked + .slider {
   background-color: var(--brand-color);
+  margin: 1px;
 }
 
 input:checked + .slider::before {
@@ -104,24 +107,9 @@ input:checked + .slider::before {
   border-radius: 50%;
 }
 
-.display-none {
-  display: none;
-}
-
-.header-modal {
-  position: fixed;
-  z-index: 99;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: var(--brand-color);
-}
-
 .header-btn-close {
-  position: absolute;
-  top: 20px;
-  right: 20px;
+  margin-left: calc(100% - 53px);
+  margin-top: 20px;
 }
 
 .svg-btn-close {
@@ -129,7 +117,7 @@ input:checked + .slider::before {
 }
 
 .header-modal-list {
-  margin-top: 200px;
+  margin-top: 97px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -141,13 +129,51 @@ input:checked + .slider::before {
   z-index: 999;
   position: absolute;
   bottom: 20px;
-  left: 20px;
+  left: 29px;
+}
+
+.active {
+  color: var(--brand-color);
+  font-weight: 500;
+}
+
+.dialog-modal {
+  padding: 0;
+  margin: 0;
+  border: none;
+  animation: var(--transition-timings);
+  height: 100%;
+  width: 50%;
+  background-color: var(--brand-color);
+  border-radius: 0;
+}
+
+.header-modal {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.dialog-modal::backdrop {
+  backdrop-filter: blur(7px) brightness(0.86) grayscale(28%) opacity(92%);
+  transition: var(--transition-timings);
+}
+
+.switch-dialog {
+  position: absolute;
+  bottom: 20px;
+  width: 46px;
+  height: 20px;
+  margin-left: 20px;
+}
+
+.switch-input {
+  margin: inherit;
 }
 
 @media only screen and (width >= 768px) {
   .header-tastytreats {
-    font-size: 18px;
-    line-height: 20px;
+    line-height: 111.111%;
     letter-spacing: -0.72px;
   }
 
@@ -175,11 +201,6 @@ input:checked + .slider::before {
   .header-refs {
     display: flex;
     gap: 16px;
-  }
-
-  .header-refs .active {
-    color: var(--brand-color);
-    font-weight: 500;
   }
 
   .header-ref {

@@ -62,5 +62,4 @@ pagination.on('afterMove', async event => {
   container.innerHTML = createMarcup(data.results);
 });
 
-
 export { data };
