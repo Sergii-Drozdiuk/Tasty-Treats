@@ -69,9 +69,31 @@ if (evt.target.classList.contains('recipes-icon-heart') && !evt.target.classList
 
 }
 
+function saveCurrentPageToLocalStorage(currentPage) {
+  localStorage.setItem('currentPage', currentPage);
+}
+
+function getCurrentPageFromLocalStorage() {
+  const currentPage = localStorage.getItem('currentPage');
+  if (currentPage !== null) {
+    return parseInt(currentPage, 10);
+  }
+  return 1;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const currentPage = Number(getCurrentPageFromLocalStorage());
+  options.currentPage = currentPage;
+  pagination.movePageTo(options.currentPage);
+  getFetchRecipes(currentPage).then(data => {
+    container.innerHTML = createMarcup(data.results);
+  });
+});
+
 pagination.on('afterMove', async event => {
   const currentPage = event.page;
   options.currentPage = currentPage;
+  saveCurrentPageToLocalStorage(currentPage);
   const data = await getFetchRecipes(currentPage);
   container.innerHTML = createMarcup(data.results);
 });
