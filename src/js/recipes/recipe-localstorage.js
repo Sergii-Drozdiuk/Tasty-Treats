@@ -6,7 +6,6 @@ export function afterCardLoaded(r) {
 
   favoritesBtn.addEventListener('click', () => {
 
-
     for (const obj of arr) {
         if (r._id === obj.id) {
             return;
@@ -24,23 +23,18 @@ export function afterCardLoaded(r) {
       removeBtn.style.display = 'inline-block';
     }
     for (const obj of arr) {
-      console.log(r._id === obj.id);
-      console.log(r._id, obj.id);
+     
       if (r._id === obj.id) {
-        console.log('object');
         favoritesBtn.style.display = 'none';
         removeBtn.style.display = 'inline-block';
-        removeBtn.addEventListener('click', (evt) => {
-          console.log(evt);
+        removeBtn.addEventListener('click', () => {
           arr.map(obj => {
-              console.log(evt.target.id);
-              console.log(obj.id);
+             
               if (r._id === obj.id) {
                 arr.splice(arr.indexOf(obj), 1);
                
               }
             });
-            console.log('object');
             localStorage.setItem('favorite-recipes', JSON.stringify(arr));
             removeBtn.style.display = 'none';
             favoritesBtn.style.display = 'inline-block';
@@ -122,5 +116,5 @@ function hadlerClick(evt) {
   }
   localStorage.setItem('favorite-recipes', JSON.stringify(arr));
 
-  console.log(i);
+ 
 }
