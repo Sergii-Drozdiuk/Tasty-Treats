@@ -24,6 +24,8 @@ function onDarkMode() {
     root.style.setProperty('--filters-secondary-color', ' rgba(255, 255, 255, 30%)');
     root.style.setProperty('--secondary-pop-recipes-color', ' rgba(255, 255, 255, 80%)');
     root.style.setProperty('--ingridients-main-border-color', ' rgba(255, 255, 255, 20%)');
+    root.style.setProperty('--modal-white', ' rgba(5, 5, 5)');
+    root.style.setProperty('--main-icon-color', 'rgb(60, 59, 59)');
   } else {
     localStorage.removeItem('theme');
 
@@ -33,6 +35,8 @@ function onDarkMode() {
     root.style.setProperty('--filters-secondary-color', '  rgba(5, 5, 5, 30%)');
     root.style.setProperty('--secondary-pop-recipes-color', ' rgba(5, 5, 5, 80%)');
     root.style.setProperty('--ingridients-main-border-color', ' rgba(5, 5, 5, 20%)');
+    root.style.setProperty('--modal-white', 'rgba(255, 255, 255)');
+    root.style.setProperty('--main-icon-color', 'rgb(217, 217, 217)');
   }
 
   herOrderBtn.classList.toggle('hero-order-btn-dark');

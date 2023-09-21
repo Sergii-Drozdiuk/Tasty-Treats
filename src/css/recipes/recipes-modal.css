@@ -2,6 +2,7 @@
   width: 531px;
   padding: 32px;
   position: relative;
+  background-color: var(--modal-white);
 }
 
 .recipes-btn-close {
@@ -76,6 +77,7 @@
 
 .recipes-time {
   margin-left: 16px;
+  color: var(--secondary-pop-recipes-color);
 }
 
 .recipes-ingridients {
@@ -263,6 +265,7 @@
   width: 335px;
   position: relative;
   padding: 20px;
+  background-color: var(--modal-white);
 }
 
 .rating-btn-close {
@@ -275,6 +278,7 @@
 .rating-modal-heading {
   font-weight: 600;
   margin-bottom: 4px;
+  color: var(--main-text-dark-color);
 }
 
 .rating-modal-container {
@@ -287,6 +291,7 @@
 .rating-number {
   font-size: 16px;
   line-height: 150%;
+  color: var(--main-text-dark-color);
 }
 
 .rating-email {
@@ -295,7 +300,9 @@
   padding: 14px 18px;
   border-radius: 15px;
   border: 1px solid var(--ingridients-main-border-color);
-  margin-bottom: 10px;
+  margin-bottom: 14px;
+  background-color: var(--modal-white);
+  color: var(--filters-main-color);
 }
 
 .rating-modal-send {

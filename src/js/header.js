@@ -10,7 +10,7 @@ const refs = {
 
 const page = document.location.pathname;
 
-if (page === '/favorites.html') {
+if (page === '/Fancy-team-project/favorites.html') {
   refs.headerFavorites.classList.add('active');
   refs.headerContainer.style.marginBottom = '50px';
 } else {
