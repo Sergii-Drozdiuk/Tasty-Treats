@@ -46,36 +46,25 @@ export function afterCardLoaded(r) {
   
 
   for (const obj of arr) {
-    console.log(r._id === obj.id);
-    console.log(r._id, obj.id);
+
     if (r._id === obj.id) {
-      console.log('object');
       favoritesBtn.style.display = 'none';
       removeBtn.style.display = 'inline-block';
       removeBtn.addEventListener('click', (evt) => {
         console.log(evt);
         arr.map(obj => {
-            console.log(evt.target.id);
-            console.log(obj.id);
             if (r._id === obj.id) {
               arr.splice(arr.indexOf(obj), 1);
              
             }
           });
-          console.log('object');
           localStorage.setItem('favorite-recipes', JSON.stringify(arr));
           removeBtn.style.display = 'none';
           favoritesBtn.style.display = 'inline-block';
       });
 }
 
- 
- 
-
-
-  
-  console.log(i);
-}}
+ }}
 
 const list = document.querySelector('.js-list');
 
@@ -92,8 +81,6 @@ function hadlerClick(evt) {
   if ( evt.target.classList.contains('path') &&  evt.target.farthestViewportElement.classList.contains('heart-active')) {
     evt.target.farthestViewportElement.classList.remove('heart-active');
     arr.map(obj => {
-      console.log(evt.target.id);
-      console.log(obj.id);
       if (evt.target.farthestViewportElement.id === obj.id) {
         arr.splice(arr.indexOf(obj), 1);
       }
@@ -107,7 +94,7 @@ function hadlerClick(evt) {
       evt.target.classList.add('heart-active');
       
       for (const obj of arr) {
-          console.log(evt.target.id === obj.id);
+        
           if (evt.target.id === obj.id) {
               return;
             }
