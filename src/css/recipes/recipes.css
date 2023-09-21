@@ -123,18 +123,18 @@
 
 .rating-active::before{
   display: block;
-  content: "☆☆☆☆☆";
+  content: "★★★★★";
   width: 0%;
   height: 100%;
   top: 0;
   left: 0;
-  color: var(--brand-color);
+  color:rgb(255, 215, 0);
   
 }
 
 .rating-body::before{
   display: block;
-  content: "☆☆☆☆☆";
+  content: "★★★★★";
   color: var(--main-text-light-color);
   opacity: 0.5;
 }
@@ -155,16 +155,12 @@
 }
 
 .rating-value{
-  margin-left: 2px;
+  margin-right: 2px;
   font-size: 70%;
   color: var(--main-text-light-color);
 }
 
 @media screen and (width>= 768px) {
-  .recipes-text-rating {
-    margin-right: 2px;
-  }
-
   .rating{
     font-size: 21px;
   }
