@@ -51,7 +51,7 @@
   transition: var(--transition-timings);
 }
 
-.header-btn-burger-menu:focus .svg-burger-menu path {
+.header-btn-burger-menu:focus-visible .svg-burger-menu path {
   stroke: var(--brand-color);
 }
 
@@ -137,15 +137,15 @@ input:checked + .slider::before {
   margin: 0;
   border: none;
   animation: var(--transition-timings);
-  height: 100%;
-  width: 50%;
+  min-height: 100%;
+  width: 200px;
   background-color: var(--brand-color);
   border-radius: 0;
 }
 
 .header-modal {
   position: relative;
-  height: 100%;
+  min-height: 100vh;
 }
 
 .dialog-modal::backdrop {
@@ -211,5 +211,11 @@ input:checked + .slider::before {
   .active {
     color: var(--brand-color);
     font-weight: 500;
+  }
+}
+
+@media only screen and (width >= 1280px) {
+  .header-container.container {
+    padding-right: 175px;
   }
 }
