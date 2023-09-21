@@ -40,19 +40,33 @@ list.addEventListener('click', hadlerClick);
 const arr = JSON.parse(localStorage.getItem('favorite-recipes')) ?? [];
 
 function hadlerClick(evt) {
-  if (evt.target.classList.contains('recipes-icon-heart')) {
-    arr.push(evt.target.id);
-    evt.target.classList.add('heart-active');
-  }
-  if (evt.target.classList.contains('path')) {
-    evt.target.farthestViewportElement.classList.remove('heart-active');
-    arr.splice(arr.indexOf(evt.target.farthestViewportElement.id), 1);
-  }
-  if (arr.includes(evt.target.id)) {
-    evt.target.classList.add('heart-active');
-  }
+  const i = {
+    id:evt.target.id,
+    tags:evt.target.dataset,
+  };
+
+  if (evt.target.classList.contains('path') && evt.target.farthestViewportElement.classList.contains('heart-active')) {
+  evt.target.farthestViewportElement.classList.remove('heart-active');
+  arr.map(obj=>{
+    console.log(evt.target.id);
+    console.log(obj.id);
+    if(evt.target.farthestViewportElement.id === obj.id) {
+     arr.splice(arr.indexOf(obj),1);
+    }
+  });
 
   localStorage.setItem('favorite-recipes', JSON.stringify(arr));
+  return;
+}
+
+if (evt.target.classList.contains('recipes-icon-heart') && !evt.target.classList.contains('heart-active')) {
+  arr.push(i);
+  evt.target.classList.add('heart-active');
+  localStorage.setItem('favorite-recipes', JSON.stringify(arr));
+  return;
+}
+
+
 }
 
 pagination.on('afterMove', async event => {
