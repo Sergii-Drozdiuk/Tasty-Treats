@@ -3,13 +3,12 @@ export function afterCardLoaded(r) {
   const removeBtn = document.querySelector('.remove-btn');
 
   const i ={ id: r._id, tags: r.tags };
- 
+
   favoritesBtn.addEventListener('click', () => {
 
 
     for (const obj of arr) {
         if (r._id === obj.id) {
-
             return;
           }
     }
@@ -24,8 +23,43 @@ export function afterCardLoaded(r) {
       removeBtn.textContent = 'Remove';
       removeBtn.style.display = 'inline-block';
     }
+    for (const obj of arr) {
+      console.log(r._id === obj.id);
+      console.log(r._id, obj.id);
+      if (r._id === obj.id) {
+        console.log('object');
+        favoritesBtn.style.display = 'none';
+        removeBtn.style.display = 'inline-block';
+        removeBtn.addEventListener('click', (evt) => {
+          console.log(evt);
+          arr.map(obj => {
+              console.log(evt.target.id);
+              console.log(obj.id);
+              if (r._id === obj.id) {
+                arr.splice(arr.indexOf(obj), 1);
+               
+              }
+            });
+            console.log('object');
+            localStorage.setItem('favorite-recipes', JSON.stringify(arr));
+            removeBtn.style.display = 'none';
+            favoritesBtn.style.display = 'inline-block';
+        });
+  }
+ 
+  }
+  });
+  
 
-    removeBtn.addEventListener('click', (evt) => {
+  for (const obj of arr) {
+    console.log(r._id === obj.id);
+    console.log(r._id, obj.id);
+    if (r._id === obj.id) {
+      console.log('object');
+      favoritesBtn.style.display = 'none';
+      removeBtn.style.display = 'inline-block';
+      removeBtn.addEventListener('click', (evt) => {
+        console.log(evt);
         arr.map(obj => {
             console.log(evt.target.id);
             console.log(obj.id);
@@ -34,15 +68,20 @@ export function afterCardLoaded(r) {
              
             }
           });
-
+          console.log('object');
           localStorage.setItem('favorite-recipes', JSON.stringify(arr));
-      
-      removeBtn.style.display = 'none';
-      favoritesBtn.style.display = 'inline-block';
-    });
-
-  });
+          removeBtn.style.display = 'none';
+          favoritesBtn.style.display = 'inline-block';
+      });
 }
+
+ 
+ 
+
+
+  
+  console.log(i);
+}}
 
 const list = document.querySelector('.js-list');
 
