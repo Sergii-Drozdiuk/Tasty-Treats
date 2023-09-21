@@ -9,14 +9,24 @@ if (sevedRecipes) {
 }
 const categorys = [
   {
-    tags: 'Beef',
+    tags: ['Beef', 'Soup'],
     id: 1,
   },
   {
-    tags: 'Desert',
+    tags: ['Desert'],
     id: 2,
   },
+  {
+    tags: ['Beef'],
+    id: 3,
+  },
+  {
+    tags: [],
+    id: 4,
+  },
 ];
+const allTags = categorys.flatMap(category => category.tags);
+const unicTags = allTags.filter((tag, i, arr) => arr.indexOf(tag) === i);
 
 filters.addEventListener('click', handlerFilter);
 
@@ -29,7 +39,7 @@ function handlerFilter(evt) {
 function renderingBtn(arr) {
   const render = arr
     .map(
-      ({ tags }) =>
+      tags =>
         `<li>
               <button type="button" class="favorites-filters-btn ">${tags}</button>
             </li>`
@@ -38,4 +48,4 @@ function renderingBtn(arr) {
 
   filters.insertAdjacentHTML('beforeend', render);
 }
-renderingBtn(categorys);
+renderingBtn(unicTags);
