@@ -1,4 +1,4 @@
-import{a as re,g as Yt,c as fe,s as K}from"./header-e1fd09d7.js";async function Ut(){return(await re.get("https://tasty-treats-backend.p.goit.global/api/categories")).data}var mt={exports:{}};/*!
+import{a as re,g as Yt,c as fe,s as K}from"./header-83fbe335.js";async function Ut(){return(await re.get("https://tasty-treats-backend.p.goit.global/api/categories")).data}var mt={exports:{}};/*!
  * TOAST UI Pagination
  * @version 3.4.1
  * @author NHN FE Development Team <dl_javascript@nhn.com>
