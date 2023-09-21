@@ -44,6 +44,7 @@
   line-height: 1.22;
   text-transform: uppercase;
   margin-block-end: 28px;
+  color: var(--dark-main-text-color);
 }
 
 .modal-label {
@@ -92,6 +93,10 @@
 }
 
 @media only screen and (width < 375px) {
+  .order-modal {
+    width: 90%;
+  }
+
   .modal-input {
     width: 97%;
   }

@@ -6,12 +6,14 @@ import { displayData } from '../pop-recipes/pop-recipes.js';
 import { pagination, options, setPerPageValue, show, hide } from '../pagination.js';
 
 const container = document.querySelector('.js-recipes-container');
-let data = { results: [] };
+let data = {};
+let currentPage = options.currentPage;
+currentPage = getCurrentPageFromLocalStorage();
 
 fetchData()
   .then(displayData)
   .then(() => {
-    getFetchRecipes()
+    getFetchRecipes(currentPage)
       .then(responseData => {
         let limit = setPerPageValue();
       if (
@@ -26,54 +28,32 @@ fetchData()
         pagination.reset(responseData.totalPages * responseData.perPage);
       }
         data.results = responseData.results;
-        options.totalItems = responseData.totalPages;
+        options.totalItems = responseData.totalPages * responseData.perPage;
         container.innerHTML = createMarcup(data.results);
         pagination.reset(responseData.totalPages * responseData.perPage);
+        pagination.movePageTo(currentPage);
       })
       .then(() => renderModal());
   });
 
-const list = document.querySelector('.js-list');
 
-list.addEventListener('click', hadlerClick);
 
-const arr = JSON.parse(localStorage.getItem('favorite-recipes')) ?? [];
-
-function hadlerClick(evt) {
-  const i = {
-    id:evt.target.id,
-    tags:evt.target.dataset,
-  };
-
-  if (evt.target.classList.contains('path') && evt.target.farthestViewportElement.classList.contains('heart-active')) {
-  evt.target.farthestViewportElement.classList.remove('heart-active');
-  arr.map(obj=>{
-    console.log(evt.target.id);
-    console.log(obj.id);
-    if(evt.target.farthestViewportElement.id === obj.id) {
-     arr.splice(arr.indexOf(obj),1);
-    }
-  });
-
-  localStorage.setItem('favorite-recipes', JSON.stringify(arr));
-  return;
+function saveCurrentPageToLocalStorage(currentPage) {
+  localStorage.setItem('currentPage', currentPage);
 }
 
-if (evt.target.classList.contains('recipes-icon-heart') && !evt.target.classList.contains('heart-active')) {
-  arr.push(i);
-  evt.target.classList.add('heart-active');
-  localStorage.setItem('favorite-recipes', JSON.stringify(arr));
-  return;
-}
-
-
+function getCurrentPageFromLocalStorage() {
+  currentPage = localStorage.getItem('currentPage');
+  if (currentPage !== null) {
+    return parseInt(currentPage, 10);
+  }else{return 1;}
 }
 
 pagination.on('afterMove', async event => {
-  const currentPage = event.page;
-  options.currentPage = currentPage;
+  currentPage = event.page;
+  saveCurrentPageToLocalStorage(currentPage);
   const data = await getFetchRecipes(currentPage);
   container.innerHTML = createMarcup(data.results);
-});
+  });
 
 export { data };

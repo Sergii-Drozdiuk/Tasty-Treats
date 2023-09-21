@@ -8,3 +8,4 @@ import '../recipes/recipes.js';
 import '../dark-theme/dark-theme.js';
 import '../scroll-up.js';
 import '../pagination.js';
+import '../recipes/recipe-localstorage.js';

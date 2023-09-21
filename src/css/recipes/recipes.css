@@ -23,6 +23,7 @@
   top: 16px;
   right: 16px;
   fill: none;
+  cursor: pointer;
 }
 
 .recipes-icon-svg {
@@ -104,7 +105,7 @@
 .rating{
   display: flex;
   align-items: center;
-  font-size: 28px;
+  font-size: 23px;
   line-height: 0.75;
 }
 
@@ -123,20 +124,20 @@
 
 .rating-active::before{
   display: block;
-  content: "☆☆☆☆☆";
+  content: "★★★★★";
   width: 0%;
   height: 100%;
   top: 0;
   left: 0;
-  color: var(--brand-color);
+  color:rgb(255, 215, 0);
   
 }
 
 .rating-body::before{
   display: block;
-  content: "☆☆☆☆☆";
+  content: "★★★★★";
+  opacity: 0.4;
   color: var(--main-text-light-color);
-  opacity: 0.5;
 }
 
 .rating-items{
@@ -155,18 +156,14 @@
 }
 
 .rating-value{
-  margin-left: 2px;
-  font-size: 70%;
+  margin-right: 2px;
+  font-size: 12px;
   color: var(--main-text-light-color);
 }
 
 @media screen and (width>= 768px) {
-  .recipes-text-rating {
-    margin-right: 2px;
-  }
-
   .rating{
-    font-size: 21px;
+    font-size: 16px;
   }
   
 }

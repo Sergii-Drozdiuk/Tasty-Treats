@@ -43,6 +43,7 @@
   color: var(--filters-main-color);
   padding: 14px 18px;
   appearance: none;
+  background-color: var(--main-text-light-color);
 }
 
 .input-filters {
@@ -54,6 +55,11 @@
   color: var(--filters-main-color);
 }
 
+.select option {
+  background-color: var(--modal-white);
+  color: var(--filters-secondary-color);
+}
+
 .input-wrapper {
   position: relative;
 }
@@ -63,7 +69,7 @@
   top: 15px;
   right: 18px;
   fill: none;
-  stroke: var(--filters-main-color);
+  stroke: var(--filters-secondary-color);
 }
 
 .select-time {

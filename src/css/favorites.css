@@ -1,5 +1,5 @@
 .favorites-main-picture {
-  display: block;
+  display: inline-block;
   margin-block-end: 40px;
 }
 
