@@ -20,6 +20,7 @@
   border: 1px solid var(--filters-secondary-color);
   transition: border-color var(--transition-timings);
   transition: fill var(--transition-timings);
+  color: var(--main-text-dark-color);
 }
 
 .tui-first {
@@ -136,7 +137,7 @@
 
 @media only screen and (width >= 1280px) {
   .pagination-wrapper {
-    padding-left: 355px;
+    padding-left: 180px;
   }
 }
 

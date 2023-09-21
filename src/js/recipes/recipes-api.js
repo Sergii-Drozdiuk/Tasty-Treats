@@ -2,10 +2,7 @@ import axios from 'axios';
 import { setPerPageValue } from '../pagination.js';
 const BASE_URL = 'https://tasty-treats-backend.p.goit.global/api';
 
-async function getFetchRecipes(page) {
-  if (!page) {
-    page = 1;
-  }
+async function getFetchRecipes(page = 1) {
   let limit = setPerPageValue();
   const response = await axios(`${BASE_URL}/recipes?limit=${limit}&page=${page}`);
   return response.data;
@@ -25,4 +22,9 @@ async function addRecipeRating(recipeId, data) {
   return r;
 }
 
-export { getFetchRecipes, getRecipeById, addRecipeRating };
+async function getRecipesByCategory(category) {
+  const r = await axios(`${BASE_URL}/recipes?category=${category}&page=1`);
+  return r.data.results;
+}
+
+export { getFetchRecipes, getRecipeById, addRecipeRating, getRecipesByCategory };

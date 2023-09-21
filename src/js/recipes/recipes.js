@@ -33,45 +33,33 @@ fetchData()
       .then(() => renderModal());
   });
 
-const list = document.querySelector('.js-list');
 
-list.addEventListener('click', hadlerClick);
 
-const arr = JSON.parse(localStorage.getItem('favorite-recipes')) ?? [];
+function saveCurrentPageToLocalStorage(currentPage) {
+  localStorage.setItem('currentPage', currentPage);
+}
 
-function hadlerClick(evt) {
-  const i = {
-    id:evt.target.id,
-    tags:evt.target.dataset,
-  };
+function getCurrentPageFromLocalStorage() {
+  const currentPage = localStorage.getItem('currentPage');
+  if (currentPage !== null) {
+    return parseInt(currentPage, 10);
+  }
+  return 1;
+}
 
-  if (evt.target.classList.contains('path') && evt.target.farthestViewportElement.classList.contains('heart-active')) {
-  evt.target.farthestViewportElement.classList.remove('heart-active');
-  arr.map(obj=>{
-    console.log(evt.target.id);
-    console.log(obj.id);
-    if(evt.target.farthestViewportElement.id === obj.id) {
-     arr.splice(arr.indexOf(obj),1);
-    }
+document.addEventListener('DOMContentLoaded', () => {
+  const currentPage = Number(getCurrentPageFromLocalStorage());
+  options.currentPage = currentPage;
+  pagination.movePageTo(options.currentPage);
+  getFetchRecipes(currentPage).then(data => {
+    container.innerHTML = createMarcup(data.results);
   });
-
-  localStorage.setItem('favorite-recipes', JSON.stringify(arr));
-  return;
-}
-
-if (evt.target.classList.contains('recipes-icon-heart') && !evt.target.classList.contains('heart-active')) {
-  arr.push(i);
-  evt.target.classList.add('heart-active');
-  localStorage.setItem('favorite-recipes', JSON.stringify(arr));
-  return;
-}
-
-
-}
+});
 
 pagination.on('afterMove', async event => {
   const currentPage = event.page;
   options.currentPage = currentPage;
+  saveCurrentPageToLocalStorage(currentPage);
   const data = await getFetchRecipes(currentPage);
   container.innerHTML = createMarcup(data.results);
 });
