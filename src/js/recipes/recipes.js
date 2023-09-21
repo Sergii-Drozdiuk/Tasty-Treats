@@ -41,8 +41,8 @@ const arr = JSON.parse(localStorage.getItem('favorite-recipes')) ?? [];
 
 function hadlerClick(evt) {
   const i = {
-    id:evt.target.id,
-    tags:evt.target.dataset,
+    id: evt.target.id,
+    tags: Object.values(evt.target.dataset),
   };
 
   if (evt.target.classList.contains('path') && evt.target.farthestViewportElement.classList.contains('heart-active')) {
