@@ -4,18 +4,16 @@ export function afterCardLoaded(r) {
   const favoritesBtn = document.querySelector('.favorites-btn');
   const removeBtn = document.querySelector('.remove-btn');
 
-  const i ={ id: r._id, tags: r.tags };
+  const i = { id: r._id, tags: r.tags };
 
   favoritesBtn.addEventListener('click', () => {
-
     for (const obj of arr) {
-        if (r._id === obj.id) {
-            return;
-          }
+      if (r._id === obj.id) {
+        return;
+      }
     }
     arr.push(i);
 
-    
     localStorage.setItem('favorite-recipes', JSON.stringify(arr));
     favoritesBtn.style.display = 'none';
     removeBtn.style.display = 'inline-block';
@@ -25,48 +23,41 @@ export function afterCardLoaded(r) {
       removeBtn.style.display = 'inline-block';
     }
     for (const obj of arr) {
-     
       if (r._id === obj.id) {
         favoritesBtn.style.display = 'none';
         removeBtn.style.display = 'inline-block';
         removeBtn.addEventListener('click', () => {
           arr.map(obj => {
-             
-              if (r._id === obj.id) {
-                arr.splice(arr.indexOf(obj), 1);
-               
-              }
-            });
-            localStorage.setItem('favorite-recipes', JSON.stringify(arr));
-            removeBtn.style.display = 'none';
-            favoritesBtn.style.display = 'inline-block';
-        });
-  }
- 
-  }
-  });
-  
-
-  for (const obj of arr) {
-
-    if (r._id === obj.id) {
-      favoritesBtn.style.display = 'none';
-      removeBtn.style.display = 'inline-block';
-      removeBtn.addEventListener('click', (evt) => {
-        console.log(evt);
-        arr.map(obj => {
             if (r._id === obj.id) {
               arr.splice(arr.indexOf(obj), 1);
-             
             }
           });
           localStorage.setItem('favorite-recipes', JSON.stringify(arr));
           removeBtn.style.display = 'none';
           favoritesBtn.style.display = 'inline-block';
-      });
-}
+        });
+      }
+    }
+  });
 
- }}
+  for (const obj of arr) {
+    if (r._id === obj.id) {
+      favoritesBtn.style.display = 'none';
+      removeBtn.style.display = 'inline-block';
+      removeBtn.addEventListener('click', evt => {
+        console.log(evt);
+        arr.map(obj => {
+          if (r._id === obj.id) {
+            arr.splice(arr.indexOf(obj), 1);
+          }
+        });
+        localStorage.setItem('favorite-recipes', JSON.stringify(arr));
+        removeBtn.style.display = 'none';
+        favoritesBtn.style.display = 'inline-block';
+      });
+    }
+  }
+}
 
 const list = document.querySelector('.js-list');
 
@@ -100,7 +91,10 @@ function hadlerClick(evt) {
     tags: Object.values(evt.target.dataset).join(',').split(','),
   };
 
-  if ( evt.target.classList.contains('path') &&  evt.target.farthestViewportElement.classList.contains('heart-active')) {
+  if (
+    evt.target.classList.contains('path') &&
+    evt.target.farthestViewportElement.classList.contains('heart-active')
+  ) {
     evt.target.farthestViewportElement.classList.remove('heart-active');
     arr.map(obj => {
       if (evt.target.farthestViewportElement.id === obj.id) {
@@ -113,6 +107,11 @@ function hadlerClick(evt) {
   }
 
   if (evt.target.classList.contains('recipes-icon-heart') && !evt.target.classList.contains('heart-active')) {
+    evt.target.classList.add('heart-active');
+
+    for (const obj of arr) {
+      if (evt.target.id === obj.id) {
+        return;
       evt.target.classList.add('heart-active');
    
    
@@ -122,11 +121,10 @@ function hadlerClick(evt) {
               return;
             }
       }
-      arr.push(i);
+    }
+    arr.push(i);
   }
   localStorage.setItem('favorite-recipes', JSON.stringify(arr));
-
- 
 }
 //  function u(params) {
   
