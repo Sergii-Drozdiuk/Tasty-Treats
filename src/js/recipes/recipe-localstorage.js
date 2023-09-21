@@ -109,10 +109,10 @@ function hadlerClick(evt) {
   if (evt.target.classList.contains('recipes-icon-heart') && !evt.target.classList.contains('heart-active')) {
     evt.target.classList.add('heart-active');
 
-    for (const obj of arr) {
-      if (evt.target.id === obj.id) {
-        return;
-      evt.target.classList.add('heart-active');
+    // for (const obj of arr) {
+    //   if (evt.target.id === obj.id) {
+    //     return;
+    //   evt.target.classList.add('heart-active');
    
    
       for (const obj of arr) {
@@ -121,11 +121,12 @@ function hadlerClick(evt) {
               return;
             }
       }
-    }
+    
     arr.push(i);
   }
   localStorage.setItem('favorite-recipes', JSON.stringify(arr));
 }
+
 //  function u(params) {
   
 //  }
