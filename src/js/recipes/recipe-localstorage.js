@@ -114,8 +114,8 @@ function hadlerClick(evt) {
 
   if (evt.target.classList.contains('recipes-icon-heart') && !evt.target.classList.contains('heart-active')) {
       evt.target.classList.add('heart-active');
-      a.push(evt.target);
-    localStorage.setItem('favorite', JSON.stringify(a));
+   
+   
       for (const obj of arr) {
         
           if (evt.target.id === obj.id) {
