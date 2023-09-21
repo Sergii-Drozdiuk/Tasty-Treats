@@ -1,3 +1,5 @@
+const arr = JSON.parse(localStorage.getItem('favorite-recipes')) ?? [];
+
 export function afterCardLoaded(r) {
   const favoritesBtn = document.querySelector('.favorites-btn');
   const removeBtn = document.querySelector('.remove-btn');
@@ -70,9 +72,29 @@ const list = document.querySelector('.js-list');
 
 list.addEventListener('click', hadlerClick);
 
-const arr = JSON.parse(localStorage.getItem('favorite-recipes')) ?? [];
 
 function hadlerClick(evt) {
+
+  
+  // const ar = document.querySelectorAll('.recipes-icon-heart');
+  
+//   if(!evt){
+    
+//     for (const iterator of arr) {
+//     console.log(iterator.id);
+//     console.dir(ar);
+//     ar.forEach(el =>{
+//       console.dir(el.id);
+//       if(iterator.id === el.id){
+//         console.log('object');
+//         el.classList.add('heart-active');
+//       }
+//     });
+//   }
+// return;
+// }
+
+
   const i = {
     id: evt.target.id,
     tags: Object.values(evt.target.dataset).join(',').split(','),
@@ -92,7 +114,8 @@ function hadlerClick(evt) {
 
   if (evt.target.classList.contains('recipes-icon-heart') && !evt.target.classList.contains('heart-active')) {
       evt.target.classList.add('heart-active');
-      
+      a.push(evt.target);
+    localStorage.setItem('favorite', JSON.stringify(a));
       for (const obj of arr) {
         
           if (evt.target.id === obj.id) {
@@ -105,3 +128,7 @@ function hadlerClick(evt) {
 
  
 }
+//  function u(params) {
+  
+//  }
+// // document.addEventListener('DOMContentLoaded',()=>hadlerClick());

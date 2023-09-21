@@ -12,6 +12,7 @@ export function createMarcup(arr) {
 <h3 class="recipes-title">${title.slice(0, 22)}</h3>
 <p class="recipes-text">${description.slice(0, 50)}...</p>
 <div class="rating">
+<div class="rating-value">${rating.toFixed(1)}</div>
   <div class="rating-body">
     <div class="rating-active" style="width:${ratingValue}%">
       <div class="rating-items">
@@ -23,7 +24,6 @@ export function createMarcup(arr) {
       </div>
     </div>
   </div>
-  <div class="rating-value">${rating.toFixed(1)}</div>
 </div>
     <button class="button-recipes" type="button">See recipe</button>
 </li>
