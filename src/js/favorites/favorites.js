@@ -6,24 +6,7 @@ if (sevedRecipes) {
   filters.classList.remove('js-hidden');
   hat.classList.add('js-hidden');
 }
-// const categorys = [
-//   {
-//     tags: ['Beef', 'Soup'],
-//     id: 1,
-//   },
-//   {
-//     tags: ['Desert'],
-//     id: 2,
-//   },
-//   {
-//     tags: ['Beef'],
-//     id: 3,
-//   },
-//   {
-//     tags: [],
-//     id: 4,
-//   },
-// ];
+
 const allTags = sevedRecipes.flatMap(category => category.tags);
 const unicTags = allTags.filter((tag, i, arr) => arr.indexOf(tag) === i);
 
