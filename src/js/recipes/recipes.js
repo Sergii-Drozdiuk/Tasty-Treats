@@ -6,12 +6,14 @@ import { displayData } from '../pop-recipes/pop-recipes.js';
 import { pagination, options, setPerPageValue, show, hide } from '../pagination.js';
 
 const container = document.querySelector('.js-recipes-container');
-let data = { results: [] };
+let data = {};
+let currentPage = options.currentPage;
+currentPage = getCurrentPageFromLocalStorage();
 
 fetchData()
   .then(displayData)
   .then(() => {
-    getFetchRecipes()
+    getFetchRecipes(currentPage)
       .then(responseData => {
         let limit = setPerPageValue();
       if (
@@ -26,9 +28,10 @@ fetchData()
         pagination.reset(responseData.totalPages * responseData.perPage);
       }
         data.results = responseData.results;
-        options.totalItems = responseData.totalPages;
+        options.totalItems = responseData.totalPages * responseData.perPage;
         container.innerHTML = createMarcup(data.results);
         pagination.reset(responseData.totalPages * responseData.perPage);
+        pagination.movePageTo(currentPage);
       })
       .then(() => renderModal());
   });
@@ -40,28 +43,17 @@ function saveCurrentPageToLocalStorage(currentPage) {
 }
 
 function getCurrentPageFromLocalStorage() {
-  const currentPage = localStorage.getItem('currentPage');
+  currentPage = localStorage.getItem('currentPage');
   if (currentPage !== null) {
     return parseInt(currentPage, 10);
-  }
-  return 1;
+  }else{return 1;}
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  const currentPage = Number(getCurrentPageFromLocalStorage());
-  options.currentPage = currentPage;
-  pagination.movePageTo(options.currentPage);
-  getFetchRecipes(currentPage).then(data => {
-    container.innerHTML = createMarcup(data.results);
-  });
-});
-
 pagination.on('afterMove', async event => {
-  const currentPage = event.page;
-  options.currentPage = currentPage;
+  currentPage = event.page;
   saveCurrentPageToLocalStorage(currentPage);
   const data = await getFetchRecipes(currentPage);
   container.innerHTML = createMarcup(data.results);
-});
+  });
 
 export { data };

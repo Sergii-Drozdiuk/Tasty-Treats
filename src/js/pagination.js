@@ -44,8 +44,7 @@ function updateItemsPerPage() {
   let items = setPerPageValue();
   if (items !== options.itemsPerPage) {
     options.itemsPerPage = items;
-    pagination.reset();
-    pagination.movePageTo(options.currentPage);
+    
   }
 }
 
@@ -59,4 +58,4 @@ function hide() {
   containerPagination.classList.replace('show', 'hide');
 }
 
-export { pagination, options, setPerPageValue, show, hide };
+export { pagination, options, setPerPageValue, updateItemsPerPage, show, hide };
