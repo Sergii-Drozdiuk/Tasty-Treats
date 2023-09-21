@@ -2,6 +2,7 @@ import JustValidate from 'just-validate';
 import { disablePageScroll, enablePageScroll } from 'scroll-lock';
 import { getRecipeById, addRecipeRating } from './recipes-api.js';
 import { renderModalById } from './markups/render-modal-markup.js';
+import { afterCardLoaded } from './recipe-localstorage.js';
 
 const recipeModal = document.querySelector('#recipes-modal');
 const ratingModal = document.querySelector('#rating-modal');
@@ -59,31 +60,6 @@ function onRecipeCardBtnClick(r) {
   ratingModal.addEventListener('click', onRatingModalBackdropClick);
 
   return r;
-}
-
-function afterCardLoaded(r) {
-  const favoritesBtn = document.querySelector('.favorites-btn');
-  const removeBtn = document.querySelector('.remove-btn');
-  favoritesBtn.addEventListener('click', () => {
-    localStorage.setItem(r.title, JSON.stringify({ id: r._id, tags: r.tags }));
-    favoritesBtn.style.display = 'none';
-    removeBtn.style.display = 'inline-block';
-    if (window.innerWidth < 768) {
-      removeBtn.textContent = 'Remove';
-      removeBtn.style.display = 'inline-block';
-    }
-    removeBtn.addEventListener('click', () => {
-      localStorage.removeItem(r.title);
-      removeBtn.style.display = 'none';
-      favoritesBtn.style.display = 'inline-block';
-    });
-    const data = JSON.parse(localStorage.getItem(r.title));
-    if (data._id !== r._id) {
-      localStorage.setItem(r.title, JSON.stringify({ id: r._id, tags: r.tags }));
-    } else {
-      return;
-    }
-  });
 }
 
 function onRatingSuccess() {
