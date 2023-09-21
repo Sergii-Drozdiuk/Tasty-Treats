@@ -1,21 +1,34 @@
 const switchDark = document.querySelector('.switch');
-
 const svgHeader = document.querySelector('.svg-shopping-cart');
 
 const herOrderBtn = document.querySelector('.hero-order-btn');
 
 const switchCheckbox = document.querySelector('input[name="switch"]');
+const switchDarkMob = document.querySelector('input[name="checkbox"]');
 
-if (localStorage.getItem('theme') === 'dark') {
-  switchCheckbox.checked = true;
-  onDarkMode();
+const burgerSvg = document.querySelector('.svg-burger-menu');
+switchCheck();
+function switchCheck() {
+  if (localStorage.getItem('theme') === 'dark') {
+    switchCheckbox.checked = true;
+    switchDarkMob.checked = true;
+    onDarkMode();
+  }
 }
 
 switchDark.addEventListener('change', onDarkMode);
+switchDarkMob.addEventListener('change', onDarkMode);
 
 function onDarkMode() {
+  switchCheckbox.addEventListener('change', function () {
+    switchDarkMob.checked = switchCheckbox.checked;
+  });
+
+  switchDarkMob.addEventListener('change', function () {
+    switchCheckbox.checked = switchDarkMob.checked;
+  });
   const root = document.documentElement;
-  if (switchCheckbox.checked) {
+  if (switchCheckbox.checked || switchDarkMob.checked) {
     localStorage.setItem('theme', 'dark');
 
     root.style.setProperty('--main-text-dark-color', 'rgb(248, 248, 248)');
@@ -39,14 +52,14 @@ function onDarkMode() {
     root.style.setProperty('--main-icon-color', 'rgb(217, 217, 217)');
   }
 
-  herOrderBtn.classList.toggle('hero-order-btn-dark');
-
-  svgHeader.classList.toggle('svg-shopping-cart-dark');
-
-  const modalLabel = document.querySelectorAll('.modal-label');
-  modalLabel.forEach(function (element) {
-    element.classList.toggle('modal-label-dark');
+  const heroBtnShadow = document.querySelectorAll('.slider');
+  heroBtnShadow.forEach(function (element) {
+    element.classList.toggle('slider-dark');
   });
+
+  herOrderBtn.classList.toggle('hero-order-btn-dark');
+  svgHeader.classList.toggle('svg-shopping-cart-dark');
+  burgerSvg.classList.toggle('svg-shopping-cart-dark');
 
   const modalInput = document.querySelectorAll('.modal-input');
   modalInput.forEach(function (element) {

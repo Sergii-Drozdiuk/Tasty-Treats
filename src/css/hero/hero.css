@@ -111,6 +111,7 @@
   background-position: 30%;
   background-size: 564px;
   border-radius: 15px;
+  background-color: var(--fixed-slider-color);
 }
 
 .barbecue-dish {
@@ -123,7 +124,6 @@
 
 .pancakes-dish {
   background-image: url('	https://tasty-treats-backend.p.goit.global/previewDish3.webp');
-  background-color: var(--main-text-dark-color);
 }
 
 .card-title {
@@ -245,7 +245,6 @@
   .dish-card {
     block-size: 442px;
     inline-size: 351px;
-    background-color: var(--main-text-dark-color);
   }
 
   .pizza-dish {
