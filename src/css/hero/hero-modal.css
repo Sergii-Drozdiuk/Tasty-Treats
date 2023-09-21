@@ -92,6 +92,10 @@
 }
 
 @media only screen and (width < 375px) {
+  .order-modal {
+    width: 90%;
+  }
+
   .modal-input {
     width: 97%;
   }
