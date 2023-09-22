@@ -1,51 +1,53 @@
 <section class="filters-section">
   <div class="filters-container">
-    <ul class="filters-list">
-      <li class="filters-item first">
-        <label class="label">Search</label>
-        <div class="input-container input-wrapper">
-          <svg width="18" height="18" class="filters-icon">
-            <use href="./img//icons.svg#icon-search"></use>
-          </svg>
-          <input class="input-filters select" type="search" placeholder="Enter Text" id="autoComplete" />
-        </div>
-      </li>
+    <form class="filters-form">
+      <ul class="filters-list">
+        <li class="filters-item first">
+          <label class="label">Search</label>
+          <div class="input-container input-wrapper">
+            <svg width="18" height="18" class="filters-icon">
+              <use href="./img//icons.svg#icon-search"></use>
+            </svg>
+            <input class="input-filters select" type="search" placeholder="Enter Text" />
+          </div>
+        </li>
 
-      <li class="filters-item second">
-        <label class="label">Time</label>
-        <div class="input-wrapper">
-          <select class="select-time select">
-            <option selected hidden>Any</option>
-          </select>
-          <svg width="18" height="18" class="select-icon">
-            <use href="./img//icons.svg#icon-arrow-down"></use>
-          </svg>
-        </div>
-      </li>
-      <li class="filters-item third">
-        <label class="label">Area</label>
-        <div class="input-wrapper">
-          <select class="select-area select">
-            <option selected hidden>Any</option>
-          </select>
-          <svg width="18" height="18" class="select-icon">
-            <use href="./img//icons.svg#icon-arrow-down"></use>
-          </svg>
-        </div>
-      </li>
+        <li class="filters-item second">
+          <label class="label">Time</label>
+          <div class="input-wrapper">
+            <select class="select-time select">
+              <option value="">Any</option>
+            </select>
+            <svg width="18" height="18" class="select-icon">
+              <use href="./img//icons.svg#icon-arrow-down"></use>
+            </svg>
+          </div>
+        </li>
+        <li class="filters-item third">
+          <label class="label">Area</label>
+          <div class="input-wrapper">
+            <select class="select-area select">
+              <option value="">Any</option>
+            </select>
+            <svg width="18" height="18" class="select-icon">
+              <use href="./img//icons.svg#icon-arrow-down"></use>
+            </svg>
+          </div>
+        </li>
 
-      <li class="filters-item fourth">
-        <label class="label">Ingredients</label>
-        <div class="input-wrapper">
-          <select class="select-ingredients select">
-            <option selected hidden>Any</option>
-          </select>
-          <svg width="18" height="18" class="select-icon">
-            <use href="./img//icons.svg#icon-arrow-down"></use>
-          </svg>
-        </div>
-      </li>
-    </ul>
+        <li class="filters-item fourth">
+          <label class="label">Ingredients</label>
+          <div class="input-wrapper">
+            <select class="select-ingredients select">
+              <option value="">Any</option>
+            </select>
+            <svg width="18" height="18" class="select-icon">
+              <use href="./img//icons.svg#icon-arrow-down"></use>
+            </svg>
+          </div>
+        </li>
+      </ul>
+    </form>
   </div>
   <div class="reset-filter">
     <button class="clear-button">
