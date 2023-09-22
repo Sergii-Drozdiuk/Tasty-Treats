@@ -16,17 +16,17 @@ fetchData()
     getFetchRecipes(currentPage)
       .then(responseData => {
         let limit = setPerPageValue();
-      if (
-        !responseData ||
-        responseData.results.length < limit ||
-        responseData.totalPages < 2 ||
-        responseData.totalPages === null
-      ) {
-        hide();
-      } else {
-        show();
-        pagination.reset(responseData.totalPages * responseData.perPage);
-      }
+        if (
+          !responseData ||
+          responseData.results.length < limit ||
+          responseData.totalPages < 2 ||
+          responseData.totalPages === null
+        ) {
+          hide();
+        } else {
+          show();
+          pagination.reset(responseData.totalPages * responseData.perPage);
+        }
         data.results = responseData.results;
         options.totalItems = responseData.totalPages * responseData.perPage;
         container.innerHTML = createMarcup(data.results);
@@ -36,8 +36,6 @@ fetchData()
       .then(() => renderModal());
   });
 
-
-
 function saveCurrentPageToLocalStorage(currentPage) {
   localStorage.setItem('currentPage', currentPage);
 }
@@ -46,7 +44,9 @@ function getCurrentPageFromLocalStorage() {
   currentPage = localStorage.getItem('currentPage');
   if (currentPage !== null) {
     return parseInt(currentPage, 10);
-  }else{return 1;}
+  } else {
+    return 1;
+  }
 }
 
 pagination.on('afterMove', async event => {
@@ -54,6 +54,6 @@ pagination.on('afterMove', async event => {
   saveCurrentPageToLocalStorage(currentPage);
   const data = await getFetchRecipes(currentPage);
   container.innerHTML = createMarcup(data.results);
-  });
+});
 
 export { data };

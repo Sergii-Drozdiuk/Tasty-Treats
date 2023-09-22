@@ -2,6 +2,21 @@ import axios from 'axios';
 import { setPerPageValue } from '../pagination.js';
 const BASE_URL = 'https://tasty-treats-backend.p.goit.global/api';
 
+const ingredientsSelect = document.querySelector('.select-ingredients');
+const areasSelect = document.querySelector('.select-area');
+const timeSelect = document.querySelector('.select-time');
+ingredientsSelect.addEventListener('change', onFiltersClick);
+areasSelect.addEventListener('change', onFiltersClick);
+timeSelect.addEventListener('change', onFiltersClick);
+
+async function onFiltersClick() {
+  const data = { ingridient: ingredientsSelect.value, area: areasSelect.value, time: timeSelect.value };
+  const params = new URLSearchParams(data).toString();
+  let limit = setPerPageValue();
+  const r = await axios(`${BASE_URL}/recipes?limit=${limit}&page=1&${params}`);
+  return r;
+}
+
 async function getFetchRecipes(page = 1) {
   let limit = setPerPageValue();
   const response = await axios(`${BASE_URL}/recipes?limit=${limit}&page=${page}`);
@@ -27,4 +42,4 @@ async function getRecipesByCategory(category) {
   return r.data.results;
 }
 
-export { getFetchRecipes, getRecipeById, addRecipeRating, getRecipesByCategory };
+export { getFetchRecipes, getRecipeById, addRecipeRating, getRecipesByCategory, onFiltersClick };
