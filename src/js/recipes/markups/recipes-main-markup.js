@@ -1,7 +1,7 @@
 export function createMarcup(arr) {
   return arr
-    .map(({ title, description, preview, _id, rating,tags }) => {
-      const ratingValue = rating/0.05;
+    .map(({ title, description, preview, _id, rating, tags }) => {
+      const ratingValue = rating / 0.05;
       return `
   <li class ="recipes-card" id="${_id}" style="background-image:linear-gradient(to top, var(--main-text-dark-color),var( --filters-main-color),transparent 100%), url(${preview});" >
   <svg class="recipes-icon-heart" id="${_id}" data-tags="${tags}" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32">
