@@ -1,2 +1,1 @@
-import axios from 'axios';
-console.log(axios);
+// const recipeId = JSON.parse(localStorage.getItem('favorite-recipes')).id;
