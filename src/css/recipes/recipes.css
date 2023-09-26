@@ -145,6 +145,7 @@
 @media screen and (width >= 768px) {
   .recipes-container {
     width: 496px;
+    max-width: none;
   }
 
   .recipes-card {

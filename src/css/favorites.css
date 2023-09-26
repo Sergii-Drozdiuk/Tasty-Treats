@@ -1,3 +1,6 @@
+@import url('./recipes/recipes-modal.css');
+@import url('./recipes/recipes.css');
+
 .favorites-main-picture {
   display: inline-block;
   margin-block-end: 40px;
@@ -12,7 +15,6 @@
 .favorites-filters-list {
   display: flex;
   gap: 15px;
-  flex-wrap: wrap;
 }
 
 .favorites-filters-btn {
@@ -36,7 +38,7 @@
   margin: 0 auto 24px;
 }
 
-.no-favarits {
+.no-favorites {
   width: 335px;
   color: var(-main-text-dark-color);
   text-align: center;
@@ -51,7 +53,14 @@
 }
 
 .favorites-cards {
+  width: 100%;
+  height: 335px;
+  background-size: cover;
+  background-position: center;
   display: flex;
-  gap: 30px;
-  margin-top: 20px;
+  flex-wrap: wrap;
+  gap: 16px;
+  border-radius: 15px;
+  padding: 214px 16px 16px;
+  position: relative;
 }
