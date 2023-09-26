@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Your ultimate online favorites culinary paradise!" />
   <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
   <title>Favorites</title>
   <link rel="stylesheet" href="./css/index.css" />
@@ -13,40 +14,7 @@
 <body>
   <load src="partials/header.html" />
   <main>
-    <section class="favorites-section">
-      <div class="favorites-container container">
-        <picture class="favorites-main-picture">
-          <source media="(min-width: 1200px)" srcset="
-                ./img/favorites-img/desktop/main-desktop.avif    1x,
-                ./img/favorites-img/desktop/main-desktop@2x.avif 2x
-              " type="image/avif" />
-          <source media="(min-width: 768px)" srcset="
-                ./img/favorites-img/tablet/main-tablet.avif    1x,
-                ./img/favorites-img/tablet/main-tablet@2x.avif 2x
-              " type="image/avif" />
-          <source media="(max-width: 767px)" srcset="
-                ./img/favorites-img/mobile/main-mobile.avif    1x,
-                ./img/favorites-img/mobile/main-mobile@2x.avif 2x
-              " type="image/avif" />
-          <img src="./img/favorites-img/mobile/main-mobile.webp" alt="Tasty Cook" />
-        </picture>
-        <div class="hat-wrapper">
-          <svg class="kitchen-hat">
-            <use href="./img/icons.svg#icon-kitchen-hat"></use>
-          </svg>
-          <p class="no-favorites">
-            It appears that you haven't added any recipes to your favorites yet. To get started, you can add
-            recipes that you like to your favorites for easier access in the future.
-          </p>
-        </div>
-        <ul class="favorites-filters-list js-hidden">
-          <li class="favorites-filters-items">
-            <button type="button" class="favorites-filters-btn">All categories</button>
-          </li>
-        </ul>
-        <ul class="favorites-cards"></ul>
-      </div>
-    </section>
+    <load src="partials/favorites-section.html" />
   </main>
   <script type="module" src="js/main-files/favorites.js"></script>
 </body>

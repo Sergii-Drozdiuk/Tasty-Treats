@@ -1,6 +1,6 @@
-import { createMarcup } from '../recipes/markups/recipes-main-markup.js';
+import { createMarcupFavorites } from '../recipes/markups/recipes-favorites-markup.js';
 import { getResById } from './favorites-recipes-api.js';
-const arrOfRecepis = [];
+const arrOfRecipes = [];
 
 const container = document.querySelector('.favorites-cards');
 const filters = document.querySelector('.favorites-filters-list');
@@ -40,8 +40,8 @@ renderingBtn(unicTags);
 function renderingRecipe(arr) {
   arr.map(({ id }) =>
     getResById(id).then(r => {
-      arrOfRecepis.push(r);
-      container.insertAdjacentHTML('beforeend', createMarcup(arrOfRecepis));
+      arrOfRecipes.push(r);
+      container.insertAdjacentHTML('beforeend', createMarcupFavorites(arrOfRecipes));
     })
   );
 }

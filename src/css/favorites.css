@@ -6,24 +6,19 @@
   margin-block-end: 40px;
 }
 
-@media only screen and (width >= 768px) {
-  .favorites-main-picture {
-    margin-block-end: 64px;
-  }
-}
-
 .favorites-filters-list {
   display: flex;
   gap: 15px;
+  margin-bottom: 24px;
 }
 
 .favorites-filters-btn {
+  height: 46px;
   padding: 14px 18px;
   border-radius: 15px;
   border: 1px solid var(--secondary-hero-img-color);
   color: var(--filters-secondary-color);
   font-size: 16px;
-  font-weight: 500;
   line-height: 1.25;
 }
 
@@ -53,14 +48,43 @@
 }
 
 .favorites-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.recipes-card-favorites {
   width: 100%;
   height: 335px;
   background-size: cover;
   background-position: center;
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
   border-radius: 15px;
   padding: 214px 16px 16px;
   position: relative;
+}
+
+@media only screen and (width >= 768px) {
+  .favorites-main-picture {
+    margin-block-end: 64px;
+  }
+
+  .favorites-filters-list {
+    margin-bottom: 32px;
+  }
+
+  .recipes-card-favorites {
+    width: 224px;
+    height: 244px;
+    padding-top: 123px;
+  }
+}
+
+@media only screen and (width >= 1280px) {
+  .recipes-card-favorites {
+    width: 258px;
+    height: 287px;
+    padding-top: 166px;
+  }
 }
