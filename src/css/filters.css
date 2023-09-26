@@ -114,6 +114,12 @@
   margin-right: 4px;
 }
 
+@media screen and (width < 375px) {
+  .input-container {
+    width: 100%;
+  }
+}
+
 @media screen and (width >= 768px) {
   .filters-list {
     gap: 16px;
