@@ -5,12 +5,13 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Your ultimate online favorites culinary paradise!" />
   <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
   <title>Favorites</title>
   
-  <script type="module" crossorigin src="/Fancy-team-project/assets/favorites-1678c549.js"></script>
-  <link rel="modulepreload" crossorigin href="/Fancy-team-project/assets/header-ee4761d9.js">
-  <link rel="stylesheet" href="/Fancy-team-project/assets/header-ce017a97.css">
+  <script type="module" crossorigin src="/Fancy-team-project/assets/favorites-d8889ac9.js"></script>
+  <link rel="modulepreload" crossorigin href="/Fancy-team-project/assets/header-da3a80e9.js">
+  <link rel="stylesheet" href="/Fancy-team-project/assets/header-e40c5129.css">
 </head>
 
 <body>
@@ -138,30 +139,34 @@
 
   <main>
     <section class="favorites-section">
-      <div class="favorites-container container">
-        <picture class="favorites-main-picture">
-          <source media="(min-width: 1200px)" srcset="/Fancy-team-project/assets/main-desktop-fa987b17.avif 1x, /Fancy-team-project/assets/main-desktop@2x-efa21716.avif 2x" type="image/avif" />
-          <source media="(min-width: 768px)" srcset="/Fancy-team-project/assets/main-tablet-a19c8ac4.avif 1x, /Fancy-team-project/assets/main-tablet@2x-10ec22fd.avif 2x" type="image/avif" />
-          <source media="(max-width: 767px)" srcset="/Fancy-team-project/assets/main-mobile-0b457e62.avif 1x, /Fancy-team-project/assets/main-mobile@2x-37a33b66.avif 2x" type="image/avif" />
-          <img src="/Fancy-team-project/assets/main-mobile-ee5174fb.webp" alt="Tasty Cook" />
-        </picture>
-        <div class="hat-wrapper">
-          <svg class="kitchen-hat">
+   <div class="favorites-container container">
+      <picture class="favorites-main-picture">
+         <source media="(min-width: 1200px)" srcset="/Fancy-team-project/assets/main-desktop-fa987b17.avif 1x, /Fancy-team-project/assets/main-desktop@2x-efa21716.avif 2x" type="image/avif" />
+         <source media="(min-width: 768px)" srcset="/Fancy-team-project/assets/main-tablet-a19c8ac4.avif 1x, /Fancy-team-project/assets/main-tablet@2x-10ec22fd.avif 2x" type="image/avif" />
+         <source media="(max-width: 767px)" srcset="/Fancy-team-project/assets/main-mobile-0b457e62.avif 1x, /Fancy-team-project/assets/main-mobile@2x-37a33b66.avif 2x" type="image/avif" />
+         <img src="/Fancy-team-project/assets/main-mobile-ee5174fb.webp" alt="Tasty Cook" />
+      </picture>
+      <div class="hat-wrapper">
+         <svg class="kitchen-hat">
             <use href="/Fancy-team-project/assets/icons-6fb877e3.svg#icon-kitchen-hat"></use>
-          </svg>
-          <p class="no-favorites">
+         </svg>
+         <p class="no-favorites">
             It appears that you haven't added any recipes to your favorites yet. To get started, you can add
             recipes that you like to your favorites for easier access in the future.
-          </p>
-        </div>
-        <ul class="favorites-filters-list js-hidden">
-          <li class="favorites-filters-items">
-            <button type="button" class="favorites-filters-btn">All categories</button>
-          </li>
-        </ul>
-        <ul class="favorites-cards"></ul>
+         </p>
       </div>
-    </section>
+      <ul class="favorites-filters-list js-hidden">
+         <li class="favorites-filters-items">
+            <button type="button" class="favorites-filters-btn"><span>All categories</span></button>
+         </li>
+      </ul>
+      <ul class="favorites-cards"></ul>
+      <div class="favorites-pagination-wrapper">
+   <div id="pagination" class="tui-pagination container">
+   </div>
+</div>
+   </div>
+</section>
   </main>
   
 </body>
