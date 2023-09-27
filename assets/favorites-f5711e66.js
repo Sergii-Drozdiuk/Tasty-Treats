@@ -1,4 +1,4 @@
-import{a as p}from"./header-da3a80e9.js";function f(e){return e.map(({title:r,description:t,preview:s,_id:l,rating:d,tags:g})=>{const h=d/.05;return`
+import{a as p}from"./header-28bdb93b.js";function f(e){return e.map(({title:r,description:t,preview:s,_id:l,rating:d,tags:g})=>{const h=d/.05;return`
   <li class ="recipes-card-favorites" id="${l}" style="background-image:linear-gradient(to top, var(--main-text-dark-color),var( --filters-main-color),transparent 100%), url(${s});" >
   <svg class="recipes-icon-heart" id="${l}" data-tags="${g}" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32">
   <path class="path"  opacity="1" stroke="#f8f8f8" style="stroke: var(--color1, #f8f8f8)"
