@@ -1,7 +1,7 @@
 import { createMarcupFavorites } from '../recipes/markups/recipes-favorites-markup.js';
 import { getResById } from './favorites-recipes-api.js';
-const arrOfRecipes = [];
 
+const arrOfRecipes = [];
 const container = document.querySelector('.favorites-cards');
 const filters = document.querySelector('.favorites-filters-list');
 const hat = document.querySelector('.hat-wrapper');

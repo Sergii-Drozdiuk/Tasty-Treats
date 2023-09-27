@@ -1,7 +1,6 @@
 import Pagination from 'tui-pagination';
 
 const containerPagination = document.getElementById('pagination');
-
 const options = {
   totalItems: 40,
   itemsPerPage: setPerPageValue(),
@@ -36,7 +35,6 @@ function setPerPageValue() {
   }
   return perPage;
 }
-
 
 window.addEventListener('resize', updateItemsPerPage);
 

@@ -29,9 +29,9 @@
   --filters-secondary-color: rgba(5, 5, 5, 30%);
   --filters-main-color: rgba(5, 5, 5, 50%);
   --secondary-pop-recipes-color: rgba(5, 5, 5, 80%);
-  --secondary-hero-img-color: rgb(248, 248, 248, 20%);
-  --secondary-pag-img-color: rgb(248, 248, 248, 50%);
-  --main-hero-img-color: rgb(248, 248, 248, 60%);
+  --secondary-hero-img-color: rgba(248, 248, 248, 20%);
+  --secondary-pag-img-color: rgba(248, 248, 248, 50%);
+  --main-hero-img-color: rgba(248, 248, 248, 60%);
   --dark-secondary-hero-img-color: rgba(255, 255, 255, 20%);
   --dark-filters-secondary-color: rgba(255, 255, 255, 30%);
   --dark-filters-main-color: rgba(255, 255, 255, 50%);
@@ -41,7 +41,7 @@
   --transition-timings: 250ms cubic-bezier(0.4, 0, 0.2, 1);
   --fixex-black: rgb(5, 5, 5);
   --fixed-white: rgb(248, 248, 248);
-  --modal-white: rgba(255, 255, 255);
+  --modal-white: rgb(255, 255, 255);
   --fixed-slider-color: rgb(22, 22, 22);
 }
 
