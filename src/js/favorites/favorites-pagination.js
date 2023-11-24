@@ -1,12 +1,18 @@
 import Pagination from 'tui-pagination';
 
-const containerPagination = document.getElementById('pagination');
+const favoriteRecipes = JSON.parse(localStorage.getItem('favorite-recipes'));
+let length = 0;
+if (favoriteRecipes) {
+  length = favoriteRecipes.length;
+}
+
+const container = document.getElementById('favorites-pagination');
+
 const options = {
-  totalItems: 40,
+  totalItems: length,
   itemsPerPage: 9,
   visiblePages: window.innerWidth < 768 ? 2 : 3,
   page: 1,
-  currentPage: 1,
   centerAlign: true,
   firstItemClassName: 'tui-first-child',
   lastItemClassName: 'tui-last-child',
@@ -24,14 +30,6 @@ const options = {
   },
 };
 
-const pagination = new Pagination(containerPagination, options);
+const pagination = new Pagination(container, options);
 
-function show() {
-  containerPagination.classList.replace('hide', 'show');
-}
-
-function hide() {
-  containerPagination.classList.replace('show', 'hide');
-}
-
-export { pagination, options, show, hide };
+export { pagination, options };

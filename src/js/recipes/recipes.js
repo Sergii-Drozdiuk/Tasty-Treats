@@ -36,6 +36,28 @@ function getCurrentPageFromLocalStorage() {
   }
 }
 
+function setPerPageValue() {
+  let perPage = 9;
+  if (window.innerWidth < 768) {
+    perPage = 6;
+  } else if (window.innerWidth >= 768 && window.innerWidth < 1280) {
+    perPage = 8;
+  }
+  return perPage;
+}
+
+window.addEventListener('resize', updateItemsPerPage);
+
+function updateItemsPerPage() {
+  let items = setPerPageValue();
+  if (items !== options.itemsPerPage) {
+    options.itemsPerPage = items;
+    pagination.setItemsPerPage(items);
+  }
+}
+
+updateItemsPerPage();
+
 pagination.on('afterMove', async event => {
   currentPage = event.page;
   saveCurrentPageToLocalStorage(currentPage);
@@ -44,4 +66,4 @@ pagination.on('afterMove', async event => {
   container.innerHTML = createMarcup(data.results);
 });
 
-export { data };
+export { setPerPageValue, data };

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { setPerPageValue } from '../pagination.js';
+import { setPerPageValue } from './recipes';
 const BASE_URL = 'https://tasty-treats-backend.p.goit.global/api';
 
 const ingredientsSelect = document.querySelector('.select-ingredients');

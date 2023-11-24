@@ -59,6 +59,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
+  margin-bottom: 40px;
 }
 
 .recipes-card-favorites {
@@ -71,6 +72,10 @@
   border-radius: 15px;
   padding: 214px 16px 16px;
   position: relative;
+}
+
+.favorites-pagination-wrapper {
+  margin-bottom: 80px;
 }
 
 @media only screen and (width >= 768px) {
@@ -92,6 +97,14 @@
     width: 224px;
     height: 244px;
     padding-top: 123px;
+  }
+
+  .favorites-cards {
+    margin-bottom: 64px;
+  }
+
+  .favorites-pagination-wrapper {
+    margin-bottom: 100px;
   }
 }
 
