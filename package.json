@@ -7,7 +7,7 @@
     "dev": "npm run stlint && npm run lint && vite",
     "lint": "eslint .",
     "stlint": "stylelint .",
-    "build": "npm run stlint && npm run lint && vite build --base=/Fancy-team-project/",
+    "build": "npm run stlint && npm run lint && vite build --base=/Tasty-Treats/",
     "preview": "vite preview"
   },
   "devDependencies": {
